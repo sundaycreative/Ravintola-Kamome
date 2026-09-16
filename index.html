@@ -73,7 +73,7 @@
   <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-white/20 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Brand Title (Without bird icon) -->
+      <!-- Brand Title -->
       <a href="#" class="group flex flex-col justify-center leading-none">
         <span class="text-[10px] sm:text-[11px] tracking-[0.25em] text-kamome-cream uppercase font-bold group-hover:text-white transition-colors">Ravintola</span>
         <span class="font-serif font-bold text-2xl sm:text-3xl tracking-wider text-white mt-0.5">KAMOME</span>
@@ -82,6 +82,7 @@
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-7 text-sm font-semibold">
         <a href="#concept" class="hover:text-kamome-cream transition-colors" data-i18n="nav_concept">Konsepti</a>
+        <a href="#popular" class="hover:text-kamome-cream transition-colors" data-i18n="nav_popular">Suosikit</a>
         <a href="#menu" class="hover:text-kamome-cream transition-colors" data-i18n="nav_menu">Ruokalista</a>
         <a href="#atmosphere" class="hover:text-kamome-cream transition-colors" data-i18n="nav_vibe">Tunnelma</a>
         <a href="#reservation" class="hover:text-kamome-cream transition-colors" data-i18n="nav_book">Pöytävaraus</a>
@@ -118,6 +119,7 @@
     <!-- Mobile Drawer -->
     <div id="mobile-drawer" class="hidden md:hidden bg-kamome-blueDark border-b border-white/20 px-6 py-6 space-y-4 text-center">
       <a href="#concept" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_concept">Konsepti</a>
+      <a href="#popular" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_popular">Suosikit</a>
       <a href="#menu" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_menu">Ruokalista</a>
       <a href="#atmosphere" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_vibe">Tunnelma</a>
       <a href="#reservation" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_book">Pöytävaraus</a>
@@ -178,14 +180,12 @@
 
         </div>
 
-        <!-- Right Visual (Compact, Stylish Logo Presentation) -->
+        <!-- Right Visual (Logo Presentation) -->
         <div class="lg:col-span-5 flex justify-center">
           <div class="relative w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center">
             
-            <!-- Soft background ring decoration -->
             <div class="absolute inset-0 rounded-full bg-white/10 animate-pulse"></div>
             
-            <!-- Main Circular Logo Card -->
             <div class="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full p-2 bg-white/30 border-4 border-kamome-cream shadow-2xl overflow-hidden group hover:scale-105 transition-transform duration-500 flex items-center justify-center">
               <img src="logo.png" 
                    alt="Ravintola Kamome Logo" 
@@ -193,7 +193,6 @@
                    onerror="this.src='https://images.weserv.nl/?url=raw.githubusercontent.com/sundaycreative/Ravintola-Kamome/main/logo.png&w=400&h=400&fit=cover&mask=circle';">
             </div>
 
-            <!-- Floating Pill Badge -->
             <div class="absolute -bottom-3 bg-kamome-cream text-kamome-charcoal px-4 py-2 rounded-full shadow-lg border border-white flex items-center gap-2.5">
               <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
               <span class="text-[11px] font-bold tracking-wide uppercase" data-i18n="badge_special">Lounas & Illallinen</span>
@@ -249,7 +248,104 @@
     </div>
   </section>
 
-  <!-- ==================== MENU ==================== -->
+  <!-- ==================== POPULAR SPECIALS / KITCHEN CAR ==================== -->
+  <section id="popular" class="py-24 px-4 sm:px-6 lg:px-8 border-b border-white/20 bg-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-kamome-cream text-kamome-charcoal text-[11px] font-bold uppercase tracking-wider shadow-sm">
+          <i class="fa-solid fa-truck-pickup text-kamome-blueDeep"></i>
+          <span data-i18n="pop_badge">Kamome Kitchen Car Specials</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white" data-i18n="pop_title">Suosituimmat Herkkumme</h2>
+        <p class="text-xs sm:text-sm text-white/85 font-light" data-i18n="pop_subtitle">
+          Ravintolan vieressä palvelevasta Kamome-keittiövaunusta ja ravintolasta saatavat asiakkaidemme kestosuosikit!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Item 1: Curry Bread -->
+        <div class="bg-kamome-cream text-kamome-charcoal rounded-3xl overflow-hidden shadow-xl border border-white flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
+          <div class="relative h-64 overflow-hidden bg-kamome-creamDark">
+            <img src="curry-bread.jpg" 
+                 alt="Kamome Curry Bread" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 onerror="this.src='https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=700&auto=format&fit=crop';">
+            <div class="absolute top-3 left-3 bg-kamome-blue text-white text-[11px] font-bold px-3 py-1 rounded-full shadow">
+              Curry Bread • カレーパン
+            </div>
+          </div>
+          <div class="p-6 flex flex-col justify-between flex-1 space-y-4">
+            <div class="space-y-2">
+              <h3 class="font-serif font-bold text-xl text-kamome-charcoal">Japanese Curry Bread</h3>
+              <p class="text-xs text-gray-700 leading-relaxed font-medium" data-i18n="pop_desc_1">
+                Nicely flaky & crispy outside, filled with rich curry inside. Come try our popular curry bread!
+              </p>
+            </div>
+            <div class="pt-3 border-t border-gray-200 text-[11px] text-kamome-blueDeep font-bold flex items-center gap-2">
+              <i class="fa-solid fa-store text-xs"></i>
+              <span data-i18n="pop_avail_1">Available at Kamome kitchen car, next to our restaurant</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Karaage -->
+        <div class="bg-kamome-cream text-kamome-charcoal rounded-3xl overflow-hidden shadow-xl border border-white flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
+          <div class="relative h-64 overflow-hidden bg-kamome-creamDark">
+            <img src="karaage.jpg" 
+                 alt="Juicy Karaage Fried Chicken" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 onerror="this.src='https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=700&auto=format&fit=crop';">
+            <div class="absolute top-3 left-3 bg-kamome-blue text-white text-[11px] font-bold px-3 py-1 rounded-full shadow">
+              Tori Karaage • から揚げ
+            </div>
+          </div>
+          <div class="p-6 flex flex-col justify-between flex-1 space-y-4">
+            <div class="space-y-2">
+              <h3 class="font-serif font-bold text-xl text-kamome-charcoal">Japanese Fried Chicken (Karaage)</h3>
+              <p class="text-xs text-gray-700 leading-relaxed font-medium" data-i18n="pop_desc_2">
+                Tender & juicy Japanese-style fried chicken karaage. Choose between spicy mayo or wasabi mayo sauce. Perfect as a tasty side dish!
+              </p>
+            </div>
+            <div class="pt-3 border-t border-gray-200 text-[11px] text-kamome-blueDeep font-bold flex items-center gap-2">
+              <i class="fa-solid fa-store text-xs"></i>
+              <span data-i18n="pop_avail_2">Available at Kamome kitchen car, next to our restaurant</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Gyoza -->
+        <div class="bg-kamome-cream text-kamome-charcoal rounded-3xl overflow-hidden shadow-xl border border-white flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
+          <div class="relative h-64 overflow-hidden bg-kamome-creamDark">
+            <img src="gyoza.jpg" 
+                 alt="Soft & Chewy Gyoza Dumplings" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 onerror="this.src='https://images.unsplash.com/photo-1498654896293-37aacf113fd9?q=80&w=700&auto=format&fit=crop';">
+            <div class="absolute top-3 left-3 bg-kamome-blue text-white text-[11px] font-bold px-3 py-1 rounded-full shadow">
+              Gyoza Dumplings • 餃子
+            </div>
+          </div>
+          <div class="p-6 flex flex-col justify-between flex-1 space-y-4">
+            <div class="space-y-2">
+              <h3 class="font-serif font-bold text-xl text-kamome-charcoal">Handmade Gyoza Dumplings</h3>
+              <p class="text-xs text-gray-700 leading-relaxed font-medium" data-i18n="pop_desc_3">
+                Soft, chewy gyoza dumplings topped with our house-made spicy mayo sauce. One of our customer favourites!
+              </p>
+            </div>
+            <div class="pt-3 border-t border-gray-200 text-[11px] text-kamome-blueDeep font-bold flex items-center gap-2">
+              <i class="fa-solid fa-store text-xs"></i>
+              <span data-i18n="pop_avail_3">Available at Kamome kitchen car, next to our restaurant</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== MAIN MENU ==================== -->
   <section id="menu" class="py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -485,6 +581,7 @@
     const i18n = {
       fi: {
         nav_concept: "Konsepti",
+        nav_popular: "Suosikit",
         nav_menu: "Ruokalista",
         nav_vibe: "Tunnelma",
         nav_book: "Pöytävaraus",
@@ -508,6 +605,15 @@
         f2_desc: "Hitaasti valmistettu dashi- ja ramen-liemi, täyteläinen miso sekä käsintehdyt gyoza-nyytit.",
         f3_title: "Korvapuusti & Matcha",
         f3_desc: "Pehmeät uunituoreet kanelipullat ja aito japanilainen Uji-alueen seremoniallinen vihreä tee.",
+        pop_badge: "Kamome Kitchen Car Suosikit",
+        pop_title: "Erityisen Suositut Herkut",
+        pop_subtitle: "Ravintolan vieressä palvelevasta Kamome-keittiövaunusta ja ravintolasta saatavat asiakkaidemme kestosuosikit!",
+        pop_desc_1: "Ihanan rapea ja lehtevä pinnalta, täyteläistä ja mausteista japanilaista currya sisältä. Tule maistamaan kuuluisaa curry-leipäämme!",
+        pop_avail_1: "Saatavilla Kamome-keittiövaunusta ravintolan vierestä",
+        pop_desc_2: "Mureaa ja mehukasta japanilaistyylistä rapeaa karaage-kanaa. Valitse chilikastike tai wasabi-majoneesi. Täydellinen lisuke tai pikkupurtava!",
+        pop_avail_2: "Saatavilla Kamome-keittiövaunusta ravintolan vierestä",
+        pop_desc_3: "Pehmeät ja täyteläiset gyoza-nyytit talon omalla tulisella majoneesikastikkeella viimeisteltynä. Asiakkaidemme ehdoton suosikki!",
+        pop_avail_3: "Saatavilla Kamome-keittiövaunusta ravintolan vierestä",
         menu_tag: "Ruokalista",
         menu_title: "Kamomen Annokset",
         menu_sub: "Valitse kategoria ja tutustu suosikkeihimme.",
@@ -541,6 +647,7 @@
       },
       en: {
         nav_concept: "Concept",
+        nav_popular: "Specials",
         nav_menu: "Menu",
         nav_vibe: "Atmosphere",
         nav_book: "Reservations",
@@ -564,6 +671,15 @@
         f2_desc: "Rich dashi and ramen broths, creamy miso soup, and pan-crisped handmade gyoza dumplings.",
         f3_title: "Cinnamon Buns & Matcha",
         f3_desc: "Fluffy freshly baked Finnish korvapuusti buns paired with premium ceremonial Uji matcha tea.",
+        pop_badge: "Kamome Kitchen Car Specials",
+        pop_title: "Customer Favourites",
+        pop_subtitle: "Handcrafted highlights served right next to our restaurant at the Kamome Kitchen Car!",
+        pop_desc_1: "Nicely flaky & crispy outside, filled with rich curry inside. Come try our popular curry bread! (レストラン隣のKamomeキッチンカーにて販売中)",
+        pop_avail_1: "Available at Kamome kitchen car, next to our restaurant",
+        pop_desc_2: "Tender & juicy Japanese-style fried chicken karaage. Choose between spicy mayo or wasabi mayo sauce. Perfect as a tasty side dish!",
+        pop_avail_2: "Available at Kamome kitchen car, next to our restaurant",
+        pop_desc_3: "Soft, chewy gyoza dumplings topped with our house-made spicy mayo sauce. One of our customer favourites! (レストラン隣のKamomeキッチンカーにて販売中)",
+        pop_avail_3: "Available at Kamome kitchen car, next to our restaurant",
         menu_tag: "Menu",
         menu_title: "Kamome Classics",
         menu_sub: "Select a category to explore our dishes.",
@@ -597,6 +713,7 @@
       },
       ru: {
         nav_concept: "Концепция",
+        nav_popular: "Хиты",
         nav_menu: "Меню",
         nav_vibe: "Атмосфера",
         nav_book: "Бронь",
@@ -620,6 +737,15 @@
         f2_desc: "Медленно томленый бульон даси, густой рамен, ароматный мисо и хрустящие гёдза.",
         f3_title: "Корвапуусти и Матча",
         f3_desc: "Теплые финские булочки с корицей и церемониальный зеленый чай матча из региона Удзи.",
+        pop_badge: "Хиты Kamome Kitchen Car",
+        pop_title: "Наши самые популярные блюда",
+        pop_subtitle: "Любимые блюда гостей из фудтрака Kamome рядом с рестораном и в основном зале!",
+        pop_desc_1: "Хрустящая слоеная корочка снаружи и насыщенный ароматный карри внутри. Попробуйте наш популярный японский карри-хлеб!",
+        pop_avail_1: "В продаже в фудтраке Kamome рядом с рестораном",
+        pop_desc_2: "Нежная и сочная жареная курочка карааге по-японски. Соусы на выбор: спайси-майонез или васаби-майонез. Идеальная закуска!",
+        pop_avail_2: "В продаже в фудтраке Kamome рядом с рестораном",
+        pop_desc_3: "Нежные пельмешки гёдза с авторским острым майонезным соусом. Безусловный фаворит среди наших гостей!",
+        pop_avail_3: "В продаже в фудтраке Kamome рядом с рестораном",
         menu_tag: "Меню",
         menu_title: "Блюда ресторана",
         menu_sub: "Выберите раздел меню.",
@@ -674,7 +800,7 @@
         descs: {
           fi: 'Rapeaksi paistettua porsaanfileetä panko-kuoressa, perinteistä japanilaista currykastiketta ja riisiä.',
           en: 'Crisp panko pork cutlet served with rich Japanese curry and fluffy white rice.',
-          ru: 'Хрустящая котлета тон Neighboring котлета в сухарях панко, классический японский карри и рис.'
+          ru: 'Хрустящая котлета тон Neighbouring котлета в сухарях панко, классический японский карри и рис.'
         }
       },
       {
