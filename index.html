@@ -52,8 +52,8 @@
       -webkit-backdrop-filter: blur(12px);
     }
     .lang-pill.active {
-      background-color: #FFF9EE;
-      color: #1A2328;
+      background-color: #FFF9EE !important;
+      color: #1A2328 !important;
     }
     .menu-filter.active {
       background-color: #FFF9EE;
@@ -89,13 +89,13 @@
         <a href="#contact" class="hover:text-kamome-cream transition-colors" data-i18n="nav_contact">店舗情報</a>
       </nav>
 
-      <!-- Language Selector & Booking CTA -->
+      <!-- Desktop Language Selector & Booking CTA -->
       <div class="hidden md:flex items-center gap-3">
         <div class="flex items-center bg-black/20 p-1 rounded-full border border-white/20 text-xs font-bold">
-          <button onclick="changeLang('ja')" id="btn-ja" class="lang-pill px-2.5 py-1 rounded-full active transition-all">JA</button>
-          <button onclick="changeLang('fi')" id="btn-fi" class="lang-pill px-2.5 py-1 rounded-full transition-all text-white">FI</button>
-          <button onclick="changeLang('en')" id="btn-en" class="lang-pill px-2.5 py-1 rounded-full transition-all text-white">EN</button>
-          <button onclick="changeLang('ru')" id="btn-ru" class="lang-pill px-2.5 py-1 rounded-full transition-all text-white">RU</button>
+          <button onclick="changeLang('ja')" id="btn-ja" class="lang-pill px-2.5 py-1 rounded-full text-white transition-all">JA</button>
+          <button onclick="changeLang('fi')" id="btn-fi" class="lang-pill px-2.5 py-1 rounded-full text-white transition-all">FI</button>
+          <button onclick="changeLang('en')" id="btn-en" class="lang-pill px-2.5 py-1 rounded-full text-white transition-all">EN</button>
+          <button onclick="changeLang('ru')" id="btn-ru" class="lang-pill px-2.5 py-1 rounded-full text-white transition-all">RU</button>
         </div>
 
         <a href="#reservation" class="bg-kamome-cream hover:bg-white text-kamome-charcoal px-4 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow hover:shadow-lg transform hover:-translate-y-0.5">
@@ -106,10 +106,10 @@
       <!-- Mobile Button & Quick Lang -->
       <div class="flex items-center gap-2 lg:hidden">
         <div class="flex items-center bg-black/20 p-0.5 rounded-full border border-white/20 text-[11px] font-bold">
-          <button onclick="changeLang('ja')" class="m-lang-ja px-1.5 py-0.5 rounded-full bg-kamome-cream text-kamome-charcoal">JA</button>
-          <button onclick="changeLang('fi')" class="m-lang-fi px-1.5 py-0.5 rounded-full text-white">FI</button>
-          <button onclick="changeLang('en')" class="m-lang-en px-1.5 py-0.5 rounded-full text-white">EN</button>
-          <button onclick="changeLang('ru')" class="m-lang-ru px-1.5 py-0.5 rounded-full text-white">RU</button>
+          <button onclick="changeLang('ja')" id="m-btn-ja" class="px-1.5 py-0.5 rounded-full text-white">JA</button>
+          <button onclick="changeLang('fi')" id="m-btn-fi" class="px-1.5 py-0.5 rounded-full text-white">FI</button>
+          <button onclick="changeLang('en')" id="m-btn-en" class="px-1.5 py-0.5 rounded-full text-white">EN</button>
+          <button onclick="changeLang('ru')" id="m-btn-ru" class="px-1.5 py-0.5 rounded-full text-white">RU</button>
         </div>
         <button id="toggle-nav" class="text-white p-2 text-xl" aria-label="Menu">
           <i class="fa-solid fa-bars"></i>
@@ -265,18 +265,15 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
         
         <!-- Item 1: Curry Bread -->
         <div class="bg-kamome-cream text-kamome-charcoal rounded-3xl overflow-hidden shadow-xl border border-white flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
-          <div class="relative w-full aspect-square overflow-hidden">
+          <div class="w-full bg-white flex items-center justify-center overflow-hidden">
             <img src="curry-bread.jpg" 
                  alt="Kamome Curry Bread" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 block"
+                 class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500 block"
                  onerror="this.src='https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=700&auto=format&fit=crop';">
-            <div class="absolute top-4 left-4 bg-kamome-blue text-white text-[11px] font-bold px-3 py-1 rounded-full shadow">
-              Curry Bread • カレーパン
-            </div>
           </div>
           <div class="p-6 flex flex-col justify-between flex-1 space-y-4">
             <div class="space-y-2">
@@ -294,14 +291,11 @@
 
         <!-- Item 2: Karaage -->
         <div class="bg-kamome-cream text-kamome-charcoal rounded-3xl overflow-hidden shadow-xl border border-white flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
-          <div class="relative w-full aspect-square overflow-hidden">
+          <div class="w-full bg-white flex items-center justify-center overflow-hidden">
             <img src="karaage.jpg" 
                  alt="Juicy Karaage Fried Chicken" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 block"
+                 class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500 block"
                  onerror="this.src='https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=700&auto=format&fit=crop';">
-            <div class="absolute top-4 left-4 bg-kamome-blue text-white text-[11px] font-bold px-3 py-1 rounded-full shadow">
-              Tori Karaage • から揚げ
-            </div>
           </div>
           <div class="p-6 flex flex-col justify-between flex-1 space-y-4">
             <div class="space-y-2">
@@ -319,14 +313,11 @@
 
         <!-- Item 3: Gyoza -->
         <div class="bg-kamome-cream text-kamome-charcoal rounded-3xl overflow-hidden shadow-xl border border-white flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
-          <div class="relative w-full aspect-square overflow-hidden">
+          <div class="w-full bg-white flex items-center justify-center overflow-hidden">
             <img src="gyoza.jpg" 
                  alt="Soft & Chewy Gyoza Dumplings" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 block"
+                 class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500 block"
                  onerror="this.src='https://images.unsplash.com/photo-1498654896293-37aacf113fd9?q=80&w=700&auto=format&fit=crop';">
-            <div class="absolute top-4 left-4 bg-kamome-blue text-white text-[11px] font-bold px-3 py-1 rounded-full shadow">
-              Gyoza Dumplings • 餃子
-            </div>
           </div>
           <div class="p-6 flex flex-col justify-between flex-1 space-y-4">
             <div class="space-y-2">
@@ -983,38 +974,43 @@
       }
     ];
 
-    // Default to Japanese (JA)
+    // Default Language
     let currentL = 'ja';
     let currentC = 'mains';
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile nav toggle
+    // Mobile Navigation Toggle
     const toggleBtn = document.getElementById('toggle-nav');
     const drawer = document.getElementById('mobile-drawer');
     toggleBtn.addEventListener('click', () => drawer.classList.toggle('hidden'));
     document.querySelectorAll('.mob-item').forEach(i => i.addEventListener('click', () => drawer.classList.add('hidden')));
 
-    // Change Language
+    // Robust Multilingual Switcher
     function changeLang(l) {
       currentL = l;
-      ['ja', 'fi', 'en', 'ru'].forEach(lang => {
+      
+      const langs = ['ja', 'fi', 'en', 'ru'];
+      langs.forEach(lang => {
+        // Desktop
         const btn = document.getElementById(`btn-${lang}`);
         if (btn) {
           if (lang === l) btn.classList.add('active');
           else btn.classList.remove('active');
         }
 
-        const mBtn = document.querySelector(`.m-lang-${lang}`);
+        // Mobile
+        const mBtn = document.getElementById(`m-btn-${lang}`);
         if (mBtn) {
           if (lang === l) {
-            mBtn.className = `m-lang-${lang} px-1.5 py-0.5 rounded-full bg-kamome-cream text-kamome-charcoal`;
+            mBtn.className = 'px-1.5 py-0.5 rounded-full bg-kamome-cream text-kamome-charcoal font-bold';
           } else {
-            mBtn.className = `m-lang-${lang} px-1.5 py-0.5 rounded-full text-white`;
+            mBtn.className = 'px-1.5 py-0.5 rounded-full text-white font-bold';
           }
         }
       });
 
+      // Update text nodes
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const k = el.getAttribute('data-i18n');
         if (i18n[l] && i18n[l][k]) {
@@ -1025,7 +1021,7 @@
       renderCards(currentC);
     }
 
-    // Filter Menu
+    // Filter Menu Tabs
     function setMenuCategory(cat) {
       currentC = cat;
       document.querySelectorAll('.menu-filter').forEach(btn => {
@@ -1056,7 +1052,7 @@
       `).join('');
     }
 
-    // Form
+    // Reservation Form
     function submitBooking(e) {
       e.preventDefault();
       document.getElementById('toast').classList.remove('hidden');
@@ -1066,7 +1062,7 @@
       document.getElementById('toast').classList.add('hidden');
     }
 
-    // Init
+    // Initialize Default View
     changeLang('ja');
     renderCards('mains');
   </script>
