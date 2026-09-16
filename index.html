@@ -6,15 +6,11 @@
   <title>かもめ食堂 | Ravintola Kamome Helsinki</title>
   <meta name="description" content="かもめ食堂 (Ravintola Kamome) – ヘルシンキにある心温まる日本食レストラン。本場の和食と北欧の穏やかな空間をお届けします。">
   
-  <!-- Universal Fonts with full Cyrillic, Latin & Japanese support -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+JP:wght@500;700;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
   
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -34,8 +30,7 @@
           },
           fontFamily: {
             sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
-            serif: ['"Playfair Display"', '"Noto Serif JP"', 'Georgia', 'serif'],
-            jp: ['"Noto Serif JP"', '"Playfair Display"', 'serif']
+            serif: ['"Playfair Display"', '"Noto Serif JP"', 'Georgia', 'serif']
           }
         }
       }
@@ -47,7 +42,6 @@
       background-color: #5DB9E4;
       color: #ffffff;
       letter-spacing: normal;
-      word-spacing: normal;
     }
     .glass-header {
       background: rgba(93, 185, 228, 0.96);
@@ -63,15 +57,12 @@
       color: #1A2328;
       border-color: #FFF9EE;
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     }
     .hero-ring {
       background: radial-gradient(circle at center, rgba(255, 249, 238, 0.16) 0%, transparent 70%);
     }
-    /* Fix letter spacing across languages */
-    [data-i18n] {
-      letter-spacing: normal;
-    }
+    [data-i18n] { letter-spacing: normal; }
   </style>
 </head>
 <body class="font-sans antialiased selection:bg-kamome-cream selection:text-kamome-charcoal overflow-x-hidden">
@@ -79,24 +70,20 @@
   <!-- ==================== HEADER ==================== -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-white/20 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
-      
-      <!-- Brand Title -->
       <a href="#" class="group flex flex-col justify-center leading-none flex-shrink-0">
         <span class="text-[10px] tracking-[0.2em] text-kamome-cream uppercase font-bold group-hover:text-white transition-colors">Ravintola</span>
         <span class="font-serif font-bold text-xl sm:text-2xl lg:text-3xl tracking-wider text-white mt-0.5">KAMOME</span>
       </a>
 
-      <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold">
         <a href="#concept" class="hover:text-kamome-cream transition-colors whitespace-nowrap" data-i18n="nav_concept">コンセプト</a>
+        <a href="#nordic-set" class="hover:text-kamome-cream transition-colors whitespace-nowrap" data-i18n="nav_nordic">北欧セット</a>
         <a href="#popular" class="hover:text-kamome-cream transition-colors whitespace-nowrap" data-i18n="nav_popular">おすすめ</a>
         <a href="#menu" class="hover:text-kamome-cream transition-colors whitespace-nowrap" data-i18n="nav_menu">メニュー</a>
-        <a href="#atmosphere" class="hover:text-kamome-cream transition-colors whitespace-nowrap" data-i18n="nav_vibe">店内の雰囲気</a>
         <a href="#reservation" class="hover:text-kamome-cream transition-colors whitespace-nowrap" data-i18n="nav_book">ご予約</a>
         <a href="#contact" class="hover:text-kamome-cream transition-colors whitespace-nowrap" data-i18n="nav_contact">店舗情報</a>
       </nav>
 
-      <!-- Desktop Language Selector & Booking CTA -->
       <div class="hidden md:flex items-center gap-3 flex-shrink-0">
         <div class="flex items-center bg-black/20 p-1 rounded-full border border-white/20 text-xs font-bold">
           <button onclick="changeLang('ja')" id="btn-ja" class="lang-pill px-2.5 py-1 rounded-full text-white transition-all">JA</button>
@@ -104,13 +91,11 @@
           <button onclick="changeLang('en')" id="btn-en" class="lang-pill px-2.5 py-1 rounded-full text-white transition-all">EN</button>
           <button onclick="changeLang('ru')" id="btn-ru" class="lang-pill px-2.5 py-1 rounded-full text-white transition-all">RU</button>
         </div>
-
         <a href="#reservation" class="bg-kamome-cream hover:bg-white text-kamome-charcoal px-4 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow hover:shadow-lg transform hover:-translate-y-0.5 whitespace-nowrap">
           <span data-i18n="nav_cta">ご予約はこちら</span>
         </a>
       </div>
 
-      <!-- Mobile Button & Quick Lang -->
       <div class="flex items-center gap-2 lg:hidden flex-shrink-0">
         <div class="flex items-center bg-black/20 p-0.5 rounded-full border border-white/20 text-[11px] font-bold">
           <button onclick="changeLang('ja')" id="m-btn-ja" class="px-1.5 py-0.5 rounded-full text-white">JA</button>
@@ -122,15 +107,13 @@
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
-
     </div>
 
-    <!-- Mobile Drawer -->
     <div id="mobile-drawer" class="hidden lg:hidden bg-kamome-blueDark border-b border-white/20 px-6 py-6 space-y-4 text-center">
       <a href="#concept" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_concept">コンセプト</a>
+      <a href="#nordic-set" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_nordic">北欧セット</a>
       <a href="#popular" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_popular">おすすめ</a>
       <a href="#menu" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_menu">メニュー</a>
-      <a href="#atmosphere" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_vibe">店内の雰囲気</a>
       <a href="#reservation" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_book">ご予約</a>
       <a href="#contact" class="mob-item block py-2 text-sm font-semibold" data-i18n="nav_contact">店舗情報</a>
       <a href="#reservation" class="w-full inline-block bg-kamome-cream text-kamome-charcoal py-3 rounded-full font-bold text-xs uppercase tracking-wider shadow">
@@ -143,10 +126,7 @@
   <section class="pt-28 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 hero-ring">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-        
-        <!-- Left Text Block -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/30 text-xs font-semibold text-kamome-cream">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span data-i18n="hero_status">Tenderinlenkki 8 • 月〜土 営業中</span>
@@ -171,7 +151,6 @@
             </a>
           </div>
 
-          <!-- Quick facts -->
           <div class="pt-6 grid grid-cols-3 gap-2 sm:gap-4 border-t border-white/20 max-w-lg mx-auto lg:mx-0">
             <div>
               <p class="text-xl sm:text-2xl font-serif font-bold text-kamome-cream">100%</p>
@@ -186,81 +165,82 @@
               <p class="text-[11px] sm:text-xs text-white/85" data-i18n="fact_3">Helsinki</p>
             </div>
           </div>
-
         </div>
 
-        <!-- Right Visual (Logo Presentation) -->
         <div class="lg:col-span-5 flex justify-center">
           <div class="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 flex items-center justify-center">
-            
             <div class="absolute inset-0 rounded-full bg-white/10 animate-pulse"></div>
-            
             <div class="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full p-2 bg-white/30 border-4 border-kamome-cream shadow-2xl overflow-hidden group hover:scale-105 transition-transform duration-500 flex items-center justify-center">
-              <img src="logo.png" 
-                   alt="Ravintola Kamome Logo" 
-                   class="w-full h-full object-cover rounded-full bg-[#5DB9E4]"
-                   onerror="this.src='https://images.weserv.nl/?url=raw.githubusercontent.com/sundaycreative/Ravintola-Kamome/main/logo.png&w=400&h=400&fit=cover&mask=circle';">
+              <img src="logo.png" alt="Ravintola Kamome Logo" class="w-full h-full object-cover rounded-full bg-[#5DB9E4]" onerror="this.src='https://images.weserv.nl/?url=raw.githubusercontent.com/sundaycreative/Ravintola-Kamome/main/logo.png&w=400&h=400&fit=cover&mask=circle';">
             </div>
-
             <div class="absolute -bottom-2 sm:-bottom-3 bg-kamome-cream text-kamome-charcoal px-4 py-2 rounded-full shadow-lg border border-white flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
               <span class="text-[10px] sm:text-[11px] font-bold tracking-wide uppercase whitespace-nowrap" data-i18n="badge_special">ランチ ＆ ディナー</span>
             </div>
-
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ==================== CONCEPT / PHILOSOPHY ==================== -->
-  <section id="concept" class="py-16 sm:py-20 bg-white/10 backdrop-blur-sm border-t border-b border-white/20 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      
-      <div class="max-w-3xl mx-auto text-center space-y-4 mb-12 sm:mb-14">
-        <span class="text-xs font-bold uppercase tracking-widest text-kamome-cream block" data-i18n="about_tag">こだわり</span>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white" data-i18n="about_title">シンプルで、丁寧に作られた日本の家庭料理</h2>
-        <p class="text-white/90 text-sm sm:text-base leading-relaxed font-normal" data-i18n="about_desc">
-          フィンランドの新鮮なサーモンや旬の食材と、日本から届く伝統的な出汁や調味料を組み合わせ、素朴でどこか懐かしい味わいをお届けしています。
+  <!-- ==================== SIGNATURE NORDIC MEAL SET ==================== -->
+  <section id="nordic-set" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-b border-white/20 bg-white/10 backdrop-blur-sm">
+    <div class="max-w-5xl mx-auto">
+      <div class="bg-kamome-cream text-kamome-charcoal rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl border-2 border-white relative overflow-hidden">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-gray-200 pb-6 mb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-kamome-blueDeep block mb-1">Signature Tasting Course</span>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-kamome-charcoal" data-i18n="nordic_title">北欧和食コース (Nordic Meal Set)</h2>
+          </div>
+          <div class="text-right">
+            <span class="text-3xl sm:text-4xl font-serif font-bold text-kamome-blueDeep">57,50 €</span>
+          </div>
+        </div>
+
+        <p class="text-xs sm:text-sm text-gray-700 leading-relaxed mb-6 font-normal" data-i18n="nordic_desc">
+          フィンランドの極上素材（サーモン、白身魚、トナカイ肉）と日本の職人技が調和した贅沢な特製セットメニュー。
         </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+          <div class="flex items-center gap-2 bg-white/80 p-3 rounded-xl border border-gray-200">
+            <i class="fa-solid fa-leaf text-emerald-600"></i>
+            <span data-i18n="nordic_1">キュウリとワカメの酢の物 (VE)</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white/80 p-3 rounded-xl border border-gray-200">
+            <i class="fa-solid fa-fish text-kamome-blueDeep"></i>
+            <span data-i18n="nordic_2">サーモンと白身魚の昆布締め刺身 (G)</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white/80 p-3 rounded-xl border border-gray-200">
+            <i class="fa-solid fa-fire text-amber-600"></i>
+            <span data-i18n="nordic_3">エストニア産 炭火焼き鰻 50g (G)</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white/80 p-3 rounded-xl border border-gray-200">
+            <i class="fa-solid fa-bowl-rice text-kamome-blueDeep"></i>
+            <span data-i18n="nordic_4">焼き鮭おにぎり ＆ トナカイ肉おにぎり (G)</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white/80 p-3 rounded-xl border border-gray-200">
+            <i class="fa-solid fa-mug-hot text-amber-800"></i>
+            <span data-i18n="nordic_5">お味噌汁 (G, VE)</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white/80 p-3 rounded-xl border border-gray-200">
+            <i class="fa-solid fa-bread-slice text-amber-700"></i>
+            <span data-i18n="nordic_6">名物 シナモンロール (V) ＆ コーヒー (VE)</span>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-5 border-t border-gray-200/80 text-[11px] sm:text-xs text-gray-600 space-y-1">
+          <p class="font-bold text-kamome-charcoal" data-i18n="nordic_upgrades_title">アップグレード オプション:</p>
+          <p data-i18n="nordic_up_1">+5 € フィンランド産 牛ヒレ肉のタタキ ポン酢ソース (2枚)</p>
+          <p data-i18n="nordic_up_2">+5 € 特選 いくら醤油漬け 50g</p>
+          <p data-i18n="nordic_up_3">+5 € デザートを宇治抹茶パフェへ変更</p>
+        </div>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <div class="bg-white/15 p-6 rounded-2xl border border-white/25 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-kamome-cream text-kamome-charcoal flex items-center justify-center text-lg font-bold">
-            <i class="fa-solid fa-fish"></i>
-          </div>
-          <h3 class="text-base font-bold text-kamome-cream" data-i18n="f1_title">新鮮なサーモンとお魚料理</h3>
-          <p class="text-xs sm:text-sm text-white/90 leading-relaxed font-normal" data-i18n="f1_desc">香ばしく焼き上げた照り焼きサーモン、丁寧に握ったおにぎり、彩り豊かな小鉢。</p>
-        </div>
-
-        <div class="bg-white/15 p-6 rounded-2xl border border-white/25 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-kamome-cream text-kamome-charcoal flex items-center justify-center text-lg font-bold">
-            <i class="fa-solid fa-fire-burner"></i>
-          </div>
-          <h3 class="text-base font-bold text-kamome-cream" data-i18n="f2_title">じっくり煮込んだ特製スープ</h3>
-          <p class="text-xs sm:text-sm text-white/90 leading-relaxed font-normal" data-i18n="f2_desc">丁寧に取った出汁とラーメンスープ、コク深いお味噌汁、手包みの焼き餃子。</p>
-        </div>
-
-        <div class="bg-white/15 p-6 rounded-2xl border border-white/25 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-kamome-cream text-kamome-charcoal flex items-center justify-center text-lg font-bold">
-            <i class="fa-solid fa-bread-slice"></i>
-          </div>
-          <h3 class="text-base font-bold text-kamome-cream" data-i18n="f3_title">シナモンロール & 宇治抹茶</h3>
-          <p class="text-xs sm:text-sm text-white/90 leading-relaxed font-normal" data-i18n="f3_desc">カルダモン香る焼きたてコルヴァプースティと、京都宇治の厳選オーガニック抹茶。</p>
-        </div>
-
-      </div>
-
     </div>
   </section>
 
   <!-- ==================== POPULAR SPECIALS / KITCHEN CAR ==================== -->
   <section id="popular" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b border-white/20 bg-white/5">
     <div class="max-w-7xl mx-auto">
-      
       <div class="text-center max-w-2xl mx-auto space-y-3 mb-10 sm:mb-12">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-kamome-cream text-kamome-charcoal text-[11px] font-bold uppercase tracking-wider shadow-sm">
           <i class="fa-solid fa-truck-pickup text-kamome-blueDeep"></i>
@@ -273,21 +253,14 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-start">
-        
-        <!-- Item 1: Curry Bread -->
         <div class="bg-kamome-cream text-kamome-charcoal rounded-3xl overflow-hidden shadow-xl border border-white flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
           <div class="w-full bg-white flex items-center justify-center overflow-hidden">
-            <img src="curry-bread.jpg" 
-                 alt="Kamome Curry Bread" 
-                 class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500 block"
-                 onerror="this.src='https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=700&auto=format&fit=crop';">
+            <img src="curry-bread.jpg" alt="Kamome Curry Bread" class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500 block" onerror="this.src='https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=700&auto=format&fit=crop';">
           </div>
           <div class="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-4">
             <div class="space-y-2">
               <h3 class="font-serif font-bold text-lg sm:text-xl text-kamome-charcoal" data-i18n="pop_name_1">特製 カレーパン</h3>
-              <p class="text-xs sm:text-sm text-gray-700 leading-relaxed font-normal" data-i18n="pop_desc_1">
-                外はサクサク＆中はコク深い濃厚カレーがたっぷり。大人気の特製カレーパンをぜひご賞味ください！
-              </p>
+              <p class="text-xs sm:text-sm text-gray-700 leading-relaxed font-normal" data-i18n="pop_desc_1">外はサクサク＆中はコク深い濃厚カレーがたっぷり。大人気の特製カレーパンをぜひご賞味ください！</p>
             </div>
             <div class="pt-3 border-t border-gray-200 text-[11px] sm:text-xs text-kamome-blueDeep font-semibold flex items-center gap-2">
               <i class="fa-solid fa-store text-xs flex-shrink-0"></i>
@@ -296,20 +269,14 @@
           </div>
         </div>
 
-        <!-- Item 2: Karaage -->
         <div class="bg-kamome-cream text-kamome-charcoal rounded-3xl overflow-hidden shadow-xl border border-white flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
           <div class="w-full bg-white flex items-center justify-center overflow-hidden">
-            <img src="karaage.jpg" 
-                 alt="Juicy Karaage Fried Chicken" 
-                 class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500 block"
-                 onerror="this.src='https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=700&auto=format&fit=crop';">
+            <img src="karaage.jpg" alt="Juicy Karaage Fried Chicken" class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500 block" onerror="this.src='https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=700&auto=format&fit=crop';">
           </div>
           <div class="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-4">
             <div class="space-y-2">
               <h3 class="font-serif font-bold text-lg sm:text-xl text-kamome-charcoal" data-i18n="pop_name_2">自家製 鶏のから揚げ</h3>
-              <p class="text-xs sm:text-sm text-gray-700 leading-relaxed font-normal" data-i18n="pop_desc_2">
-                柔らかくジューシーな日本のから揚げ。スパイシーマヨまたはワサビマヨソースをお選びいただけます！
-              </p>
+              <p class="text-xs sm:text-sm text-gray-700 leading-relaxed font-normal" data-i18n="pop_desc_2">柔らかくジューシーな日本のから揚げ。スパイシーマヨまたはワサビマヨソースをお選びいただけます！</p>
             </div>
             <div class="pt-3 border-t border-gray-200 text-[11px] sm:text-xs text-kamome-blueDeep font-semibold flex items-center gap-2">
               <i class="fa-solid fa-store text-xs flex-shrink-0"></i>
@@ -318,20 +285,14 @@
           </div>
         </div>
 
-        <!-- Item 3: Gyoza -->
         <div class="bg-kamome-cream text-kamome-charcoal rounded-3xl overflow-hidden shadow-xl border border-white flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
           <div class="w-full bg-white flex items-center justify-center overflow-hidden">
-            <img src="gyoza.jpg" 
-                 alt="Soft & Chewy Gyoza Dumplings" 
-                 class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500 block"
-                 onerror="this.src='https://images.unsplash.com/photo-1498654896293-37aacf113fd9?q=80&w=700&auto=format&fit=crop';">
+            <img src="gyoza.jpg" alt="Soft & Chewy Gyoza Dumplings" class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500 block" onerror="this.src='https://images.unsplash.com/photo-1498654896293-37aacf113fd9?q=80&w=700&auto=format&fit=crop';">
           </div>
           <div class="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-4">
             <div class="space-y-2">
               <h3 class="font-serif font-bold text-lg sm:text-xl text-kamome-charcoal" data-i18n="pop_name_3">特製 焼き餃子</h3>
-              <p class="text-xs sm:text-sm text-gray-700 leading-relaxed font-normal" data-i18n="pop_desc_3">
-                もっちりジューシーな餃子に、自家製スパイシーマヨソースをトッピング。リピーター多数の人気商品です！
-              </p>
+              <p class="text-xs sm:text-sm text-gray-700 leading-relaxed font-normal" data-i18n="pop_desc_3">もっちりジューシーな餃子に、自家製スパイシーマヨソースをトッピング。リピーター多数の人気商品です！</p>
             </div>
             <div class="pt-3 border-t border-gray-200 text-[11px] sm:text-xs text-kamome-blueDeep font-semibold flex items-center gap-2">
               <i class="fa-solid fa-store text-xs flex-shrink-0"></i>
@@ -339,44 +300,42 @@
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
   </section>
 
-  <!-- ==================== MAIN MENU ==================== -->
+  <!-- ==================== MAIN A LA CARTE MENU ==================== -->
   <section id="menu" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
-      
       <div class="text-center max-w-2xl mx-auto space-y-3 mb-10">
         <span class="text-xs font-bold uppercase tracking-widest text-kamome-cream block" data-i18n="menu_tag">お品書き</span>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white" data-i18n="menu_title">かもめ食堂のメニュー</h2>
-        <p class="text-xs sm:text-sm text-white/90 font-normal" data-i18n="menu_sub">カテゴリーをお選びいただき、当店の味をご覧ください。</p>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white" data-i18n="menu_title">かもめ食堂のグランドメニュー</h2>
+        <p class="text-xs sm:text-sm text-white/90 font-normal" data-i18n="menu_sub">本格和食、丼もの、ラーメン、串焼きから一品料理まで。</p>
       </div>
 
-      <!-- Categories Filter -->
+      <!-- Categories Filter Tabs -->
       <div class="flex flex-wrap items-center justify-center gap-2 mb-10 sm:mb-12">
-        <button onclick="setMenuCategory('mains')" class="menu-filter active px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/30 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200" data-cat="mains" data-i18n="cat_mains">
-          定食・丼もの
+        <button onclick="setMenuCategory('onebowl')" class="menu-filter active px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/30 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200" data-cat="onebowl" data-i18n="cat_onebowl">
+          丼・カレー・ラーメン
         </button>
-        <button onclick="setMenuCategory('ramen')" class="menu-filter px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/30 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200" data-cat="ramen" data-i18n="cat_ramen">
-          ラーメン・餃子
+        <button onclick="setMenuCategory('grilled')" class="menu-filter px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/30 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200" data-cat="grilled" data-i18n="cat_grilled">
+          炭火焼き・焼き鳥
         </button>
-        <button onclick="setMenuCategory('onigiri')" class="menu-filter px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/30 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200" data-cat="onigiri" data-i18n="cat_onigiri">
-          おにぎり・一品料理
+        <button onclick="setMenuCategory('deepfried')" class="menu-filter px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/30 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200" data-cat="deepfried" data-i18n="cat_deepfried">
+          揚げ物 (Deep-fried)
         </button>
-        <button onclick="setMenuCategory('sweets')" class="menu-filter px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/30 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200" data-cat="sweets" data-i18n="cat_sweets">
-          甘味・お飲み物
+        <button onclick="setMenuCategory('sashimi_steamed')" class="menu-filter px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/30 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200" data-cat="sashimi_steamed" data-i18n="cat_sashimi">
+          刺身・点心・ご飯もの
+        </button>
+        <button onclick="setMenuCategory('snacks')" class="menu-filter px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/30 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200" data-cat="snacks" data-i18n="cat_snacks">
+          おつまみ・小鉢 (Snacks)
         </button>
       </div>
 
-      <!-- Menu Grid -->
-      <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Rendered by JavaScript -->
-      </div>
+      <!-- Cards Grid -->
+      <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
-      <!-- Wolt & Takeaway Banner -->
+      <!-- Delivery Banner -->
       <div class="mt-12 bg-white/15 border border-white/30 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         <div>
           <h4 class="text-lg font-bold text-white font-serif" data-i18n="takeaway_t">テイクアウト ＆ デリバリー</h4>
@@ -391,7 +350,6 @@
           </a>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -423,9 +381,7 @@
   <!-- ==================== RESERVATION FORM ==================== -->
   <section id="reservation" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
-      
       <div class="bg-kamome-cream text-kamome-charcoal rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl border border-white">
-        
         <div class="text-center space-y-2 mb-8">
           <span class="text-xs font-bold uppercase tracking-widest text-kamome-blueDeep block" data-i18n="res_tag">お席の予約</span>
           <h3 class="text-2xl sm:text-3xl font-serif font-bold text-kamome-charcoal" data-i18n="res_h">かもめ食堂 ご予約フォーム</h3>
@@ -476,9 +432,7 @@
             <span data-i18n="form_submit">予約リクエストを送信</span>
           </button>
         </form>
-
       </div>
-
     </div>
   </section>
 
@@ -486,7 +440,6 @@
   <section id="contact" class="py-16 sm:py-20 bg-black/10 border-t border-white/20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        
         <div class="lg:col-span-5 space-y-6">
           <span class="text-xs font-bold uppercase tracking-widest text-kamome-cream block" data-i18n="contact_tag">店舗案内</span>
           <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white" data-i18n="contact_h">営業時間・アクセス</h2>
@@ -546,7 +499,6 @@
             </iframe>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -575,12 +527,12 @@
     </div>
   </div>
 
-  <!-- ==================== JAVASCRIPT ==================== -->
+  <!-- ==================== JAVASCRIPT & ACTUAL MENU DATA ==================== -->
   <script>
-    // Universal Multilingual Dictionary (JA / FI / EN / RU)
     const i18n = {
       ja: {
         nav_concept: "コンセプト",
+        nav_nordic: "北欧セット",
         nav_popular: "おすすめ",
         nav_menu: "メニュー",
         nav_vibe: "店内の雰囲気",
@@ -596,15 +548,18 @@
         fact_2: "毎日手作り",
         fact_3: "Helsinki",
         badge_special: "ランチ ＆ ディナー",
-        about_tag: "こだわり",
-        about_title: "シンプルで、丁寧に作られた日本の家庭料理",
-        about_desc: "フィンランドの新鮮なサーモンや旬の食材と、日本から届く伝統的な出汁や調味料を組み合わせ、素朴でどこか懐かしい味わいをお届けしています。",
-        f1_title: "新鮮なサーモンとお魚料理",
-        f1_desc: "香ばしく焼き上げた照り焼きサーモン、丁寧に握ったおにぎり、彩り豊かな小鉢。",
-        f2_title: "じっくり煮込んだ特製スープ",
-        f2_desc: "丁寧に取った出汁とラーメンスープ、コク深いお味噌汁、手包みの焼き餃子。",
-        f3_title: "シナモンロール & 宇治抹茶",
-        f3_desc: "カルダモン香る焼きたてコルヴァプースティと、京都宇治の厳選オーガニック抹茶。",
+        nordic_title: "北欧和食コース (Nordic Meal Set)",
+        nordic_desc: "フィンランドの極上素材（サーモン、白身魚、トナカイ肉）と日本の職人技が調和した贅沢な特製セットメニュー。",
+        nordic_1: "キュウリとワカメの酢の物 (VE)",
+        nordic_2: "サーモンと白身魚の昆布締め刺身 (G)",
+        nordic_3: "エストニア産 炭火焼き鰻 50g (G)",
+        nordic_4: "焼き鮭おにぎり ＆ トナカイ肉おにぎり (G)",
+        nordic_5: "お味噌汁 (G, VE)",
+        nordic_6: "名物 シナモンロール (V) ＆ コーヒー (VE)",
+        nordic_upgrades_title: "アップグレード オプション:",
+        nordic_up_1: "+5 € フィンランド産 牛ヒレ肉のタタキ ポン酢ソース (2枚)",
+        nordic_up_2: "+5 € 特選 いくら醤油漬け 50g",
+        nordic_up_3: "+5 € デザートを宇治抹茶パフェへ変更",
         pop_badge: "Kamome キッチンカー 名物メニュー",
         pop_title: "当店一番人気のメニュー",
         pop_subtitle: "レストラン隣のKamomeキッチンカーと店内で大人気！お客様から愛される看板メニューです。",
@@ -618,12 +573,13 @@
         pop_desc_3: "もっちりジューシーな餃子に、自家製スパイシーマヨソースをトッピング。リピーター多数の人気商品です！",
         pop_avail_3: "レストラン隣のKamomeキッチンカーにて販売中",
         menu_tag: "お品書き",
-        menu_title: "かもめ食堂のメニュー",
-        menu_sub: "カテゴリーをお選びいただき、当店の味をご覧ください。",
-        cat_mains: "定食・丼もの",
-        cat_ramen: "ラーメン・餃子",
-        cat_onigiri: "おにぎり・一品料理",
-        cat_sweets: "甘味・お飲み物",
+        menu_title: "かもめ食堂のグランドメニュー",
+        menu_sub: "本格和食、丼もの、ラーメン、串焼きから一品料理まで。",
+        cat_onebowl: "丼・カレー・ラーメン",
+        cat_grilled: "炭火焼き・焼き鳥",
+        cat_deepfried: "揚げ物 (Deep-fried)",
+        cat_sashimi: "刺身・点心・ご飯もの",
+        cat_snacks: "おつまみ・小鉢 (Snacks)",
         takeaway_t: "テイクアウト ＆ デリバリー",
         takeaway_d: "お電話での事前注文、またはWoltアプリからご自宅・オフィスへお届けします。",
         vibe_tag: "ギャラリー",
@@ -650,6 +606,7 @@
       },
       fi: {
         nav_concept: "Konsepti",
+        nav_nordic: "Nordic-setti",
         nav_popular: "Suosikit",
         nav_menu: "Ruokalista",
         nav_vibe: "Tunnelma",
@@ -665,15 +622,18 @@
         fact_2: "Päivittäin tehty",
         fact_3: "Helsinki",
         badge_special: "Lounas & Illallinen",
-        about_tag: "Ruokafilosofia",
-        about_title: "Yksinkertaista, huolella tehtyä japanilaista ruokaa",
-        about_desc: "Ravintola Kamome yhdistää puhtaat suomalaiset raaka-aineet – kuten tuoreen lohen ja sesongin vihannekset – perinteisiin japanilaisiin makuihin, aitoon dashi-liemeen ja valmistustapoihin.",
-        f1_title: "Tuore Lohta & Kalaa",
-        f1_desc: "Paistettua lohta teriyakilla, käsin puristettuja onigireja ja huolella maustettuja lisukkeita.",
-        f2_title: "Haudutetut Liemet",
-        f2_desc: "Hitaasti valmistettu dashi- ja ramen-liemi, täyteläinen miso sekä käsintehdyt gyoza-nyytit.",
-        f3_title: "Korvapuusti & Matcha",
-        f3_desc: "Pehmeät uunituoreet kanelipullat ja aito japanilainen Uji-alueen seremoniallinen vihreä tee.",
+        nordic_title: "Nordic Meal Set -maistelukokonaisuus",
+        nordic_desc: "Ainutlaatuinen kokonaisuus pohjoismaisia huippuraaka-aineita ja aitoa japanilaista käsityötä.",
+        nordic_1: "Kurkku- ja wakame-pikkelssi (VE)",
+        nordic_2: "Lohi- ja siikasashimi kelp-marinoituna (G)",
+        nordic_3: "Grillattu virolainen ankerias 50g (G)",
+        nordic_4: "Grillilohi-onigiri & Poro-onigiri (G)",
+        nordic_5: "Miso-keitto (G, VE)",
+        nordic_6: "Korvapuusti (V) & Kahvi (VE)",
+        nordic_upgrades_title: "Päivitysvaihtoehdot:",
+        nordic_up_1: "+5 € Suomalainen naudan sisäfileetataki ponzukastikkeella (2 kpl)",
+        nordic_up_2: "+5 € Marinoitu kirjolohen mäti (ikura) 50g",
+        nordic_up_3: "+5 € Korvapuustin tilalle Matcha-parfait",
         pop_badge: "Kamome Kitchen Car Suosikit",
         pop_title: "Erityisen Suositut Herkut",
         pop_subtitle: "Ravintolan vieressä palvelevasta Kamome-keittiövaunusta ja ravintolasta saatavat asiakkaidemme kestosuosikit!",
@@ -687,12 +647,13 @@
         pop_desc_3: "Pehmeät ja täyteläiset gyoza-nyytit talon omalla tulisella majoneesikastikkeella viimeisteltynä. Asiakkaidemme ehdoton suosikki!",
         pop_avail_3: "Saatavilla Kamome-keittiövaunusta ravintolan vierestä",
         menu_tag: "Ruokalista",
-        menu_title: "Kamomen Annokset",
-        menu_sub: "Valitse kategoria ja tutustu suosikkeihimme.",
-        cat_mains: "Pääruoat & Teishoku",
-        cat_ramen: "Ramen & Gyoza",
-        cat_onigiri: "Onigiri & Pikkupurtavat",
-        cat_sweets: "Makeat & Juomat",
+        menu_title: "Kamomen Pääruokalista",
+        menu_sub: "Aitoja makuja: kulhoruoat, ramenit, vartaat ja japanilaiset herkut.",
+        cat_onebowl: "Kulhot, Curry & Ramen",
+        cat_grilled: "Grillatut & Yakitori",
+        cat_deepfried: "Fritatut (Deep-fried)",
+        cat_sashimi: "Sashimi, Höyrytetyt & Riisi",
+        cat_snacks: "Pikkulautaset & Izakaya",
         takeaway_t: "Nouto & Kotiinkuljetus",
         takeaway_d: "Tilaa ennakkoon puhelimitse tai tilaa kotiin Wolt-palvelun kautta.",
         vibe_tag: "Galleria",
@@ -719,6 +680,7 @@
       },
       en: {
         nav_concept: "Concept",
+        nav_nordic: "Nordic Set",
         nav_popular: "Specials",
         nav_menu: "Menu",
         nav_vibe: "Atmosphere",
@@ -734,34 +696,38 @@
         fact_2: "Fresh Daily",
         fact_3: "Helsinki",
         badge_special: "Lunch & Dinner",
-        about_tag: "Philosophy",
-        about_title: "Simple, Heartfelt Japanese Cooking",
-        about_desc: "Ravintola Kamome pairs pristine Finnish ingredients—fresh salmon, crisp seasonal vegetables—with authentic Japanese seasonings, dashi broth, and artisanal care.",
-        f1_title: "Nordic Salmon & Fish",
-        f1_desc: "Seared teriyaki salmon, freshly pressed onigiri rice balls, and delicate Japanese side dishes.",
-        f2_title: "Slow-simmered Broths",
-        f2_desc: "Rich dashi and ramen broths, creamy miso soup, and pan-crisped handmade gyoza dumplings.",
-        f3_title: "Cinnamon Buns & Matcha",
-        f3_desc: "Fluffy freshly baked Finnish korvapuusti buns paired with premium ceremonial Uji matcha tea.",
+        nordic_title: "Nordic Meal Set (Special Course)",
+        nordic_desc: "A tasting menu bringing together Finnish fish and reindeer with delicate Japanese culinary craftsmanship.",
+        nordic_1: "Cucumber and wakame pickles (VE)",
+        nordic_2: "Salmon and kelp marinated siika sashimi (G)",
+        nordic_3: "Grilled Estonian eel 50g (G)",
+        nordic_4: "Grilled salmon onigiri & Reindeer onigiri (G)",
+        nordic_5: "Miso soup (G, VE)",
+        nordic_6: "Cinnamon roll (V) & Coffee (VE)",
+        nordic_upgrades_title: "Course Upgrades:",
+        nordic_up_1: "+5 € 2 pcs Finnish beef tenderloin tataki with ponzu sauce",
+        nordic_up_2: "+5 € 50g marinated fish roe (ikura)",
+        nordic_up_3: "+5 € Upgrade cinnamon roll to matcha parfait",
         pop_badge: "Kamome Kitchen Car Specials",
         pop_title: "Customer Favourites",
         pop_subtitle: "Handcrafted highlights served right next to our restaurant at the Kamome Kitchen Car!",
         pop_name_1: "Japanese Curry Bread",
-        pop_desc_1: "Nicely flaky & crispy outside, filled with rich curry inside. Come try our popular curry bread! (レストラン隣のKamomeキッチンカーにて販売中)",
+        pop_desc_1: "Nicely flaky & crispy outside, filled with rich curry inside. Come try our popular curry bread!",
         pop_avail_1: "Available at Kamome kitchen car, next to our restaurant",
         pop_name_2: "Japanese Fried Chicken (Karaage)",
         pop_desc_2: "Tender & juicy Japanese-style fried chicken karaage. Choose between spicy mayo or wasabi mayo sauce. Perfect as a tasty side dish!",
         pop_avail_2: "Available at Kamome kitchen car, next to our restaurant",
         pop_name_3: "Handmade Gyoza Dumplings",
-        pop_desc_3: "Soft, chewy gyoza dumplings topped with our house-made spicy mayo sauce. One of our customer favourites! (レストラン隣のKamomeキッチンカーにて販売中)",
+        pop_desc_3: "Soft, chewy gyoza dumplings topped with our house-made spicy mayo sauce. One of our customer favourites!",
         pop_avail_3: "Available at Kamome kitchen car, next to our restaurant",
         menu_tag: "Menu",
-        menu_title: "Kamome Classics",
-        menu_sub: "Select a category to explore our dishes.",
-        cat_mains: "Mains & Teishoku",
-        cat_ramen: "Ramen & Gyoza",
-        cat_onigiri: "Onigiri & Bites",
-        cat_sweets: "Sweets & Drinks",
+        menu_title: "Kamome Grand Menu",
+        menu_sub: "Authentic one-bowl meals, ramens, grilled yakitori, and izakaya small plates.",
+        cat_onebowl: "One Bowl, Curry & Ramen",
+        cat_grilled: "Grilled & Yakitori",
+        cat_deepfried: "Deep-fried",
+        cat_sashimi: "Sashimi, Steamed & Rice",
+        cat_snacks: "Izakaya Snacks",
         takeaway_t: "Takeaway & Wolt Delivery",
         takeaway_d: "Order ahead by phone or get direct doorstep delivery via the Wolt app.",
         vibe_tag: "Atmosphere",
@@ -788,6 +754,7 @@
       },
       ru: {
         nav_concept: "Концепция",
+        nav_nordic: "Нордик-сет",
         nav_popular: "Хиты",
         nav_menu: "Меню",
         nav_vibe: "Атмосфера",
@@ -803,15 +770,18 @@
         fact_2: "Свежие продукты",
         fact_3: "Хельсинки",
         badge_special: "Ланч и Ужин",
-        about_tag: "Философия",
-        about_title: "Простая, душевная японская еда",
-        about_desc: "Ravintola Kamome соединяет свежайшие северные ингредиенты — лосось и сезонные продукты — с традиционными японскими бульонами, мисо и соусами.",
-        f1_title: "Свежий лосось и рыба",
-        f1_desc: "Сочный лосось в соусе терияки, домашние онигири и традиционные японские закуски.",
-        f2_title: "Насыщенные бульоны",
-        f2_desc: "Медленно томленый бульон даси, густой рамен, ароматный мисо и хрустящие гёдза.",
-        f3_title: "Корвапуусти и Матча",
-        f3_desc: "Теплые финские булочки с корицей и церемониальный зеленый чай матча из региона Удзи.",
+        nordic_title: "Сет «Северная трапеза» (Nordic Meal Set)",
+        nordic_desc: "Авторский дегустационный сет, объединяющий северную рыбу, дичь и японские традиции.",
+        nordic_1: "Маринованные огурцы и вакаме (VE)",
+        nordic_2: "Сашими из лосося и сига в комбу (G)",
+        nordic_3: "Эстонский угорь на углях 50г (G)",
+        nordic_4: "Онигири с жареным лососем и онигири с олениной (G)",
+        nordic_5: "Мисо-суп (G, VE)",
+        nordic_6: "Фирменная булочка с корицей (V) и кофе (VE)",
+        nordic_upgrades_title: "Дополнения к сету:",
+        nordic_up_1: "+5 € 2 шт. татаки из финской говяжьей вырезки с понзу",
+        nordic_up_2: "+5 € 50г маринованной икры форели (икура)",
+        nordic_up_3: "+5 € Замена булочки с корицей на парфе с матча",
         pop_badge: "Хиты Kamome Kitchen Car",
         pop_title: "Наши самые популярные блюда",
         pop_subtitle: "Любимые блюда гостей из фудтрака Kamome рядом с рестораном и в основном зале!",
@@ -825,12 +795,13 @@
         pop_desc_3: "Нежные пельмешки гёдза с авторским острым майонезным соусом. Безусловный фаворит среди наших гостей!",
         pop_avail_3: "В продаже в фудтраке Kamome рядом с рестораном",
         menu_tag: "Меню",
-        menu_title: "Блюда ресторана",
-        menu_sub: "Выберите раздел меню.",
-        cat_mains: "Основные & Тэйсёку",
-        cat_ramen: "Рамен & Гёдза",
-        cat_onigiri: "Онигири & Закуски",
-        cat_sweets: "Десерты & Напитки",
+        menu_title: "Основное меню Kamome",
+        menu_sub: "Классические донбури, японский карри, рамен, якитори и закуски идзакая.",
+        cat_onebowl: "Донбури, Карри и Рамен",
+        cat_grilled: "Блюда на углях и Якитори",
+        cat_deepfried: "Во фритюре (Deep-fried)",
+        cat_sashimi: "Сашими, На пару и Рис",
+        cat_snacks: "Закуски Идзакая (Snacks)",
         takeaway_t: "Самовывоз и Доставка",
         takeaway_d: "Заказывайте заранее по телефону или оформляйте доставку через Wolt.",
         vibe_tag: "Галерея",
@@ -857,157 +828,579 @@
       }
     };
 
-    // Actual Dishes with full multilingual support
+    // Authentic Menu Database from Restaurant Photo Sheets
     const dishes = [
+      // ONE BOWL MEALS: CURRY, RICE BOWLS & RAMEN
       {
-        cat: 'mains',
-        price: '22.50 €',
-        img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=600&auto=format&fit=crop',
-        names: { ja: 'かもめ 鮭の照り焼き定食', fi: 'Kamome Lohisetti (Teishoku)', en: 'Kamome Salmon Teishoku Set', ru: 'Сет с лососем Тэйсёку' },
+        cat: 'onebowl',
+        price: '40.00 €',
+        tags: ['Special', 'Includes Miso'],
+        names: { ja: '上 うな丼 150g (味噌汁付)', fi: 'Jo Unadon (Grillattu ankerias 150g)', en: 'Jo Unadon (Grilled eel bowl 150g)', ru: 'Дзё Унадон (Угорь на гриле 150г)' },
         descs: {
-          ja: '香ばしく焼き上げた新鮮な北欧産サーモンの照り焼き、炊きたてのご飯、お味噌汁、特製小鉢の定食。',
-          fi: 'Paistettua tuoretta lohta teriyakilla, japanilaista riisiä, miso-keitto ja kauden lisukkeet.',
-          en: 'Pan-seared fresh salmon with teriyaki glaze, steamed rice, miso soup, and seasonal sides.',
-          ru: 'Свежий лосось в соусе терияки, японский рис, мисо-суп и сезонные гарниры.'
+          ja: '大ぶりで肉厚な鰻を香ばしい秘伝タレで焼き上げた極上うな丼。お味噌汁付き。',
+          fi: 'Ensiluokkaista mehevää grillattua ankeriasta riisipedillä makealla tarel-kastikkeella. Sisältää misokeiton.',
+          en: 'Premium grilled eel 150g glazed with savory sweet tare sauce over rice. Includes miso soup.',
+          ru: 'Премиальный угорь на гриле в соусе тарэ на подушке из риса. Подается с мисо-супом.'
         }
       },
       {
-        cat: 'mains',
-        price: '19.80 €',
-        img: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=600&auto=format&fit=crop',
-        names: { ja: '自家製 ロースとんかつカレー', fi: 'Porsas Tonkatsu Curry', en: 'Crispy Pork Tonkatsu Curry', ru: 'Тонкацу Карри со свининой' },
+        cat: 'onebowl',
+        price: '22.00 €',
+        tags: ['G', '+12.50€ extra eel'],
+        names: { ja: 'うな丼 100g', fi: 'Unadon (Grillattu ankerias 100g)', en: 'Unadon (Grilled eel bowl 100g)', ru: 'Унадон (Угорь на гриле 100г)' },
         descs: {
-          ja: 'サクサクの生パン粉で揚げた特製ロースかつと、香り高くコク深い自家製カレーライスのセット。',
-          fi: 'Rapeaksi paistettua porsaanfileetä panko-kuoressa, perinteistä japanilaista currykastiketta ja riisiä.',
-          en: 'Crisp panko pork cutlet served with rich Japanese curry and fluffy white rice.',
-          ru: 'Хрустящая свиная котлета в сухарях панко, классический японский карри и рис.'
+          ja: '炭火の香ばしさが広がる定番のうな丼 (100g)。',
+          fi: 'Klassinen grillattu ankeriaskulho (100g) tare-kastikkeella.',
+          en: 'Classic Japanese glazed grilled eel (100g) served over seasoned rice.',
+          ru: 'Классический угорь на гриле 100г на рисе с карамельным соусом.'
         }
       },
       {
-        cat: 'mains',
-        price: '18.90 €',
-        img: 'https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=600&auto=format&fit=crop',
-        names: { ja: '極旨 牛丼 (温泉卵付き)', fi: 'Gyudon Beef Bowl', en: 'Classic Gyudon Beef Bowl', ru: 'Гюдон с говядиной' },
+        cat: 'onebowl',
+        price: '25.00 €',
+        tags: ['200g Roe', 'Fresh'],
+        names: { ja: '特選 いくら丼 200g', fi: 'Ikuradon (Kirjolohen mätiä 200g)', en: 'Ikuradon (Rainbow trout roe bowl 200g)', ru: 'Икурадон (Икра форели 200г)' },
         descs: {
-          ja: '特製出汁と甘口醤油でじっくり煮込んだ柔らかい牛肉と玉ねぎを、温かいご飯に乗せて。',
-          fi: 'Mureaksi haudutettua naudanlihaa ja makeaa sipulia dashi-soijakastikkeessa riisipedillä.',
-          en: 'Tender simmered sliced beef and sweet onion in sweet dashi soy sauce over rice.',
-          ru: 'Тонко нарезанная томленая говядина со сладким луком в бульоне даси на подушке из риса.'
+          ja: '自家製醤油漬けの新鮮なニジマスいくらを贅沢に200gのせた至福の丼。',
+          fi: 'Ylellinen kulho täynnä marinoitua tuoretta kirjolohen mätiä riisin päällä.',
+          en: 'Generous bowl topped with 200g of marinated fresh rainbow trout roe.',
+          ru: 'Щедрая порция маринованной икры форели (200г) на теплом японском рисе.'
         }
       },
       {
-        cat: 'ramen',
+        cat: 'onebowl',
+        price: '21.00 €',
+        tags: ['Fresh Fish'],
+        names: { ja: 'ちらし寿司 (サーモン & 白身魚)', fi: 'Chirashi sushi (Lohi & siika)', en: 'Chirashi sushi bowl (Salmon & siika)', ru: 'Тираси суши (Лосось и сиг)' },
+        descs: {
+          ja: '酢飯にサーモン、シイカ（白身魚）、椎茸、人参、豆腐、玉子、アボカド、魚卵、海苔を華やかに盛り付け。',
+          fi: 'Sushiriisiä, inkivääriä, kurkkua, siitaketta, porkkanaa, tofua, tamagoa, avokadoa, lohta, siikaa ja mätiä.',
+          en: 'Sushi rice, ginger, cucumber, shiitake, carrots, tofu, tamago, avocado, cooked & raw salmon, siika, fish roe, nori.',
+          ru: 'Суши-рис, лосось, сиг, шиитаке, тофу, авокадо, икра, огурец и тамаго.'
+        }
+      },
+      {
+        cat: 'onebowl',
+        price: '20.00 €',
+        tags: ['Fresh'],
+        names: { ja: 'サーモン刺身丼', fi: 'Salmon sashimi don', en: 'Salmon sashimi don', ru: 'Донбури с сашими из лосося' },
+        descs: {
+          ja: '脂の乗った新鮮なサーモン刺身を贅沢にのせた丼。(+10€でいくら100g追加可能)',
+          fi: 'Tuoreita lohisashimiviipaleita riisipedillä (+10€ lohenmäti 100g).',
+          en: 'Fresh salmon sashimi slices served over sushi rice (+10€ for 100g salmon roe).',
+          ru: 'Свежайшие ломтики сашими из лосося на рисе (+10€ за 100г икры).'
+        }
+      },
+      {
+        cat: 'onebowl',
         price: '18.50 €',
-        img: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=600&auto=format&fit=crop',
-        names: { ja: '特製 濃厚豚骨ラーメン', fi: 'Tonkotsu Ramen', en: 'Tonkotsu Pork Ramen', ru: 'Тонкоцу Рамен' },
+        tags: ['Pork'],
+        names: { ja: 'ロースとんかつ カレー', fi: 'Tonkatsu curry', en: 'Tonkatsu curry', ru: 'Тонкацу карри (свинина)' },
         descs: {
-          ja: '長時間じっくり煮込んだ濃厚な豚骨スープに、自家製チャーシュー、味付け玉子、メンマ、特製麺。',
-          fi: 'Täyteläinen porsasliemi, chashu-possua, marinoitu kananmuna, bambu ja tuore nuudeli.',
-          en: 'Rich pork bone broth, tender chashu pork, seasoned soft egg, bamboo shoots, and noodles.',
-          ru: 'Наваристый свиной бульон, свинина тясю, маринованное яйцо, ростки бамбука и лапша.'
+          ja: 'サクサクのとんかつと、丁寧に煮込んだ自家製カレールー＆ご飯。',
+          fi: 'Rapea porsaanleike ja japanilaista currykastiketta riisillä.',
+          en: 'Crispy pork cutlet served with Japanese curry sauce and steamed rice.',
+          ru: 'Хрустящая свиная отбивная панко с традиционным соусом карри и рисом.'
         }
       },
       {
-        cat: 'ramen',
-        price: '17.90 €',
-        img: 'https://images.unsplash.com/photo-1591814468924-caf88d1232e1?q=80&w=600&auto=format&fit=crop',
-        names: { ja: 'ヴィーガン 白味噌ラーメン', fi: 'Vegaaninen Miso Ramen', en: 'Vegan Creamy Miso Ramen', ru: 'Веганский Мисо Рамен' },
+        cat: 'onebowl',
+        price: '18.50 €',
+        tags: ['Chicken'],
+        names: { ja: 'チキンカツ カレー', fi: 'Chickenkatsu curry', en: 'Chickenkatsu curry', ru: 'Чикенкацу карри (курица)' },
         descs: {
-          ja: '椎茸と豆乳出汁をブレンドした香り高い白味噌スープに、焼き豆腐、旬の野菜、焙煎ごま油を添えて。',
-          fi: 'Täyteläinen kasvis-misoliemi, tofua, vihanneksia, seesamiöljyä ja tuoretta nuudelia.',
-          en: 'Creamy vegetable and miso broth with seared tofu, greens, roasted sesame oil, and noodles.',
-          ru: 'Бульон с белым мисо, нежный тофу, сезонные овощи, кунжутное масло и лапша.'
+          ja: '外はカリッと中はジューシーなチキンカツと特製カレーライス。',
+          fi: 'Rapeaksi paistettu mehevä kanaleike japanilaisella currylla ja riisillä.',
+          en: 'Crispy breaded chicken cutlet with rich curry sauce and rice.',
+          ru: 'Хрустящее куриное филе в сухарях панко с японским карри и рисом.'
         }
       },
       {
-        cat: 'ramen',
-        price: '9.50 €',
-        img: 'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?q=80&w=600&auto=format&fit=crop',
-        names: { ja: '手作り 焼き餃子 (6個)', fi: 'Gyoza-nyytit (6 kpl)', en: 'Pan-fried Gyoza (6 pcs)', ru: 'Пельмени Гёдза (6 шт)' },
+        cat: 'onebowl',
+        price: '18.50 €',
+        tags: ['VE option'],
+        names: { ja: 'コロッケ カレー (ポテト牛肉 / 豆腐ビーガン)', fi: 'Korokke curry (VE)', en: 'Korokke curry (VE option)', ru: 'Корокке карри (крокеты)' },
         descs: {
-          ja: 'パリッと香ばしく焼き上げた手作り餃子（お肉または野菜）。自家製ポン酢とご一緒にどうぞ。',
-          fi: 'Pannulla rapsakaksi paistetut käsintehdyt liha- tai kasvisnyytit ponzu-kastikkeella.',
-          en: 'Crispy pan-fried pork or veggie dumplings with citrus soy dipping sauce.',
-          ru: 'Хрустящие жареные гедза с мясом или овощами, подаются с соусом пондзу.'
+          ja: 'ポテト牛肉コロッケ、またはヴィーガン豆腐コロッケとお楽しみいただくカレー。',
+          fi: 'Peruna-naudanlihakroketti tai vegaaninen tofukroketti riisillä ja currylla.',
+          en: 'Potato & beef croquette or vegan tofu croquette with curry and rice.',
+          ru: 'Картофельно-мясной или веганский крокет из тофу с соусом карри и рисом.'
         }
       },
       {
-        cat: 'onigiri',
-        price: '4.50 €',
-        img: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=600&auto=format&fit=crop',
-        names: { ja: '手結び おにぎり (各種)', fi: 'Käsintehty Onigiri', en: 'Handmade Onigiri', ru: 'Онигири ручной лепки' },
+        cat: 'onebowl',
+        price: '17.50 €',
+        tags: ['VE'],
+        names: { ja: '季節の野菜 カレー (VE)', fi: 'Vegetable curry (VE)', en: 'Vegetable curry (VE)', ru: 'Овощной карри (VE)' },
         descs: {
-          ja: '映画のシンボルでもある温かいおにぎり。具材：鮭（サーモン）、梅干し、または特製味噌。',
-          fi: 'Perinteinen japanilainen riisipallo nori-levällä. Täyte: Lohi, Umeboshi tai Miso.',
-          en: 'Classic sushi rice triangle wrapped in crisp nori. Filling: Salmon, Umeboshi plum, or Miso.',
-          ru: 'Японский треугольник из риса в нори. Начинки: лосось, слива умэбоси или мисо.'
+          ja: '色鮮やかな旬の野菜がたっぷり入った植物性100%のカレー。',
+          fi: 'Täyteläinen ja maukas kasviscurry tuoreilla vihanneksilla ja riisillä.',
+          en: 'Rich aromatic plant-based curry packed with seasonal vegetables and rice.',
+          ru: 'Ароматный веганский карри со свежими сезонными овощами и рисом.'
         }
       },
       {
-        cat: 'onigiri',
+        cat: 'onebowl',
+        price: '19.00 €',
+        tags: ['Pork bone broth'],
+        names: { ja: '濃厚 豚骨ラーメン', fi: 'Tonkotsu Ramen', en: 'Tonkotsu Ramen', ru: 'Тонкоцу Рамен' },
+        descs: {
+          ja: 'じっくり炊き出した白濁豚骨スープに特製麺、チャーシュー、味玉、メンマ。',
+          fi: 'Syvänmakuinen porsaanluuliemi, nuudelit, chashu-possua, kananmuna ja vihanneksia.',
+          en: 'Noodles in rich slow-cooked pork bone broth with tender chashu pork.',
+          ru: 'Насыщенный бульон на свиных косточках, свинина тясю, яйцо и лапша.'
+        }
+      },
+      {
+        cat: 'onebowl',
+        price: '19.00 €',
+        tags: ['Pork / Veg / Vegan'],
+        names: { ja: '味噌ラーメン (豚 / ベジタリアン / ヴィーガン)', fi: 'Miso Ramen (possu/kasvis/vege)', en: 'Miso Ramen (Pork/Vegetarian/Vegan)', ru: 'Мисо Рамен (мясной/вегетарианский)' },
+        descs: {
+          ja: '味噌とオーツミルクベースの芳醇なスープ。お好みのベースをお選びいただけます。',
+          fi: 'Miso- ja kauramaitopohjainen täyteläinen liemi ja nuudelit.',
+          en: 'Flavorful noodles in miso and oat milk based broth.',
+          ru: 'Густой ароматный бульон с мисо и овсяным молоком, лапшой и топпингами.'
+        }
+      },
+      {
+        cat: 'onebowl',
+        price: '26.00 €',
+        tags: ['G option'],
+        names: { ja: 'ラーメン ＆ ミニ丼セット', fi: 'Ramen & mini-rice bowl set (G)', en: 'Ramen & mini-rice bowl set (G)', ru: 'Сет: Рамен и мини-донбури' },
+        descs: {
+          ja: 'お好きなラーメン（豚骨または味噌）＋ ミニ丼（チャーシュー丼 または 揚げ出し豆腐丼VE）。',
+          fi: 'Valitsemasi ramen (Tonkotsu/Miso) + mini-kulho grillatulla possulla tai Agedashitofulla (VE).',
+          en: 'Choice of Ramen (Tonkotsu/Miso) + mini Don with grilled chashu pork or Agedashitofu (VE).',
+          ru: 'Рамен на выбор + мини-порция донбури с тясю или агэдаси тофу (VE).'
+        }
+      },
+
+      // GRILLED & YAKITORI
+      {
+        cat: 'grilled',
+        price: '16.00 €',
+        tags: ['G'],
+        names: { ja: '炭火焼き 大和鰻 100g', fi: 'Eel (100g) by Yamato (G)', en: 'Eel (100g) by Yamato (G)', ru: 'Угорь Yamato на углях 100г (G)' },
+        descs: {
+          ja: '上質な大和鰻を職人がじっくり炭火で焼き上げた極上の香ばしさ。',
+          fi: 'Ensiluokkaista Yamato-angeriasta hiilillä paistettuna.',
+          en: 'Grilled premium Yamato eel (100g) with savory glaze.',
+          ru: 'Нежнейший угорь Yamato 100г, обжаренный на углях.'
+        }
+      },
+      {
+        cat: 'grilled',
+        price: '14.50 €',
+        tags: ['G'],
+        names: { ja: '牛アントルコート ステーキ 100g', fi: 'Beef entrecote steak 100g (G)', en: 'Beef entrecote steak 100g (G)', ru: 'Стейк из антрекота 100г (G)' },
+        descs: {
+          ja: 'ジューシーに焼き上げた牛リブアイ・アントルコートステーキ。',
+          fi: 'Mehevä naudan entrecote-pihvi grillattuna.',
+          en: 'Succulent grilled beef ribeye entrecote steak.',
+          ru: 'Сочный стейк из говяжьего антрекота на гриле.'
+        }
+      },
+      {
+        cat: 'grilled',
+        price: '13.50 €',
+        tags: ['G'],
+        names: { ja: '特製 牛タン焼き 100g', fi: 'Beef tongue 100g (G)', en: 'Beef tongue 100g (G)', ru: 'Говяжий язык на гриле 100г (G)' },
+        descs: {
+          ja: '独特の歯ごたえと旨味が広がる炭火焼き牛タン。',
+          fi: 'Grillattua mureaa naudankieltä.',
+          en: 'Tender seasoned grilled beef tongue with delicate texture.',
+          ru: 'Нежный маринованный говяжий язык, обжаренный на углях.'
+        }
+      },
+      {
+        cat: 'grilled',
+        price: '14.50 €',
+        tags: ['G'],
+        names: { ja: 'サーモン 塩麹焼き 130g', fi: 'Shio-koji salmon 130g (G)', en: 'Shio-koji salmon 130g (G)', ru: 'Лосось в сио-кодзи 130г (G)' },
+        descs: {
+          ja: '伝統の塩麹に漬け込み、旨味を最大限に引き出した香ばしいサーモン。',
+          fi: 'Shio-koji-riisillä marinoitua ja mehukkaaksi grillattua lohta.',
+          en: 'Fresh Nordic salmon marinated in savory shio-koji and grilled to perfection.',
+          ru: 'Свежий нордический лосось, маринованный в рисовом кодзи.'
+        }
+      },
+      {
+        cat: 'grilled',
+        price: '10.00 €',
+        tags: ['100g Pork'],
+        names: { ja: '自家製 炙りチャーシュー 100g', fi: 'Grilled chashu pork 100g', en: 'Grilled chashu pork 100g', ru: 'Жареная свинина тясю 100г' },
+        descs: {
+          ja: '甘辛いタレでじっくり煮込み、表面を香ばしく炙った豚バラチャーシュー。',
+          fi: 'Mureaksi haudutettua ja liekitettyä chashu-possua.',
+          en: 'Slow-braised pork belly chashu seared over flame.',
+          ru: 'Томленая свиная грудинка тясю с аппетитной корочкой.'
+        }
+      },
+      {
+        cat: 'grilled',
+        price: '7.50 €',
+        tags: ['2 skewers', 'G'],
+        names: { ja: '焼き鳥 2本 (もも / 手羽中 / ハツ / 皮)', fi: 'Yakitori-chicken (2 skewers) (G)', en: 'Yakitori chicken (2 skewers) (G)', ru: 'Якитори из курицы (2 шпажки) (G)' },
+        descs: {
+          ja: '鶏肉の部位を選択：もも、手羽中、ハツ（心臓）、または皮。',
+          fi: 'Valitse: reisi, siipipala, sydän tai kanan nahka.',
+          en: 'Choice of chicken thigh, middle wing, heart, or skin.',
+          ru: 'На выбор: бедро, крылышко, сердечки или хрустящая куриная кожа.'
+        }
+      },
+      {
+        cat: 'grilled',
+        price: '6.50 €',
+        tags: ['2 skewers', 'G, VE'],
+        names: { ja: '季節野菜の串焼き 2本 (G, VE)', fi: 'Vegetables (2 skewers) (G, VE)', en: 'Vegetables (2 skewers) (G, VE)', ru: 'Овощные шпажки (2 шт) (G, VE)' },
+        descs: {
+          ja: 'ナス、ズッキーニ、ネギ、またはキノコからお選びいただけます。',
+          fi: 'Valitse: munakoiso, kesäkurpitsa, purjo tai sieni.',
+          en: 'Choice of eggplant, zucchini, leek, or mushroom.',
+          ru: 'На выбор: баклажан, цукини, лук-порей или грибы.'
+        }
+      },
+      {
+        cat: 'grilled',
+        price: '13.00 €',
+        tags: ['4 skewers', 'G'],
+        names: { ja: '焼き鳥 小セット (串4本)', fi: 'Small yakitori set (4 skewers) (G)', en: 'Small yakitori set (4 skewers) (G)', ru: 'Малый сет якитори (4 шпажки) (G)' },
+        descs: {
+          ja: '鶏肉の焼き鳥2本 ＋ 季節の野菜串2本のバランス良い盛り合わせ。',
+          fi: '2 kanavarrasta ja 2 kasvisvarrasta hiililtä.',
+          en: '2 chicken skewers and 2 vegetable skewers grilled to order.',
+          ru: '2 куриные шпажки и 2 овощные шпажки на углях.'
+        }
+      },
+      {
+        cat: 'grilled',
+        price: '29.50 €',
+        tags: ['10 skewers', 'G'],
+        names: { ja: '焼き鳥 大セット (串10本)', fi: 'Large yakitori set (10 skewers) (G)', en: 'Large yakitori set (10 skewers) (G)', ru: 'Большой сет якитори (10 шпажек) (G)' },
+        descs: {
+          ja: '鶏肉の焼き鳥7本 ＋ 季節野菜の串3本。シェアに最適な大満足プレート。',
+          fi: '7 kanavarrasta ja 3 kasvisvarrasta jaettavaksi.',
+          en: '7 chicken skewers and 3 vegetable skewers, perfect for sharing.',
+          ru: '7 шпажек с курицей и 3 овощные шпажки — идеальное блюдо на компанию.'
+        }
+      },
+
+      // DEEP-FRIED
+      {
+        cat: 'deepfried',
+        price: '8.00 €',
+        tags: ['G'],
+        names: { ja: '自家製 揚げ出し豆腐 (G)', fi: 'Agedashitofu (G)', en: 'Agedashitofu (G)', ru: 'Агэдаси тофу (G)' },
+        descs: {
+          ja: '外はカリッと中はふんわり揚げた自家製豆腐を、上品な温かい出汁で。',
+          fi: 'Fritattua kotitekoista tofua raikkaassa dashi-kastikkeessa.',
+          en: 'Deep-fried homemade silken tofu in light savoury dashi broth.',
+          ru: 'Хрустящий жареный тофу в нежном соусе даси.'
+        }
+      },
+      {
+        cat: 'deepfried',
+        price: '13.50 €',
+        tags: ['Pork'],
+        names: { ja: '特製 とんかつ (豚ロースカツ単品)', fi: 'Tonkatsu (pork cutlet)', en: 'Tonkatsu (pork cutlet)', ru: 'Тонкацу (свиная отбивная)' },
+        descs: {
+          ja: '厳選豚ロース肉を粗挽き生パン粉でサクッとジューシーに揚げた逸品。',
+          fi: 'Kullanrapeaksi paistettu mehevä porsaanleike.',
+          en: 'Deep-fried breaded pork cutlet with authentic tonkatsu sauce.',
+          ru: 'Классическая хрустящая свиная котлета в панировке панко.'
+        }
+      },
+      {
+        cat: 'deepfried',
+        price: '13.50 €',
+        tags: ['Chicken'],
+        names: { ja: '特製 チキンカツ (単品)', fi: 'Chickenkatsu (chicken cutlet)', en: 'Chickenkatsu (chicken cutlet)', ru: 'Чикенкацу (куриная отбивная)' },
+        descs: {
+          ja: '柔らかい鶏肉の旨味を閉じ込めたサクサクのチキンカツ。',
+          fi: 'Panko-kuorrutettu rapea kanaleike.',
+          en: 'Crispy deep-fried panko-crusted chicken cutlet.',
+          ru: 'Сочное куриное филе в хрустящей панировке.'
+        }
+      },
+      {
+        cat: 'deepfried',
+        price: '13.50 €',
+        tags: ['G'],
+        names: { ja: '鶏のから揚げ (単品)', fi: 'Chicken ka\'arage (G)', en: 'Chicken ka\'arage (G)', ru: 'Курица карааге (G)' },
+        descs: {
+          ja: '秘伝の生姜醤油に漬け込んだジューシーな鶏のから揚げ。',
+          fi: 'Japanilaista rapeaa ja mehevää friteerattua kanaa.',
+          en: 'Tender juicy Japanese-style seasoned fried chicken.',
+          ru: 'Нежные сочные кусочки жареной курицы в имбирном маринаде.'
+        }
+      },
+      {
+        cat: 'deepfried',
+        price: '9.00 €',
+        tags: ['G, VE'],
+        names: { ja: 'キノコのから揚げ (G, VE)', fi: 'Mushroom ka\'arage (G, VE)', en: 'Mushroom ka\'arage (G, VE)', ru: 'Карааге из грибов (G, VE)' },
+        descs: {
+          ja: 'キノコの旨味と香りを衣に閉じ込めた和風ヴィーガンから揚げ。',
+          fi: 'Rapeaksi friteerattuja sieniä japanilaiseen tapaan.',
+          en: 'Crispy deep-fried seasoned mushrooms, fully gluten-free & vegan.',
+          ru: 'Хрустящие грибы в авторском маринаде во фритюре.'
+        }
+      },
+      {
+        cat: 'deepfried',
+        price: '13.50 €',
+        tags: ['VE option'],
+        names: { ja: '手作り コロッケ (牛ポテト / 豆腐VE)', fi: 'Korokke (potato & beef / tofu VE)', en: 'Korokke (potato & beef / tofu VE)', ru: 'Крокеты корокке (говядина/тофу)' },
+        descs: {
+          ja: 'サクサクほくほくの自家製ジャガイモ牛肉コロッケ、またはヴィーガン豆腐コロッケ。',
+          fi: 'Peruna-naudanliha tai vegaaninen tofukroketti.',
+          en: 'Traditional crispy potato and beef or vegan tofu croquettes.',
+          ru: 'Традиционные японские крокеты с картофелем и говядиной или тофу.'
+        }
+      },
+      {
+        cat: 'deepfried',
+        price: '6.50 €',
+        tags: ['G, VE'],
+        names: { ja: 'わさび塩 フライドポテト (G, VE)', fi: 'Wasabi salted fried potatoes (G, VE)', en: 'Wasabi salted fried potatoes (G, VE)', ru: 'Картофель фри с васаби-солью' },
+        descs: {
+          ja: 'ツンとした香りと辛味がクセになる特製わさび塩ポテト。',
+          fi: 'Rapeita perunoita pirteällä wasabisuolalla maustettuna.',
+          en: 'Golden crispy fried potatoes seasoned with aromatic wasabi salt.',
+          ru: 'Хрустящие ломтики картофеля с пикантной солью васаби.'
+        }
+      },
+
+      // SASHIMI, STEAMED & RICE
+      {
+        cat: 'sashimi_steamed',
+        price: '17.00 €',
+        tags: ['9 pcs', 'G'],
+        names: { ja: '特選 刺身盛り合わせ 9点 (G)', fi: 'Sashimi set – 9 pcs (G)', en: 'Sashimi set – 9 pcs (G)', ru: 'Сет сашими 9 кусочков (G)' },
+        descs: {
+          ja: 'サーモン3点、本日のお魚3点、牛タタキ3点の豪華盛り合わせ。',
+          fi: '3 kpl lohta, 3 kpl päivän kalaa, 3 kpl nautatatakia.',
+          en: '3 pcs salmon, 3 pcs fish of the day, 3 pcs beef tataki.',
+          ru: '3 шт. лосося, 3 шт. рыбы дня, 3 шт. говяжьего татаки.'
+        }
+      },
+      {
+        cat: 'sashimi_steamed',
+        price: '15.00 €',
+        tags: ['6 pcs', 'G'],
+        names: { ja: 'フィンランド産 白身魚(シイカ)の昆布締め 6点', fi: 'Finnish Siika sashimi – 6 pcs (G)', en: 'Finnish Siika sashimi – 6 pcs (G)', ru: 'Сашими из сига (6 шт) (G)' },
+        descs: {
+          ja: '昆布で締めて旨味を凝縮させた極上のフィンランド産シイカ刺身。',
+          fi: 'Kelp-marinoitua tuoretta kotimaista siikaa.',
+          en: 'Kelp-marinated Finnish whitefish (siika) sashimi.',
+          ru: 'Свежайший финский сиг, выдержанный в водорослях комбу.'
+        }
+      },
+      {
+        cat: 'sashimi_steamed',
+        price: '14.50 €',
+        tags: ['6 pcs', 'G'],
+        names: { ja: '牛ヒレ肉のタタキ 6点 (G)', fi: 'Beef tenderloin tataki – 6 pcs (G)', en: 'Beef tenderloin tataki – 6 pcs (G)', ru: 'Татаки из говяжьей вырезки (6 шт)' },
+        descs: {
+          ja: '表面を軽く炙り、特製ポン酢で仕上げた柔らかい牛ヒレ肉。',
+          fi: 'Kevyesti liekitettyä mureaa naudan sisäfileetä.',
+          en: 'Finely seared tender beef tenderloin served with citrus ponzu.',
+          ru: 'Обожженная вырезка финской говядины с соусом понзу.'
+        }
+      },
+      {
+        cat: 'sashimi_steamed',
+        price: '14.00 €',
+        tags: ['6 pcs', 'G'],
+        names: { ja: 'ノルディック サーモン刺身 6点 (G)', fi: 'Salmon sashimi – 6 pcs (G)', en: 'Salmon sashimi – 6 pcs (G)', ru: 'Сашими из лосося (6 шт) (G)' },
+        descs: {
+          ja: '新鮮でとろけるような脂の甘みが際立つサーモン刺身。',
+          fi: 'Tuoreita laadukkaita lohiviipaleita.',
+          en: 'Six delicate slices of fresh Nordic salmon sashimi.',
+          ru: 'Шесть ломтиков нежнейшего северного лосося.'
+        }
+      },
+      {
+        cat: 'sashimi_steamed',
+        price: '10.00 €',
+        tags: ['5 pcs', 'VE option'],
+        names: { ja: '蒸し餃子 5個 (野菜または豚肉)', fi: 'Steamed gyoza dumplings – 5 pcs', en: 'Steamed gyoza dumplings – 5 pcs', ru: 'Паровые пельмени гёдза (5 шт)' },
+        descs: {
+          ja: 'ふっくらと蒸し上げた手包み餃子（野菜または豚肉）。',
+          fi: 'Höyrytettyjä maukkaita nyyttejä kasvis- tai possutäytteellä.',
+          en: 'Steamed handmade dumplings with seasoned vegetable or pork filling.',
+          ru: 'Нежные паровые пельмени с овощной или мясной начинкой.'
+        }
+      },
+      {
+        cat: 'sashimi_steamed',
+        price: '12.50 €',
+        tags: ['G, VE'],
+        names: { ja: '蒸し野菜と豆腐の胡麻だれ (G, VE)', fi: 'Steamed vegetables & tofu with sesame (G, VE)', en: 'Steamed vegetables & tofu with sesame sauce', ru: 'Овощи и тофу на пару с кунжутом' },
+        descs: {
+          ja: '蒸したての温かい旬野菜と豆腐に、濃厚な自家製胡麻だれを添えて。',
+          fi: 'Höyrytettyjä tuoreita kasviksia ja tofua aromikkaalla seesamikastikkeella.',
+          en: 'Steamed fresh garden vegetables and tofu with rich homemade sesame sauce.',
+          ru: 'Сезонные овощи и тофу на пару с авторским кунжутным соусом.'
+        }
+      },
+      {
+        cat: 'sashimi_steamed',
+        price: '10.00 €',
+        tags: ['2 pcs', 'G'],
+        names: { ja: '手結び おにぎり 2個 (G)', fi: 'Onigiri (2 kpl) (G)', en: 'Onigiri (2 pcs) (G)', ru: 'Онигири (2 шт) (G)' },
+        descs: {
+          ja: '具材：トナカイ肉(G)、焼き鮭(G)、ツナマヨ(G)、または梅干し(VE)。',
+          fi: 'Valitse: poro (G), grillilohi (G), tonnikala-majo (G) tai umeboshi-luumu (VE).',
+          en: 'Choice of reindeer (G), grilled salmon (G), tuna-mayo (G), or umeboshi plum (VE).',
+          ru: 'На выбор: оленина (G), жареный лосось (G), тунец-майо (G) или слива умэбоси (VE).'
+        }
+      },
+      {
+        cat: 'sashimi_steamed',
+        price: '3.50 €',
+        tags: ['G, VE'],
+        names: { ja: '特製 お味噌汁 (G, VE)', fi: 'Miso soup (G, VE)', en: 'Miso soup (G, VE)', ru: 'Мисо-суп (G, VE)' },
+        descs: {
+          ja: '毎朝丁寧に引いた出汁と本物の味噌で作る温かいお味噌汁。',
+          fi: 'Perinteinen lämmittävä japanilainen misokeitto.',
+          en: 'Authentic comforting Japanese miso soup with seaweed and tofu.',
+          ru: 'Традиционный японский суп мисо с водорослями и тофу.'
+        }
+      },
+      {
+        cat: 'sashimi_steamed',
+        price: '3.00 €',
+        tags: ['G, VE'],
+        names: { ja: '炊きたて 白ご飯 (G, VE)', fi: 'White rice (G, VE)', en: 'White rice (G, VE)', ru: 'Японский рис (G, VE)' },
+        descs: {
+          ja: 'ふっくらツヤツヤに炊き上げた上質な日本米。',
+          fi: 'Korkealaatuista höyrytettyä japanilaista riisiä.',
+          en: 'Steamed fluffy Japanese short-grain rice.',
+          ru: 'Традиционный круглозерный рис на пару.'
+        }
+      },
+
+      // SNACKS (SMALL PLATES)
+      {
+        cat: 'snacks',
         price: '8.50 €',
-        img: 'https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=600&auto=format&fit=crop',
-        names: { ja: '特製 鶏のから揚げ (単品)', fi: 'Tori Karaage', en: 'Crispy Karaage Chicken', ru: 'Курица Карааге' },
+        tags: ['G, V'],
+        names: { ja: '出汁巻き玉子 (G, V)', fi: 'Dashimaki tamago (G, V)', en: 'Dashimaki tamago (G, V)', ru: 'Дасимаки тамаго (G, V)' },
         descs: {
-          ja: '生姜醤油に漬け込んだサクサクジューシーなから揚げ。レモンと特製マヨネーズを添えて。',
-          fi: 'Inkiväärillä ja soijalla marinoitua rapeaa kanaa sekä japanilaista majoneesia.',
-          en: 'Crispy soy-ginger fried chicken bites served with lemon and Japanese mayonnaise.',
-          ru: 'Куриные кусочки во фритюре с имбирем, чесноком и японским майонезом.'
+          ja: '鰹と昆布の旨味出汁をたっぷり巻き込んだ、ほんのり甘い伝統の玉子焼き。',
+          fi: 'Makean suolainen perinteinen japanilainen dashi-munakas.',
+          en: 'Savoury-sweet Japanese layered rolled omelet made with rich dashi broth.',
+          ru: 'Нежный слоеный японский омлет на бульоне даси.'
         }
       },
       {
-        cat: 'sweets',
-        price: '5.50 €',
-        img: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=600&auto=format&fit=crop',
-        names: { ja: '焼きたて シナモンロール (Korvapuusti)', fi: 'Kamome Korvapuusti', en: 'Cinnamon Roll (Korvapuusti)', ru: 'Булочка с корицей' },
+        cat: 'snacks',
+        price: '8.00 €',
+        tags: ['Popular'],
+        names: { ja: '特製 牛すじ煮込み', fi: 'Japanese beef stew', en: 'Japanese beef stew', ru: 'Японское тушеное мясо с овощами' },
         descs: {
-          ja: 'かもめ食堂名物、カルダモンがふわりと香る焼きたてのフィンランド伝統シナモンロール。',
-          fi: 'Vastaleivottu pehmeä ja kardemummainen suomalais-japanilainen korvapuusti.',
-          en: 'Freshly baked soft cardamom and cinnamon bun, warm and comforting.',
-          ru: 'Свежеиспеченная сдобная финская булочка с корицей и кардамоном.'
+          ja: '柔らかくなるまでじっくり醤油とみりんで煮込んだ和風ビーフシチュー。',
+          fi: 'Mureaksi haudutettua naudanlihaa japanilaisittain.',
+          en: 'Tender slow-simmered savory Japanese beef stew.',
+          ru: 'Нежная томленая говядина в соево-сладком соусе.'
         }
       },
       {
-        cat: 'sweets',
-        price: '6.00 €',
-        img: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=600&auto=format&fit=crop',
-        names: { ja: '京都宇治 抹茶ラテ (Hot / Iced)', fi: 'Uji Matcha Latte', en: 'Kyoto Uji Matcha Latte', ru: 'Матча Латте из Киото' },
+        cat: 'snacks',
+        price: '8.00 €',
+        tags: ['G, VE'],
+        names: { ja: '自家製 豆腐サラダ 胡麻ドレッシング', fi: 'Homemade tofu salad (G, VE)', en: 'Homemade tofu salad (G, VE)', ru: 'Салат с тофу и кунжутным соусом' },
         descs: {
-          ja: '京都宇治産の最高級オーガニック抹茶を丁寧に点て、まろやかなオーツミルクと合わせました。',
-          fi: 'Seremonialaatuista vihreää Uji-matchaa ja pehmeää kauramaitoa.',
-          en: 'Ceremonial grade organic Japanese matcha tea whisked with silky oat milk.',
-          ru: 'Органический чай матча из региона Удзи с овсяным молоком.'
+          ja: 'レタス、キュウリ、ワカメ、トマト、トウモロコシ、手作り豆腐、特製胡麻ドレッシング。',
+          fi: 'Salaattia, kurkkua, wakamea, tomaattia, maissia, tofua ja seesamikastiketta.',
+          en: 'Lettuce, cucumber, wakame, tomato, sweet corn, homemade tofu, and sesame dressing.',
+          ru: 'Листья салата, огурец, томаты, кукуруза, тофу и кунжутная заправка.'
+        }
+      },
+      {
+        cat: 'snacks',
+        price: '5.00 €',
+        tags: ['G, VE'],
+        names: { ja: '季節の枝豆 (G, VE)', fi: 'Season\'s edamame (G, VE)', en: 'Season\'s edamame (G, VE)', ru: 'Бобы эдамаме с солью (G, VE)' },
+        descs: {
+          ja: 'ふっくら茹でたてに塩を振った定番の枝豆。ビールやお酒のお供に。',
+          fi: 'Höyrytettyjä soijapapuja merisuolalla.',
+          en: 'Steamed green soybeans lightly tossed in sea salt.',
+          ru: 'Свежесваренные зеленые бобы эдамаме с морской солью.'
+        }
+      },
+      {
+        cat: 'snacks',
+        price: '5.00 €',
+        tags: ['G, VE'],
+        names: { ja: '自家製 冷奴 (G, VE)', fi: 'Hiyayakko (G, VE)', en: 'Hiyayakko (G, VE)', ru: 'Холодный тофу Хияякко (G, VE)' },
+        descs: {
+          ja: '大豆の甘みが引き立つ手作りのなめらか冷奴。薬味とお醤油で。',
+          fi: 'Kotitekoista kylmää japanilaista tofua mausteilla.',
+          en: 'Homemade chilled Japanese silken tofu with delicate toppings.',
+          ru: 'Домашний охлажденный тофу с зеленым луком и соевым соусом.'
+        }
+      },
+      {
+        cat: 'snacks',
+        price: '4.50 €',
+        tags: ['G'],
+        names: { ja: '自家製 キムチ (G)', fi: 'Homemade kimchi (G)', en: 'Homemade kimchi (G)', ru: 'Домашнее кимчи (G)' },
+        descs: {
+          ja: 'しっかり漬け込んだピリ辛で奥深い味わいの自家製キムチ。',
+          fi: 'Talon omaa mausteista ja raikasta kimchiä.',
+          en: 'Spicy fermented savory house-made cabbage kimchi.',
+          ru: 'Пикантная домашняя ферментированная пекинская капуста.'
+        }
+      },
+      {
+        cat: 'snacks',
+        price: '4.00 €',
+        tags: ['G, VE'],
+        names: { ja: 'キャベツのお漬物 (つけもの) (G, VE)', fi: 'Tsukemono (G, VE)', en: 'Tsukemono (G, VE)', ru: 'Цукэмоно (маринованная капуста)' },
+        descs: {
+          ja: '箸休めにぴったりのさっぱりとした和風キャベツ漬け。',
+          fi: 'Japanilaisia rapeita kaalipikkelssiä.',
+          en: 'Traditional crisp Japanese salted cabbage pickles.',
+          ru: 'Хрустящая маринованная капуста по-японски.'
+        }
+      },
+      {
+        cat: 'snacks',
+        price: '4.00 €',
+        tags: ['VE'],
+        names: { ja: 'キュウリとワカメの酢の物', fi: 'Cucumber and wakame pickles', en: 'Cucumber and wakame pickles', ru: 'Маринованные огурцы с вакаме' },
+        descs: {
+          ja: '爽やかな甘酢が心地よいキュウリとワカメの伝統酢の物。',
+          fi: 'Raikas pikkelöity kurkku- ja wakamelesi.',
+          en: 'Refreshing sweet vinegar marinated cucumber and seaweed pickles.',
+          ru: 'Освежающая закуска из огурцов и водорослей вакаме в легком маринаде.'
         }
       }
     ];
 
-    // Default Language
     let currentL = 'ja';
-    let currentC = 'mains';
+    let currentC = 'onebowl';
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile Navigation Toggle
     const toggleBtn = document.getElementById('toggle-nav');
     const drawer = document.getElementById('mobile-drawer');
     toggleBtn.addEventListener('click', () => drawer.classList.toggle('hidden'));
     document.querySelectorAll('.mob-item').forEach(i => i.addEventListener('click', () => drawer.classList.add('hidden')));
 
-    // Robust Multilingual Switcher
     function changeLang(l) {
       currentL = l;
       document.documentElement.lang = l;
       
-      const langs = ['ja', 'fi', 'en', 'ru'];
-      langs.forEach(lang => {
-        // Desktop
+      ['ja', 'fi', 'en', 'ru'].forEach(lang => {
         const btn = document.getElementById(`btn-${lang}`);
         if (btn) {
           if (lang === l) btn.classList.add('active');
           else btn.classList.remove('active');
         }
-
-        // Mobile
         const mBtn = document.getElementById(`m-btn-${lang}`);
         if (mBtn) {
           if (lang === l) {
@@ -1018,7 +1411,6 @@
         }
       });
 
-      // Update text nodes
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const k = el.getAttribute('data-i18n');
         if (i18n[l] && i18n[l][k]) {
@@ -1029,7 +1421,6 @@
       renderCards(currentC);
     }
 
-    // Filter Menu Tabs
     function setMenuCategory(cat) {
       currentC = cat;
       document.querySelectorAll('.menu-filter').forEach(btn => {
@@ -1043,24 +1434,26 @@
       const box = document.getElementById('cards-container');
       const filtered = dishes.filter(d => d.cat === cat);
       box.innerHTML = filtered.map(d => `
-        <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-kamome-cream/60 flex flex-col group text-kamome-charcoal">
-          <div class="h-48 sm:h-52 overflow-hidden relative">
-            <img src="${d.img}" alt="${d.names[currentL]}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <span class="absolute bottom-3 right-3 bg-kamome-charcoal/90 text-kamome-cream text-xs font-bold px-3 py-1.5 rounded-full shadow">
-              ${d.price}
-            </span>
-          </div>
-          <div class="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-3 bg-kamome-cream/30">
-            <div>
-              <h4 class="font-serif font-bold text-base sm:text-lg text-kamome-charcoal mb-1">${d.names[currentL]}</h4>
-              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">${d.descs[currentL]}</p>
+        <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-kamome-cream/60 flex flex-col justify-between p-6 group text-kamome-charcoal hover:-translate-y-1 transition-transform duration-300">
+          <div>
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h4 class="font-serif font-bold text-base sm:text-lg text-kamome-charcoal leading-snug">${d.names[currentL]}</h4>
+              <span class="bg-kamome-blue text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap shadow-sm">
+                ${d.price}
+              </span>
             </div>
+            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">${d.descs[currentL]}</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between text-[11px]">
+            <div class="flex flex-wrap gap-1">
+              ${d.tags.map(t => `<span class="bg-kamome-creamSoft px-2 py-0.5 rounded text-gray-700 font-semibold">${t}</span>`).join('')}
+            </div>
+            <a href="#reservation" class="text-kamome-blueDeep font-bold hover:underline">Order / Reserve →</a>
           </div>
         </div>
       `).join('');
     }
 
-    // Reservation Form
     function submitBooking(e) {
       e.preventDefault();
       document.getElementById('toast').classList.remove('hidden');
@@ -1070,9 +1463,8 @@
       document.getElementById('toast').classList.add('hidden');
     }
 
-    // Initialize Default View
     changeLang('ja');
-    renderCards('mains');
+    renderCards('onebowl');
   </script>
 </body>
 </html>
