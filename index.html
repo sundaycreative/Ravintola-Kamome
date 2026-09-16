@@ -3,37 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ravintola Kamome | Aito japanilainen keittiö Helsingissä</title>
-  <meta name="description" content="Ravintola Kamome – japanilaista kotiruokaa, izakaya-annoksia ja aitoa tunnelmaa Helsingissä. Ruokala Lokki -elokuvasta tuttu lämminhenkinen ravintola.">
+  <title>Ravintola Kamome | Japanilainen ravintola Helsingissä</title>
+  <meta name="description" content="Ravintola Kamome – aitoa japanilaista ruokaa, raikkaita pohjoismaisia makuja ja lämminhenkistä tunnelmaa Helsingissä.">
   
-  <!-- Google Fonts: Plus Jakarta Sans & Noto Serif JP -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Zen+Old+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
   
-  <!-- Font Awesome 6 Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Tailwind CSS via CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            kamome: {
-              cream: '#FAF8F5',
-              softblue: '#E3EDEE',
-              ice: '#F0F6F7',
-              accent: '#3B7A87',
-              accentDark: '#28555E',
-              dark: '#1C2527',
-              muted: '#637578'
+            brand: {
+              blue: '#5DB9E4',
+              blueDark: '#4AA4CE',
+              blueLight: '#78C7EC',
+              cream: '#FFF9EE',
+              creamSoft: '#F6EEDB',
+              creamDark: '#EDE0C8',
+              charcoal: '#1A2328'
             }
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            serif: ['"Noto Serif JP"', 'serif'],
+            serif: ['"Zen Old Mincho"', 'serif']
           }
         }
       }
@@ -41,176 +41,180 @@
   </script>
 
   <style>
-    .glass-nav {
-      background: rgba(250, 248, 245, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    .hero-pattern {
-      background-color: #FAF8F5;
-      background-image: radial-gradient(#3B7A87 0.65px, #FAF8F5 0.65px);
-      background-size: 26px 26px;
-    }
-    .lang-btn.active {
-      background-color: #3B7A87;
+    body {
+      background-color: #5DB9E4;
       color: #ffffff;
     }
-    .menu-tab.active {
-      background-color: #3B7A87;
-      color: #ffffff;
-      border-color: #3B7A87;
+    .glass-header {
+      background: rgba(93, 185, 228, 0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
+    .lang-pill.active {
+      background-color: #FFF9EE;
+      color: #1A2328;
+    }
+    .menu-filter.active {
+      background-color: #FFF9EE;
+      color: #1A2328;
+      border-color: #FFF9EE;
+      transform: scale(1.03);
+    }
+    /* SVG Logo styling */
+    .kamome-seagull-body { fill: #FFFFFF; stroke: #1A2328; stroke-width: 3.5; stroke-linejoin: round; }
+    .kamome-seagull-wing { fill: #1A2328; }
+    .kamome-line { stroke: #1A2328; stroke-width: 3.5; stroke-linecap: round; }
   </style>
 </head>
-<body class="bg-kamome-cream text-kamome-dark font-sans antialiased selection:bg-kamome-accent selection:text-white">
+<body class="font-sans antialiased selection:bg-brand-cream selection:text-brand-charcoal">
 
-  <!-- ==================== HEADER / NAVBAR ==================== -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-kamome-softblue transition-all duration-300">
+  <!-- ==================== HEADER ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-white/20 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-full bg-kamome-softblue flex items-center justify-center text-kamome-accent group-hover:scale-105 transition-transform duration-300">
-          <i class="fa-solid fa-dove text-lg"></i>
+      <!-- Exact Seagull Logo from photo -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="w-12 h-12 rounded-full bg-[#5DB9E4] border-2 border-white/80 p-1 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+          <svg viewBox="0 0 200 200" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(10, 10)">
+              <!-- Foot 1 -->
+              <path d="M 75 145 L 68 152 M 68 152 L 60 151 M 68 152 L 72 156" class="kamome-line" />
+              <!-- Foot 2 -->
+              <path d="M 90 148 L 84 158 M 84 158 L 76 158 M 84 158 L 88 163" class="kamome-line" />
+              <!-- Seagull Body -->
+              <path d="M 52 75 C 45 68, 48 55, 62 55 C 75 55, 82 66, 85 75 C 105 75, 142 90, 142 125 C 142 148, 120 160, 85 158 C 65 156, 52 140, 52 115 C 52 98, 46 85, 52 75 Z" class="kamome-seagull-body" />
+              <!-- Beak & worm/fish -->
+              <path d="M 50 67 L 35 73" class="kamome-line" />
+              <path d="M 36 60 Q 32 68 35 73 Q 32 80 28 82" class="kamome-line" fill="none" />
+              <!-- Eye -->
+              <circle cx="58" cy="65" r="2.5" fill="#1A2328" />
+              <!-- Wing Detail Top -->
+              <path d="M 120 95 C 122 108, 128 120, 142 128 C 138 120, 132 110, 125 102 Z" class="kamome-seagull-wing" />
+              <!-- Tail Detail Bottom -->
+              <path d="M 100 135 C 125 138, 145 142, 150 162 C 140 160, 126 150, 115 148 C 112 154, 100 152, 95 142 Z" class="kamome-seagull-wing" />
+            </g>
+          </svg>
         </div>
-        <div>
-          <span class="font-serif font-bold text-xl sm:text-2xl tracking-wider block leading-none text-kamome-dark">KAMOME</span>
-          <span class="text-[10px] tracking-widest text-kamome-muted uppercase font-medium">かもめ食堂 • Helsinki</span>
+        <div class="leading-none">
+          <span class="text-[11px] uppercase tracking-widest text-brand-cream block font-medium">Ravintola</span>
+          <span class="font-serif font-bold text-xl sm:text-2xl tracking-wider text-white">KAMOME</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="#about" class="text-sm font-medium hover:text-kamome-accent transition-colors duration-200" data-i18n="nav_about">Meistä</a>
-        <a href="#menu" class="text-sm font-medium hover:text-kamome-accent transition-colors duration-200" data-i18n="nav_menu">Ruokalista</a>
-        <a href="#gallery" class="text-sm font-medium hover:text-kamome-accent transition-colors duration-200" data-i18n="nav_gallery">Tunnelma</a>
-        <a href="#reservation" class="text-sm font-medium hover:text-kamome-accent transition-colors duration-200" data-i18n="nav_reserve">Pöytävaraus</a>
-        <a href="#contact" class="text-sm font-medium hover:text-kamome-accent transition-colors duration-200" data-i18n="nav_contact">Yhteystiedot</a>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+        <a href="#about" class="hover:text-brand-cream transition-colors" data-i18n="nav_about">Konsepti</a>
+        <a href="#menu" class="hover:text-brand-cream transition-colors" data-i18n="nav_menu">Ruokalista</a>
+        <a href="#atmosphere" class="hover:text-brand-cream transition-colors" data-i18n="nav_vibe">Tunnelma</a>
+        <a href="#reservation" class="hover:text-brand-cream transition-colors" data-i18n="nav_book">Pöytävaraus</a>
+        <a href="#contact" class="hover:text-brand-cream transition-colors" data-i18n="nav_contact">Yhteystiedot</a>
       </nav>
 
-      <!-- Language Selector & Reservation CTA -->
+      <!-- Language & CTA -->
       <div class="hidden md:flex items-center gap-4">
-        <!-- Lang Switcher -->
-        <div class="flex items-center bg-white p-1 rounded-full border border-kamome-softblue shadow-sm text-xs font-semibold">
-          <button onclick="setLanguage('fi')" id="lang-btn-fi" class="lang-btn px-3 py-1 rounded-full transition-all duration-200 active">FI</button>
-          <button onclick="setLanguage('en')" id="lang-btn-en" class="lang-btn px-3 py-1 rounded-full transition-all duration-200">EN</button>
-          <button onclick="setLanguage('ru')" id="lang-btn-ru" class="lang-btn px-3 py-1 rounded-full transition-all duration-200">RU</button>
+        <div class="flex items-center bg-black/20 p-1 rounded-full border border-white/20 text-xs font-semibold">
+          <button onclick="changeLang('fi')" id="btn-fi" class="lang-pill px-2.5 py-1 rounded-full active transition-colors">FI</button>
+          <button onclick="changeLang('en')" id="btn-en" class="lang-pill px-2.5 py-1 rounded-full transition-colors text-white">EN</button>
+          <button onclick="changeLang('ru')" id="btn-ru" class="lang-pill px-2.5 py-1 rounded-full transition-colors text-white">RU</button>
         </div>
 
-        <a href="#reservation" class="bg-kamome-accent hover:bg-kamome-accentDark text-white px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center gap-2">
-          <i class="fa-regular fa-calendar-check"></i>
-          <span data-i18n="nav_btn_book">Varaa pöytä</span>
+        <a href="#reservation" class="bg-brand-cream hover:bg-white text-brand-charcoal px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow hover:shadow-lg">
+          <span data-i18n="nav_cta">Varaa pöytä</span>
         </a>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-      <div class="flex items-center gap-3 md:hidden">
-        <div class="flex items-center bg-white p-0.5 rounded-full border border-kamome-softblue text-[11px] font-semibold">
-          <button onclick="setLanguage('fi')" class="lang-btn-mob-fi px-2 py-0.5 rounded-full bg-kamome-accent text-white">FI</button>
-          <button onclick="setLanguage('en')" class="lang-btn-mob-en px-2 py-0.5 rounded-full text-kamome-dark">EN</button>
-          <button onclick="setLanguage('ru')" class="lang-btn-mob-ru px-2 py-0.5 rounded-full text-kamome-dark">RU</button>
+      <!-- Mobile Button -->
+      <div class="flex items-center gap-2 md:hidden">
+        <div class="flex items-center bg-black/20 p-0.5 rounded-full border border-white/20 text-[11px] font-bold">
+          <button onclick="changeLang('fi')" class="m-lang-fi px-2 py-0.5 rounded-full bg-brand-cream text-brand-charcoal">FI</button>
+          <button onclick="changeLang('en')" class="m-lang-en px-2 py-0.5 rounded-full text-white">EN</button>
+          <button onclick="changeLang('ru')" class="m-lang-ru px-2 py-0.5 rounded-full text-white">RU</button>
         </div>
-        <button id="mobile-menu-btn" class="text-kamome-dark hover:text-kamome-accent p-2 text-xl focus:outline-none" aria-label="Valikko">
-          <i class="fa-solid fa-bars-staggered"></i>
+        <button id="toggle-nav" class="text-white p-2 text-xl" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
         </button>
       </div>
 
     </div>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-kamome-cream border-b border-kamome-softblue px-6 py-6 shadow-xl transition-all">
-      <div class="flex flex-col gap-4 text-center text-base font-medium">
-        <a href="#about" class="mob-link py-2 border-b border-kamome-softblue/50" data-i18n="nav_about">Meistä</a>
-        <a href="#menu" class="mob-link py-2 border-b border-kamome-softblue/50" data-i18n="nav_menu">Ruokalista</a>
-        <a href="#gallery" class="mob-link py-2 border-b border-kamome-softblue/50" data-i18n="nav_gallery">Tunnelma</a>
-        <a href="#reservation" class="mob-link py-2 border-b border-kamome-softblue/50" data-i18n="nav_reserve">Pöytävaraus</a>
-        <a href="#contact" class="mob-link py-2" data-i18n="nav_contact">Yhteystiedot</a>
-        <a href="#reservation" class="mt-2 w-full bg-kamome-accent text-white py-3 rounded-xl font-semibold shadow-md flex items-center justify-center gap-2">
-          <i class="fa-regular fa-calendar-check"></i>
-          <span data-i18n="nav_btn_book">Varaa pöytä</span>
-        </a>
-      </div>
+    <!-- Mobile Nav Bar -->
+    <div id="mobile-drawer" class="hidden md:hidden bg-brand-blueDark border-b border-white/20 px-6 py-6 space-y-4 text-center">
+      <a href="#about" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_about">Konsepti</a>
+      <a href="#menu" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_menu">Ruokalista</a>
+      <a href="#atmosphere" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_vibe">Tunnelma</a>
+      <a href="#reservation" class="mob-item block py-2 text-sm font-semibold border-b border-white/10" data-i18n="nav_book">Pöytävaraus</a>
+      <a href="#contact" class="mob-item block py-2 text-sm font-semibold" data-i18n="nav_contact">Yhteystiedot</a>
+      <a href="#reservation" class="w-full inline-block bg-brand-cream text-brand-charcoal py-3 rounded-full font-bold text-xs uppercase tracking-wider shadow">
+        <span data-i18n="nav_cta">Varaa pöytä</span>
+      </a>
     </div>
   </header>
 
   <!-- ==================== HERO SECTION ==================== -->
-  <section class="relative min-h-[92vh] pt-28 pb-16 flex items-center hero-pattern overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10">
+  <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Left Content -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           
-          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/90 border border-kamome-softblue shadow-sm text-xs font-semibold text-kamome-accent">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span data-i18n="hero_badge">Avoinna tänään 11:00 – 21:00 • Pursimiehenkatu 12</span>
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/30 text-xs font-semibold text-brand-cream">
+            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+            <span data-i18n="hero_status">Aukioloajat: Ma–Pe 11:00–21:00 • La 13:00–21:00</span>
           </div>
 
-          <h1 class="text-4xl sm:text-5xl xl:text-6xl font-serif font-bold text-kamome-dark leading-tight">
-            <span data-i18n="hero_title_1">Japanilaisen sielukasta</span> <br>
-            <span class="text-kamome-accent italic font-normal" data-i18n="hero_title_2">ruokaa Helsingin sydämessä</span>
+          <h1 class="text-4xl sm:text-6xl font-serif font-bold text-white tracking-tight leading-tight">
+            <span data-i18n="hero_h1_1">Japanilainen keittiö.</span> <br>
+            <span class="text-brand-cream font-normal italic" data-i18n="hero_h1_2">Pohjoismainen rauha.</span>
           </h1>
 
-          <p class="text-base sm:text-lg text-kamome-muted max-w-xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_subtitle">
-            Ruokala Lokki -elokuvasta syntynyt tarina jatkuu. Yhdistämme aidot japanilaiset perinteet, huolella valitut pohjoismaiset raaka-aineet ja levollisen kotoisan tunnelman.
+          <p class="text-white/90 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-light" data-i18n="hero_intro">
+            Aitoa japanilaista kotiruokaa, lämmintä ramenia, rapeaa tonkatsua sekä tuoreita leivonnaisia Helsingissä. Tervetuloa nauttimaan konstailemattomasta ruoasta ja levollisesta tunnelmasta.
           </p>
 
-          <!-- CTAs -->
           <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <a href="#menu" class="w-full sm:w-auto px-8 py-4 bg-kamome-accent hover:bg-kamome-accentDark text-white rounded-full font-semibold text-sm tracking-wider uppercase transition-all duration-300 shadow-lg hover:shadow-xl text-center transform hover:-translate-y-0.5">
-              <span data-i18n="hero_cta_menu">Tutustu ruokalistaan</span>
+            <a href="#menu" class="w-full sm:w-auto px-8 py-4 bg-brand-cream hover:bg-white text-brand-charcoal rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-md">
+              <span data-i18n="hero_btn_menu">Katso ruokalista</span>
             </a>
-            <a href="#reservation" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-kamome-softblue text-kamome-dark border border-kamome-softblue rounded-full font-semibold text-sm tracking-wider uppercase transition-all duration-300 text-center shadow-sm hover:shadow">
-              <span data-i18n="hero_cta_reserve">Varaa pöytä</span>
+            <a href="https://www.instagram.com/ravintolakamome/" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 bg-white/15 hover:bg-white/25 text-white border border-white/30 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2">
+              <i class="fa-brands fa-instagram text-brand-cream text-base"></i>
+              <span>Instagram @ravintolakamome</span>
             </a>
           </div>
 
-          <!-- Quick Highlight features -->
-          <div class="pt-8 border-t border-kamome-softblue grid grid-cols-3 gap-4 text-center lg:text-left">
+          <!-- Quick facts -->
+          <div class="pt-6 grid grid-cols-3 gap-4 border-t border-white/20 max-w-lg mx-auto lg:mx-0">
             <div>
-              <p class="text-xl sm:text-2xl font-serif font-bold text-kamome-accent">100%</p>
-              <p class="text-xs text-kamome-muted mt-0.5" data-i18n="hero_stat_1">Aito japanilainen reseptiikka</p>
+              <p class="text-2xl font-serif font-bold text-brand-cream">100%</p>
+              <p class="text-[11px] text-white/80" data-i18n="fact_1">Japanilainen maku</p>
             </div>
             <div>
-              <p class="text-xl sm:text-2xl font-serif font-bold text-kamome-accent">2006</p>
-              <p class="text-xs text-kamome-muted mt-0.5" data-i18n="hero_stat_2">Kulttielokuvan kuvauspaikka</p>
+              <p class="text-2xl font-serif font-bold text-brand-cream">Fresh</p>
+              <p class="text-[11px] text-white/80" data-i18n="fact_2">Päivittäin valmistettu</p>
             </div>
             <div>
-              <p class="text-xl sm:text-2xl font-serif font-bold text-kamome-accent">4.8 ★</p>
-              <p class="text-xs text-kamome-muted mt-0.5" data-i18n="hero_stat_3">Yli 1000 tyytyväistä vierasta</p>
+              <p class="text-2xl font-serif font-bold text-brand-cream">Helsinki</p>
+              <p class="text-[11px] text-white/80" data-i18n="fact_3">Pursimiehenkatu</p>
             </div>
           </div>
 
         </div>
 
-        <!-- Right Hero Visual -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-md lg:max-w-none">
-            
-            <!-- Main Hero Image (Authentic Japanese Food) -->
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] object-cover">
-              <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=900&auto=format&fit=crop" 
-                   alt="Autenttinen japanilainen ramen ja herkut" 
-                   class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700">
+        <div class="lg:col-span-5">
+          <div class="relative max-w-md mx-auto">
+            <div class="rounded-3xl overflow-hidden border-4 border-brand-cream shadow-2xl aspect-[4/5] bg-brand-blueDark">
+              <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=900&auto=format&fit=crop" 
+                   alt="Lohi ja japanilainen ruoka" 
+                   class="w-full h-full object-cover">
             </div>
-
-            <!-- Floating Badge Card 1 -->
-            <div class="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-kamome-softblue max-w-[210px] hidden sm:flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-kamome-softblue flex-shrink-0 flex items-center justify-center text-kamome-accent text-lg">
-                <i class="fa-solid fa-bowl-rice"></i>
+            <div class="absolute -bottom-5 -left-5 bg-brand-cream text-brand-charcoal p-4 rounded-2xl shadow-xl flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-[#5DB9E4] text-white flex items-center justify-center">
+                <i class="fa-solid fa-bowl-food"></i>
               </div>
               <div>
-                <h4 class="text-xs font-bold text-kamome-dark" data-i18n="hero_float_title">Lounas & Illallinen</h4>
-                <p class="text-[11px] text-kamome-muted" data-i18n="hero_float_desc">Ramen, Donburi & Matcha</p>
+                <p class="text-xs font-bold uppercase tracking-wider" data-i18n="badge_special">Lounas & Illallinen</p>
+                <p class="text-[11px] text-gray-700">Teishoku, Ramen, Onigiri</p>
               </div>
             </div>
-
-            <!-- Floating Badge Card 2 (Film tribute) -->
-            <div class="absolute -top-4 -right-4 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-lg border border-kamome-softblue hidden sm:flex items-center gap-2">
-              <i class="fa-solid fa-film text-kamome-accent text-sm"></i>
-              <span class="text-xs font-semibold text-kamome-dark" data-i18n="hero_float_film">Kamome Shokudō</span>
-            </div>
-
           </div>
         </div>
 
@@ -218,80 +222,42 @@
     </div>
   </section>
 
-  <!-- ==================== ABOUT SECTION ==================== -->
-  <section id="about" class="py-24 bg-white relative">
+  <!-- ==================== ABOUT / CONCEPT ==================== -->
+  <section id="about" class="py-20 bg-white/10 backdrop-blur-sm border-t border-b border-white/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div class="max-w-3xl mx-auto text-center space-y-4 mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-cream block" data-i18n="about_tag">Ruokafilosofia</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white" data-i18n="about_title">Yksinkertaista, huolella tehtyä japanilaista ruokaa</h2>
+        <p class="text-white/90 text-sm leading-relaxed" data-i18n="about_desc">
+          Ravintola Kamome yhdistää puhtaat suomalaiset raaka-aineet – kuten lohen ja kauden kasvikset – perinteisiin japanilaisiin makuihin, liemiin ja valmistustapoihin. Ei turhaa kikkailua, vaan aitoja ja rehellisiä makuja.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- Image Collage -->
-        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
-          <div class="space-y-4">
-            <div class="rounded-2xl overflow-hidden shadow-md aspect-[3/4]">
-              <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=700&auto=format&fit=crop" 
-                   alt="Ravintolan valoisa ja skandinaavinen sisustus" 
-                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-            </div>
-            <div class="rounded-2xl overflow-hidden shadow-md aspect-square">
-              <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?q=80&w=600&auto=format&fit=crop" 
-                   alt="Japanilaiset gyoza-mykyt" 
-                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-            </div>
+        <div class="bg-white/15 p-6 rounded-2xl border border-white/25 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-cream text-brand-charcoal flex items-center justify-center text-lg font-bold">
+            <i class="fa-solid fa-fish"></i>
           </div>
-          <div class="space-y-4 pt-8">
-            <div class="rounded-2xl overflow-hidden shadow-md aspect-square">
-              <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=600&auto=format&fit=crop" 
-                   alt="Japanilaiset onigirit ja teetä" 
-                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-            </div>
-            <div class="rounded-2xl overflow-hidden shadow-md aspect-[3/4]">
-              <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?q=80&w=700&auto=format&fit=crop" 
-                   alt="Tuore lohi ja nigirit" 
-                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-            </div>
-          </div>
+          <h3 class="text-base font-bold text-brand-cream" data-i18n="f1_title">Tuore Lohta & Kalaa</h3>
+          <p class="text-xs text-white/85 leading-relaxed" data-i18n="f1_desc">Paistettua lohta teriyakilla, käsin puristettuja onigireja ja huolella maustettuja lisukkeita.</p>
         </div>
 
-        <!-- Story Content -->
-        <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-kamome-accent">
-            <span class="h-px w-6 bg-kamome-accent"></span>
-            <span data-i18n="about_tag">Tarinamme & Filosofiamme</span>
+        <div class="bg-white/15 p-6 rounded-2xl border border-white/25 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-cream text-brand-charcoal flex items-center justify-center text-lg font-bold">
+            <i class="fa-solid fa-fire-burner"></i>
           </div>
+          <h3 class="text-base font-bold text-brand-cream" data-i18n="f2_title">Haudutetut Liemet</h3>
+          <p class="text-xs text-white/85 leading-relaxed" data-i18n="f2_desc">Hitaasti valmistettu dashi- ja ramen-liemi, täyteläinen miso sekä käsintehdyt gyoza-nyytit.</p>
+        </div>
 
-          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-kamome-dark leading-tight" data-i18n="about_heading">
-            Paikka, jossa rauhaisa pohjoismainen estetiikka kohtaa japanilaisen lämmön
-          </h2>
-
-          <p class="text-kamome-muted leading-relaxed" data-i18n="about_p1">
-            Ravintola Kamome nousi maailmanlaajuiseen tietoisuuteen legendaarisen japanilaisen elokuvan <em>Ruokala Lokki (Kamome Shokudō, 2006)</em> tapahtumapaikkana. Tänä päivänä jatkamme perinnettä tarjoamalla aitoa, käsintehtyä japanilaista kotiruokaa ja modernia izakaya-tunnelmaa Helsingin sydämessä.
-          </p>
-
-          <p class="text-kamome-muted leading-relaxed" data-i18n="about_p2">
-            Uskomme sesongin tuoreuteen: mehevä lohi, laadukas dashi-liemi, vastakeitetyt onigiri-riisipallot ja rapea tonkatsu valmistetaan alusta alkaen keittiömme japanilaisella pieteetillä ja suomalaisella rehellisyydellä.
-          </p>
-
-          <!-- 3 Philosophy Highlights -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-            <div class="p-4 rounded-xl bg-kamome-ice border border-kamome-softblue">
-              <i class="fa-solid fa-leaf text-kamome-accent mb-2"></i>
-              <h3 class="text-sm font-bold text-kamome-dark" data-i18n="about_val1_t">Kausiluontoisuus & Laatu</h3>
-              <p class="text-xs text-kamome-muted mt-1" data-i18n="about_val1_d">Suomalainen kala yhdistettynä aitoihin japanilaisiin soijoihin ja misoihin.</p>
-            </div>
-            <div class="p-4 rounded-xl bg-kamome-ice border border-kamome-softblue">
-              <i class="fa-solid fa-heart text-kamome-accent mb-2"></i>
-              <h3 class="text-sm font-bold text-kamome-dark" data-i18n="about_val2_t">Kotoisa Omotenashi</h3>
-              <p class="text-xs text-kamome-muted mt-1" data-i18n="about_val2_d">Japanilainen vieraanvaraisuus, jossa jokainen asiakas toivotetaan tervetulleeksi kuin vanha ystävä.</p>
-            </div>
+        <div class="bg-white/15 p-6 rounded-2xl border border-white/25 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-cream text-brand-charcoal flex items-center justify-center text-lg font-bold">
+            <i class="fa-solid fa-bread-slice"></i>
           </div>
-
-          <div class="pt-2">
-            <a href="#menu" class="inline-flex items-center gap-2 font-semibold text-sm text-kamome-accent hover:text-kamome-accentDark transition-colors">
-              <span data-i18n="about_link">Tutustu tarkemmin annoksiimme</span>
-              <i class="fa-solid fa-arrow-right-long text-xs"></i>
-            </a>
-          </div>
-
+          <h3 class="text-base font-bold text-brand-cream" data-i18n="f3_title">Korvapuusti & Matcha</h3>
+          <p class="text-xs text-white/85 leading-relaxed" data-i18n="f3_desc">Pehmeät uunituoreet kanelipullat ja aito japanilainen Uji-alueen seremoniallinen vihreä tee.</p>
         </div>
 
       </div>
@@ -299,57 +265,49 @@
     </div>
   </section>
 
-  <!-- ==================== MENU SECTION ==================== -->
-  <section id="menu" class="py-24 bg-kamome-cream border-t border-kamome-softblue">
+  <!-- ==================== MENU ==================== -->
+  <section id="menu" class="py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-kamome-accent block" data-i18n="menu_subtitle">Kulinaariset elämykset</span>
-        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-kamome-dark" data-i18n="menu_title">Ravintola Kamomen Ruokalista</h2>
-        <p class="text-sm text-kamome-muted" data-i18n="menu_desc">Aitoja makuja, tuoreita raaka-aineita ja lämmittävää sielunruokaa. Kaikki annokset valmistetaan tilauksesta.</p>
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-cream block" data-i18n="menu_tag">Ruokalista</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white" data-i18n="menu_title">Kamomen Annokset</h2>
+        <p class="text-xs sm:text-sm text-white/85" data-i18n="menu_sub">Valitse kategoria ja tutustu suosikkeihimme.</p>
       </div>
 
-      <!-- Categories Filter Tabs -->
-      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
-        <button onclick="filterMenu('mains')" class="menu-tab active px-5 py-2.5 rounded-full border border-kamome-softblue text-xs font-semibold uppercase tracking-wider transition-all duration-200" data-cat="mains" data-i18n="menu_tab_mains">
-          Pääruoat & Donburi
+      <!-- Categories -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <button onclick="setMenuCategory('mains')" class="menu-filter active px-5 py-2.5 rounded-full border border-white/30 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200" data-cat="mains" data-i18n="cat_mains">
+          Pääruoat & Teishoku
         </button>
-        <button onclick="filterMenu('ramen')" class="menu-tab px-5 py-2.5 rounded-full border border-kamome-softblue text-xs font-semibold uppercase tracking-wider transition-all duration-200" data-cat="ramen" data-i18n="menu_tab_ramen">
+        <button onclick="setMenuCategory('ramen')" class="menu-filter px-5 py-2.5 rounded-full border border-white/30 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200" data-cat="ramen" data-i18n="cat_ramen">
           Ramen & Gyoza
         </button>
-        <button onclick="filterMenu('sides')" class="menu-tab px-5 py-2.5 rounded-full border border-kamome-softblue text-xs font-semibold uppercase tracking-wider transition-all duration-200" data-cat="sides" data-i18n="menu_tab_sides">
-          Izakaya & Onigiri
+        <button onclick="setMenuCategory('onigiri')" class="menu-filter px-5 py-2.5 rounded-full border border-white/30 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200" data-cat="onigiri" data-i18n="cat_onigiri">
+          Onigiri & Pikkupurtavat
         </button>
-        <button onclick="filterMenu('drinks')" class="menu-tab px-5 py-2.5 rounded-full border border-kamome-softblue text-xs font-semibold uppercase tracking-wider transition-all duration-200" data-cat="drinks" data-i18n="menu_tab_drinks">
-          Juomat & Jälkiruoat
+        <button onclick="setMenuCategory('sweets')" class="menu-filter px-5 py-2.5 rounded-full border border-white/30 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200" data-cat="sweets" data-i18n="cat_sweets">
+          Makeat & Juomat
         </button>
       </div>
 
-      <!-- Menu Items Grid -->
-      <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        <!-- Rendered dynamically by JavaScript -->
+      <!-- Cards Grid -->
+      <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered by JS -->
       </div>
 
-      <!-- Takeaway / Wolt banner note -->
-      <div class="mt-14 p-6 sm:p-8 rounded-2xl bg-white border border-kamome-softblue shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="flex items-center gap-4 text-center md:text-left">
-          <div class="w-12 h-12 rounded-full bg-kamome-softblue flex items-center justify-center text-kamome-accent text-xl flex-shrink-0">
-            <i class="fa-solid fa-bag-shopping"></i>
-          </div>
-          <div>
-            <h4 class="text-base font-bold text-kamome-dark" data-i18n="menu_takeaway_title">Haluatko tilata mukaan kotiin tai toimistolle?</h4>
-            <p class="text-xs text-kamome-muted" data-i18n="menu_takeaway_desc">Tarjoamme noutoruokaa suoraan ravintolasta sekä kotiinkuljetusta suosituimpien kumppaneiden kautta.</p>
-          </div>
+      <!-- Wolt & Takeaway Banner -->
+      <div class="mt-12 bg-white/15 border border-white/30 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h4 class="text-lg font-bold text-white font-serif" data-i18n="takeaway_t">Nouto & Kotiinkuljetus</h4>
+          <p class="text-xs text-white/80 mt-1" data-i18n="takeaway_d">Tilaa ennakkoon puhelimitse tai tilaa kotiin Wolt-palvelun kautta.</p>
         </div>
-        <div class="flex items-center gap-3">
-          <a href="https://wolt.com" target="_blank" rel="noopener" class="px-5 py-2.5 bg-kamome-ice hover:bg-kamome-softblue text-kamome-dark text-xs font-semibold rounded-full border border-kamome-softblue transition-colors flex items-center gap-2">
-            <span>Wolt Delivery</span>
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <a href="https://wolt.com" target="_blank" rel="noopener" class="flex-1 md:flex-initial text-center px-6 py-3 bg-brand-cream text-brand-charcoal text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white transition-colors">
+            Wolt Delivery
           </a>
-          <a href="tel:+358417921340" class="px-5 py-2.5 bg-kamome-accent hover:bg-kamome-accentDark text-white text-xs font-semibold rounded-full transition-colors flex items-center gap-2">
-            <i class="fa-solid fa-phone text-xs"></i>
-            <span data-i18n="menu_call_order">Tilaa: 041 792 1340</span>
+          <a href="tel:+358417921340" class="flex-1 md:flex-initial text-center px-6 py-3 bg-white/20 hover:bg-white/30 text-white border border-white/40 text-xs font-bold uppercase tracking-wider rounded-full transition-colors">
+            Puh: 041 792 1340
           </a>
         </div>
       </div>
@@ -357,1079 +315,558 @@
     </div>
   </section>
 
-  <!-- ==================== GALLERY / ATMOSPHERE ==================== -->
-  <section id="gallery" class="py-24 bg-white">
+  <!-- ==================== GALLERY ==================== -->
+  <section id="atmosphere" class="py-20 bg-white/10 border-t border-white/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-kamome-accent block" data-i18n="gallery_subtitle">Visuaalinen matka</span>
-        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-kamome-dark" data-i18n="gallery_title">Ruokala Lokin Tunnelmaa</h2>
-        <p class="text-sm text-kamome-muted" data-i18n="gallery_desc">Pohjoismaisen vaaleaa puuta, tuoreiden korvapuustien ja miso-keiton tuoksua sekä rentoa helsinkiläistä tunnelmaa.</p>
+      <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-cream block" data-i18n="vibe_tag">Galleria</span>
+        <h2 class="text-3xl font-serif font-bold text-white" data-i18n="vibe_title">Tunnelmia Kamomesta</h2>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        
-        <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-sm">
-          <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?q=80&w=600&auto=format&fit=crop" 
-               alt="Japanilainen ruoka" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-            <span class="text-white text-xs font-medium" data-i18n="gal_img1">Päivän Bento</span>
-          </div>
+        <div class="rounded-2xl overflow-hidden aspect-square border-2 border-white/20 shadow-md">
+          <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=600&auto=format&fit=crop" alt="Ramen" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
         </div>
-
-        <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-sm">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600&auto=format&fit=crop" 
-               alt="Ravintolasali" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-            <span class="text-white text-xs font-medium" data-i18n="gal_img2">Lämmin salitunnelma</span>
-          </div>
+        <div class="rounded-2xl overflow-hidden aspect-square border-2 border-white/20 shadow-md">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=600&auto=format&fit=crop" alt="Cafe atmosphere" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
         </div>
-
-        <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-sm">
-          <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=600&auto=format&fit=crop" 
-               alt="Japanilainen vihreä tee ja jälkiruoka" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-            <span class="text-white text-xs font-medium" data-i18n="gal_img3">Seremoniallinen Matcha</span>
-          </div>
+        <div class="rounded-2xl overflow-hidden aspect-square border-2 border-white/20 shadow-md">
+          <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=600&auto=format&fit=crop" alt="Onigiri" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
         </div>
-
-        <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-sm">
-          <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=600&auto=format&fit=crop" 
-               alt="Vastaleivotut korvapuustit" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-            <span class="text-white text-xs font-medium" data-i18n="gal_img4">Kuuluisat Korvapuustit</span>
-          </div>
+        <div class="rounded-2xl overflow-hidden aspect-square border-2 border-white/20 shadow-md">
+          <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=600&auto=format&fit=crop" alt="Cinnamon buns" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
         </div>
-
       </div>
-
     </div>
   </section>
 
-  <!-- ==================== RESERVATION SECTION ==================== -->
-  <section id="reservation" class="py-24 bg-kamome-ice relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- ==================== RESERVATION FORM ==================== -->
+  <section id="reservation" class="py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="bg-white rounded-3xl shadow-xl border border-kamome-softblue overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+      <div class="bg-brand-cream text-brand-charcoal rounded-3xl p-8 sm:p-12 shadow-2xl border border-white">
         
-        <!-- Left Banner / Info -->
-        <div class="lg:col-span-5 bg-kamome-dark text-white p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
-          <div class="absolute -bottom-10 -right-10 text-white/5 text-9xl font-serif select-none pointer-events-none">
-            かもめ
-          </div>
-
-          <div class="space-y-6 relative z-10">
-            <span class="text-xs font-bold uppercase tracking-widest text-kamome-softblue" data-i18n="res_info_tag">Varaa Elämys</span>
-            <h3 class="text-3xl font-serif font-bold text-white leading-snug" data-i18n="res_info_title">Varmista pöytäsi suositussa ravintolassamme</h3>
-            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed" data-i18n="res_info_desc">
-              Suosittelemme pöytävarauksen tekemistä etenkin ilta-aikoihin ja viikonloppuisin. Yli 8 hengen seurueille pyydämme ottamaan yhteyttä suoraan sähköpostitse tai puhelimitse.
-            </p>
-          </div>
-
-          <div class="space-y-4 pt-8 border-t border-gray-700 relative z-10 text-xs">
-            <div class="flex items-center gap-3">
-              <i class="fa-solid fa-phone text-kamome-accent text-sm"></i>
-              <span>+358 41 792 1340</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <i class="fa-solid fa-envelope text-kamome-accent text-sm"></i>
-              <span>info@kamome.fi</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <i class="fa-solid fa-clock text-kamome-accent text-sm"></i>
-              <span data-i18n="res_info_hours">Ma–Pe 11–21 | La 13–21 | Su Suljettu</span>
-            </div>
-          </div>
-
+        <div class="text-center space-y-2 mb-8">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#5DB9E4] block" data-i18n="res_tag">Pöytävaraus</span>
+          <h3 class="text-2xl sm:text-3xl font-serif font-bold text-brand-charcoal" data-i18n="res_h">Varaa pöytä Ravintola Kamomesta</h3>
+          <p class="text-xs sm:text-sm text-gray-600 max-w-md mx-auto" data-i18n="res_p">
+            Lähetä varauspyyntösi alla olevalla lomakkeella. Vahvistamme varauksen sähköpostitse.
+          </p>
         </div>
 
-        <!-- Right Form -->
-        <div class="lg:col-span-7 p-8 sm:p-12">
-          <form id="reservation-form" onsubmit="handleReservation(event)" class="space-y-5">
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <!-- Name -->
-              <div>
-                <label class="block text-xs font-semibold text-kamome-dark uppercase tracking-wider mb-1.5" data-i18n="form_name">Koko Nimi *</label>
-                <input type="text" required placeholder="Matti Meikäläinen" 
-                       class="w-full px-4 py-3 rounded-xl border border-kamome-softblue focus:border-kamome-accent focus:ring-1 focus:ring-kamome-accent outline-none text-sm transition-all bg-kamome-cream/30">
-              </div>
-
-              <!-- Phone -->
-              <div>
-                <label class="block text-xs font-semibold text-kamome-dark uppercase tracking-wider mb-1.5" data-i18n="form_phone">Puhelinnumero *</label>
-                <input type="tel" required placeholder="+358 40 123 4567" 
-                       class="w-full px-4 py-3 rounded-xl border border-kamome-softblue focus:border-kamome-accent focus:ring-1 focus:ring-kamome-accent outline-none text-sm transition-all bg-kamome-cream/30">
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <!-- Email -->
-              <div>
-                <label class="block text-xs font-semibold text-kamome-dark uppercase tracking-wider mb-1.5" data-i18n="form_email">Sähköposti *</label>
-                <input type="email" required placeholder="nimi@esimerkki.fi" 
-                       class="w-full px-4 py-3 rounded-xl border border-kamome-softblue focus:border-kamome-accent focus:ring-1 focus:ring-kamome-accent outline-none text-sm transition-all bg-kamome-cream/30">
-              </div>
-
-              <!-- Guests -->
-              <div>
-                <label class="block text-xs font-semibold text-kamome-dark uppercase tracking-wider mb-1.5" data-i18n="form_guests">Henkilömäärä *</label>
-                <select required class="w-full px-4 py-3 rounded-xl border border-kamome-softblue focus:border-kamome-accent focus:ring-1 focus:ring-kamome-accent outline-none text-sm transition-all bg-kamome-cream/30">
-                  <option value="1">1 henkilö</option>
-                  <option value="2" selected>2 henkilöä</option>
-                  <option value="3">3 henkilöä</option>
-                  <option value="4">4 henkilöä</option>
-                  <option value="5">5 henkilöä</option>
-                  <option value="6">6 henkilöä</option>
-                  <option value="7+">7+ henkilöä (otamme yhteyttä)</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <!-- Date -->
-              <div>
-                <label class="block text-xs font-semibold text-kamome-dark uppercase tracking-wider mb-1.5" data-i18n="form_date">Päivämäärä *</label>
-                <input type="date" required id="res-date"
-                       class="w-full px-4 py-3 rounded-xl border border-kamome-softblue focus:border-kamome-accent focus:ring-1 focus:ring-kamome-accent outline-none text-sm transition-all bg-kamome-cream/30">
-              </div>
-
-              <!-- Time -->
-              <div>
-                <label class="block text-xs font-semibold text-kamome-dark uppercase tracking-wider mb-1.5" data-i18n="form_time">Kellonaika *</label>
-                <select required class="w-full px-4 py-3 rounded-xl border border-kamome-softblue focus:border-kamome-accent focus:ring-1 focus:ring-kamome-accent outline-none text-sm transition-all bg-kamome-cream/30">
-                  <option value="11:30">11:30 (Lounas)</option>
-                  <option value="12:30">12:30 (Lounas)</option>
-                  <option value="13:30">13:30</option>
-                  <option value="16:00">16:00</option>
-                  <option value="17:30" selected>17:30</option>
-                  <option value="18:30">18:30</option>
-                  <option value="19:30">19:30</option>
-                  <option value="20:00">20:00</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Notes -->
+        <form id="res-form" onsubmit="submitBooking(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-semibold text-kamome-dark uppercase tracking-wider mb-1.5" data-i18n="form_notes">Erityistoiveet tai allergiat</label>
-              <textarea rows="3" placeholder="Ilmoita mahdolliset ruoka-aineallergiat tai toiveet pöytäpaikasta..." 
-                        class="w-full px-4 py-3 rounded-xl border border-kamome-softblue focus:border-kamome-accent focus:ring-1 focus:ring-kamome-accent outline-none text-sm transition-all bg-kamome-cream/30 resize-none"></textarea>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1" data-i18n="form_name">Nimi *</label>
+              <input type="text" required placeholder="Etunimi Sukunimi" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5DB9E4] outline-none text-sm bg-white">
             </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="w-full py-4 bg-kamome-accent hover:bg-kamome-accentDark text-white rounded-xl font-semibold text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2">
-              <i class="fa-regular fa-paper-plane"></i>
-              <span data-i18n="form_submit">Lähetä varauspyyntö</span>
-            </button>
-
-          </form>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==================== TESTIMONIALS SECTION ==================== -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
-        <span class="text-xs font-bold uppercase tracking-widest text-kamome-accent block" data-i18n="reviews_tag">Asiakkaidemme kokemuksia</span>
-        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-kamome-dark" data-i18n="reviews_title">Mitä vieraamme sanovat</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Review 1 -->
-        <div class="bg-kamome-ice p-8 rounded-2xl border border-kamome-softblue flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex text-amber-400 text-sm gap-1">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-sm text-kamome-dark italic leading-relaxed" data-i18n="rev1_text">
-              "Tunnelma oli täysin sama kuin elokuvassa Ruokala Lokki! Lohiateria ja misokeitto olivat taivaallisen hyviä, ja henkilökunnan ystävällisyys teki illasta unohtumattoman."
-            </p>
-          </div>
-          <div class="pt-6 mt-6 border-t border-kamome-softblue/60 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-kamome-softblue flex items-center justify-center font-bold text-kamome-accent text-xs">EK</div>
             <div>
-              <h5 class="text-xs font-bold text-kamome-dark">Elina Koskinen</h5>
-              <p class="text-[11px] text-kamome-muted">Helsinki, Google Reviews</p>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1" data-i18n="form_phone">Puhelin *</label>
+              <input type="tel" required placeholder="+358 40 123 4567" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5DB9E4] outline-none text-sm bg-white">
             </div>
           </div>
-        </div>
 
-        <!-- Review 2 -->
-        <div class="bg-kamome-ice p-8 rounded-2xl border border-kamome-softblue flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex text-amber-400 text-sm gap-1">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-sm text-kamome-dark italic leading-relaxed" data-i18n="rev2_text">
-              "Kaupungin paras tonkotsu-ramen ja taatusti autenttisin japanilainen maku. Korvapuusti matcha-teen kera oli täydellinen päätös lounaalle. Suuri suositus!"
-            </p>
-          </div>
-          <div class="pt-6 mt-6 border-t border-kamome-softblue/60 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-kamome-softblue flex items-center justify-center font-bold text-kamome-accent text-xs">KT</div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <h5 class="text-xs font-bold text-kamome-dark">Kenji Takahashi</h5>
-              <p class="text-[11px] text-kamome-muted">Tokio / Matkailija</p>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1" data-i18n="form_email">Sähköposti *</label>
+              <input type="email" required placeholder="nimi@osoite.fi" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5DB9E4] outline-none text-sm bg-white">
             </div>
-          </div>
-        </div>
-
-        <!-- Review 3 -->
-        <div class="bg-kamome-ice p-8 rounded-2xl border border-kamome-softblue flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex text-amber-400 text-sm gap-1">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-sm text-kamome-dark italic leading-relaxed" data-i18n="rev3_text">
-              "Rauhallinen ja tyylikäs miljöö Punavuoressa. Erinomaiset vegaanivaihtoehdot ja gyoza-nyytit olivat rapeita ja mehukkaita. Palaamme varmasti pian uudelleen."
-            </p>
-          </div>
-          <div class="pt-6 mt-6 border-t border-kamome-softblue/60 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-kamome-softblue flex items-center justify-center font-bold text-kamome-accent text-xs">SL</div>
             <div>
-              <h5 class="text-xs font-bold text-kamome-dark">Sofia Lindqvist</h5>
-              <p class="text-[11px] text-kamome-muted">Espoo, Tripadvisor</p>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1" data-i18n="form_people">Henkilömäärä *</label>
+              <select required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5DB9E4] outline-none text-sm bg-white">
+                <option value="1">1 henkilö</option>
+                <option value="2" selected>2 henkilöä</option>
+                <option value="3">3 henkilöä</option>
+                <option value="4">4 henkilöä</option>
+                <option value="5+">5+ henkilöä</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1" data-i18n="form_date">Päivä & Aika *</label>
+              <input type="datetime-local" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5DB9E4] outline-none text-sm bg-white">
             </div>
           </div>
-        </div>
 
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==================== LOCATION & CONTACT SECTION ==================== -->
-  <section id="contact" class="py-24 bg-kamome-cream border-t border-kamome-softblue">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Contact Information & Hours -->
-        <div class="lg:col-span-5 space-y-8">
           <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-kamome-accent block mb-2" data-i18n="contact_tag">Tervetuloa käymään</span>
-            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-kamome-dark" data-i18n="contact_title">Aukioloajat & Sijainti</h2>
-            <p class="text-sm text-kamome-muted mt-2" data-i18n="contact_desc">Löydät meidät Helsingin tunnelmallisesta Punavuoresta, lyhyen kävelymatkan päässä Johanneksenkirkolta.</p>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1" data-i18n="form_notes">Lisätoiveet / Allergiat</label>
+            <textarea rows="2" placeholder="Mahdolliset ruoka-aineallergiat..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5DB9E4] outline-none text-sm bg-white resize-none"></textarea>
           </div>
 
-          <!-- Opening Hours Table -->
-          <div class="bg-white p-6 rounded-2xl border border-kamome-softblue shadow-sm space-y-3">
-            <h3 class="text-xs font-bold text-kamome-dark uppercase tracking-wider flex items-center gap-2 mb-4">
-              <i class="fa-regular fa-clock text-kamome-accent"></i>
-              <span data-i18n="hours_title">Aukioloajat</span>
-            </h3>
-            
-            <div class="flex justify-between text-xs py-1.5 border-b border-gray-100">
-              <span class="text-kamome-muted" data-i18n="hours_mon_fri">Maanantai – Perjantai</span>
-              <span class="font-semibold text-kamome-dark">11:00 – 21:00</span>
-            </div>
-            <div class="flex justify-between text-xs py-1.5 border-b border-gray-100">
-              <span class="text-kamome-muted" data-i18n="hours_sat">Lauantai</span>
-              <span class="font-semibold text-kamome-dark">13:00 – 21:00</span>
-            </div>
-            <div class="flex justify-between text-xs py-1.5">
-              <span class="text-kamome-muted" data-i18n="hours_sun">Sunnuntai & Pyhät</span>
-              <span class="font-semibold text-red-600" data-i18n="hours_closed">Suljettu</span>
-            </div>
-          </div>
+          <button type="submit" class="w-full py-4 bg-[#5DB9E4] hover:bg-brand-blueDark text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-colors shadow">
+            <span data-i18n="form_submit">Lähetä varaus</span>
+          </button>
+        </form>
 
-          <!-- Direct Contacts -->
-          <div class="space-y-4">
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-kamome-softblue flex items-center justify-center text-kamome-accent flex-shrink-0 mt-1">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
-              <div>
-                <h4 class="text-xs font-bold text-kamome-dark uppercase tracking-wider" data-i18n="contact_addr_title">Osoite</h4>
-                <p class="text-sm text-kamome-muted">Pursimiehenkatu 12, 00150 Helsinki, Finland</p>
-                <a href="https://maps.app.goo.gl/1wvCxoY9boUmLPtM9" target="_blank" rel="noopener" class="text-xs font-semibold text-kamome-accent hover:underline mt-1 inline-block" data-i18n="contact_open_gmaps">
-                  Avaa Google Mapsissa →
-                </a>
-              </div>
-            </div>
+      </div>
 
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-kamome-softblue flex items-center justify-center text-kamome-accent flex-shrink-0 mt-1">
-                <i class="fa-solid fa-phone"></i>
-              </div>
-              <div>
-                <h4 class="text-xs font-bold text-kamome-dark uppercase tracking-wider" data-i18n="contact_phone_title">Puhelin & Varaukset</h4>
-                <p class="text-sm text-kamome-muted">+358 41 792 1340</p>
-              </div>
-            </div>
+    </div>
+  </section>
 
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-kamome-softblue flex items-center justify-center text-kamome-accent flex-shrink-0 mt-1">
-                <i class="fa-solid fa-envelope"></i>
-              </div>
-              <div>
-                <h4 class="text-xs font-bold text-kamome-dark uppercase tracking-wider" data-i18n="contact_email_title">Sähköposti</h4>
-                <p class="text-sm text-kamome-muted">info@kamome.fi</p>
-              </div>
+  <!-- ==================== CONTACT & MAP ==================== -->
+  <section id="contact" class="py-20 bg-black/10 border-t border-white/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-cream block" data-i18n="contact_tag">Tiedot</span>
+          <h2 class="text-3xl font-serif font-bold text-white" data-i18n="contact_h">Aukioloajat & Käyntiosoite</h2>
+          
+          <div class="bg-white/15 p-6 rounded-2xl border border-white/25 space-y-3 text-xs">
+            <div class="flex justify-between border-b border-white/10 pb-2">
+              <span class="text-white/80" data-i18n="time_mf">Maanantai – Perjantai</span>
+              <span class="font-bold text-brand-cream">11:00 – 21:00</span>
+            </div>
+            <div class="flex justify-between border-b border-white/10 pb-2">
+              <span class="text-white/80" data-i18n="time_sat">Lauantai</span>
+              <span class="font-bold text-brand-cream">13:00 – 21:00</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-white/80" data-i18n="time_sun">Sunnuntai</span>
+              <span class="font-bold text-red-200" data-i18n="time_closed">Suljettu</span>
             </div>
           </div>
 
+          <div class="space-y-3 text-xs">
+            <p class="flex items-center gap-3 text-white">
+              <i class="fa-solid fa-location-dot text-brand-cream text-base w-5"></i>
+              <span>Pursimiehenkatu 12, 00150 Helsinki</span>
+            </p>
+            <p class="flex items-center gap-3 text-white">
+              <i class="fa-solid fa-phone text-brand-cream text-base w-5"></i>
+              <span>+358 41 792 1340</span>
+            </p>
+            <p class="flex items-center gap-3 text-white">
+              <i class="fa-solid fa-envelope text-brand-cream text-base w-5"></i>
+              <span>info@kamome.fi</span>
+            </p>
+            <p class="flex items-center gap-3 text-white">
+              <i class="fa-brands fa-instagram text-brand-cream text-base w-5"></i>
+              <a href="https://www.instagram.com/ravintolakamome/" target="_blank" class="hover:underline">@ravintolakamome</a>
+            </p>
+          </div>
+
+          <div class="pt-2">
+            <a href="https://maps.app.goo.gl/1wvCxoY9boUmLPtM9" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-3 bg-brand-cream text-brand-charcoal rounded-full text-xs font-bold uppercase tracking-wider hover:bg-white transition-colors">
+              <span data-i18n="open_gmaps">Avaa Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
         </div>
 
-        <!-- Google Maps View -->
         <div class="lg:col-span-7">
-          <div class="rounded-3xl overflow-hidden shadow-xl border border-kamome-softblue h-[420px] relative bg-kamome-softblue">
+          <div class="h-80 sm:h-96 rounded-3xl overflow-hidden border-2 border-white/30 shadow-xl bg-brand-blueDark">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1985.3475730303866!2d24.9388373!3d60.1585806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920bc8bb0dc949%3A0xe54bb3f7a42125be!2sPursimiehenkatu%2012%2C%2000150%20Helsinki!5e0!3m2!1sfi!2sfi!4v1710000000000!5m2!1sfi!2sfi" 
               width="100%" 
               height="100%" 
               style="border:0;" 
               allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Ravintola Kamome Google Kartta">
+              loading="lazy"
+              title="Google Maps Location">
             </iframe>
           </div>
         </div>
 
       </div>
-
     </div>
   </section>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="bg-kamome-dark text-white pt-16 pb-12 border-t border-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
-        
-        <!-- Col 1: Brand -->
-        <div class="space-y-4 md:col-span-1">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-kamome-accent flex items-center justify-center text-white">
-              <i class="fa-solid fa-dove"></i>
-            </div>
-            <span class="font-serif font-bold text-xl tracking-wider">KAMOME</span>
-          </div>
-          <p class="text-xs text-gray-400 leading-relaxed" data-i18n="footer_bio">
-            Aitoa japanilaista ravintolatunnelmaa Helsingissä vuodesta toiseen. Lämpimästi tervetuloa nauttimaan.
-          </p>
-          <!-- Socials -->
-          <div class="flex items-center gap-3 pt-2">
-            <a href="https://instagram.com" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-kamome-accent text-gray-300 hover:text-white flex items-center justify-center text-xs transition-colors" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-kamome-accent text-gray-300 hover:text-white flex items-center justify-center text-xs transition-colors" aria-label="Facebook">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://maps.app.goo.gl/1wvCxoY9boUmLPtM9" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-kamome-accent text-gray-300 hover:text-white flex items-center justify-center text-xs transition-colors" aria-label="Google Maps">
-              <i class="fa-solid fa-location-dot"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Col 2: Quick Links -->
-        <div>
-          <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-300 mb-4" data-i18n="footer_nav_title">Pikalinkit</h4>
-          <ul class="space-y-2 text-xs text-gray-400">
-            <li><a href="#about" class="hover:text-white transition-colors" data-i18n="nav_about">Meistä</a></li>
-            <li><a href="#menu" class="hover:text-white transition-colors" data-i18n="nav_menu">Ruokalista</a></li>
-            <li><a href="#gallery" class="hover:text-white transition-colors" data-i18n="nav_gallery">Tunnelma</a></li>
-            <li><a href="#reservation" class="hover:text-white transition-colors" data-i18n="nav_reserve">Pöytävaraus</a></li>
-            <li><a href="#contact" class="hover:text-white transition-colors" data-i18n="nav_contact">Yhteystiedot</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Hours Summary -->
-        <div>
-          <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-300 mb-4" data-i18n="footer_hours_title">Aukioloajat</h4>
-          <ul class="space-y-2 text-xs text-gray-400">
-            <li>Ma–Pe: 11:00 – 21:00</li>
-            <li>La: 13:00 – 21:00</li>
-            <li class="text-red-400" data-i18n="hours_sun_closed">Su: Suljettu</li>
-            <li class="text-gray-500 pt-2 text-[11px]" data-i18n="footer_kitchen_closes">Keittiö sulkeutuu 30 min ennen sulkemisaikaa.</li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Location Pin -->
-        <div>
-          <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-300 mb-4" data-i18n="footer_loc_title">Käyntiosoite</h4>
-          <p class="text-xs text-gray-400 leading-relaxed">
-            Ravintola Kamome<br>
-            Pursimiehenkatu 12<br>
-            00150 Helsinki, Finland
-          </p>
-          <p class="text-xs text-kamome-softblue mt-3 font-semibold">
-            +358 41 792 1340
-          </p>
-        </div>
-
+  <footer class="py-8 bg-brand-charcoal text-white text-xs border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="font-serif font-bold text-brand-cream text-sm">Ravintola KAMOME</span>
+        <span class="text-white/40">|</span>
+        <span class="text-white/70">Helsinki</span>
       </div>
-
-      <!-- Copyright -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-500 gap-4">
-        <p>&copy; <span id="cur-year"></span> Ravintola Kamome (Kamome Project Oy). All rights reserved.</p>
-        <p class="flex items-center gap-1">
-          <span>Crafted with Japanese care & Nordic warmth</span>
-        </p>
-      </div>
-
+      <p class="text-white/60">&copy; <span id="year"></span> Ravintola Kamome. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- ==================== RESERVATION TOAST MODAL ==================== -->
-  <div id="toast-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 transition-opacity duration-300">
-    <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl transform transition-transform scale-95 duration-300 space-y-4">
-      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-2xl">
+  <!-- ==================== TOAST MODAL ==================== -->
+  <div id="toast" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center hidden p-4">
+    <div class="bg-brand-cream text-brand-charcoal p-6 rounded-2xl max-w-sm w-full text-center space-y-3 shadow-2xl">
+      <div class="w-12 h-12 rounded-full bg-[#5DB9E4] text-white flex items-center justify-center mx-auto text-xl">
         <i class="fa-solid fa-check"></i>
       </div>
-      <h3 class="text-xl font-serif font-bold text-kamome-dark" data-i18n="toast_title">Varauspyyntö vastaanotettu!</h3>
-      <p class="text-xs sm:text-sm text-kamome-muted leading-relaxed" data-i18n="toast_desc">
-        Kiitos varauksestasi. Olemme vastaanottaneet tiedot ja lähetämme vahvistuksen antamaasi sähköpostiin mahdollisimman pian. Lämpimästi tervetuloa!
-      </p>
-      <button onclick="closeModal()" class="w-full py-3 bg-kamome-accent hover:bg-kamome-accentDark text-white rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors">
-        OK
-      </button>
+      <h4 class="font-serif font-bold text-lg" data-i18n="toast_t">Kiitos varauksesta!</h4>
+      <p class="text-xs text-gray-700" data-i18n="toast_d">Varauspyyntösi on vastaanotettu. Vahvistamme pöydän pikimmiten sähköpostiisi.</p>
+      <button onclick="closeModal()" class="w-full py-2.5 bg-[#5DB9E4] text-white font-bold text-xs uppercase rounded-xl">OK</button>
     </div>
   </div>
 
-  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <!-- ==================== JAVASCRIPT ==================== -->
   <script>
-    // --- 1. MULTILINGUAL DICTIONARY (FI / EN / RU) ---
-    const translations = {
+    // i18n Dictionary
+    const i18n = {
       fi: {
-        nav_about: "Meistä",
+        nav_about: "Konsepti",
         nav_menu: "Ruokalista",
-        nav_gallery: "Tunnelma",
-        nav_reserve: "Pöytävaraus",
+        nav_vibe: "Tunnelma",
+        nav_book: "Pöytävaraus",
         nav_contact: "Yhteystiedot",
-        nav_btn_book: "Varaa pöytä",
-        hero_badge: "Avoinna tänään 11:00 – 21:00 • Pursimiehenkatu 12",
-        hero_title_1: "Japanilaisen sielukasta",
-        hero_title_2: "ruokaa Helsingin sydämessä",
-        hero_subtitle: "Ruokala Lokki -elokuvasta syntynyt tarina jatkuu. Yhdistämme aidot japanilaiset perinteet, huolella valitut pohjoismaiset raaka-aineet ja levollisen kotoisan tunnelman.",
-        hero_cta_menu: "Tutustu ruokalistaan",
-        hero_cta_reserve: "Varaa pöytä",
-        hero_stat_1: "Aito reseptiikka",
-        hero_stat_2: "Kulttielokuvan lokaatio",
-        hero_stat_3: "Tyytyväistä ruokailijaa",
-        hero_float_title: "Lounas & Illallinen",
-        hero_float_desc: "Ramen, Donburi & Matcha",
-        hero_float_film: "Kamome Shokudō",
-        about_tag: "Tarinamme & Filosofiamme",
-        about_heading: "Paikka, jossa rauhaisa pohjoismainen estetiikka kohtaa japanilaisen lämmön",
-        about_p1: "Ravintola Kamome nousi maailmanlaajuiseen tietoisuuteen legendaarisen japanilaisen elokuvan Ruokala Lokki (Kamome Shokudō, 2006) tapahtumapaikkana. Tänä päivänä jatkamme perinnettä tarjoamalla aitoa, käsintehtyä japanilaista kotiruokaa ja modernia izakaya-tunnelmaa Helsingin sydämessä.",
-        about_p2: "Uskomme sesongin tuoreuteen: mehevä lohi, laadukas dashi-liemi, vastakeitetyt onigiri-riisipallot ja rapea tonkatsu valmistetaan alusta alkaen keittiömme japanilaisella pieteetillä ja suomalaisella rehellisyydellä.",
-        about_val1_t: "Kausiluontoisuus & Laatu",
-        about_val1_d: "Suomalainen kala yhdistettynä aitoihin japanilaisiin soijoihin ja misoihin.",
-        about_val2_t: "Kotoisa Omotenashi",
-        about_val2_d: "Japanilainen vieraanvaraisuus, jossa jokainen asiakas toivotetaan tervetulleeksi.",
-        about_link: "Tutustu tarkemmin annoksiimme",
-        menu_subtitle: "Kulinaariset elämykset",
-        menu_title: "Ravintola Kamomen Ruokalista",
-        menu_desc: "Aitoja makuja, tuoreita raaka-aineita ja lämmittävää sielunruokaa. Kaikki annokset valmistetaan tilauksesta.",
-        menu_tab_mains: "Pääruoat & Donburi",
-        menu_tab_ramen: "Ramen & Gyoza",
-        menu_tab_sides: "Izakaya & Onigiri",
-        menu_tab_drinks: "Juomat & Jälkiruoat",
-        menu_takeaway_title: "Haluatko tilata mukaan kotiin tai toimistolle?",
-        menu_takeaway_desc: "Tarjoamme noutoruokaa suoraan ravintolasta sekä kotiinkuljetusta suosituimpien kumppaneiden kautta.",
-        menu_call_order: "Soita: 041 792 1340",
-        gallery_subtitle: "Visuaalinen matka",
-        gallery_title: "Ruokala Lokin Tunnelmaa",
-        gallery_desc: "Pohjoismaisen vaaleaa puuta, tuoreiden korvapuustien ja miso-keiton tuoksua sekä rentoa helsinkiläistä tunnelmaa.",
-        gal_img1: "Päivän Bento",
-        gal_img2: "Lämmin salitunnelma",
-        gal_img3: "Seremoniallinen Matcha",
-        gal_img4: "Kuuluisat Korvapuustit",
-        res_info_tag: "Varaa Elämys",
-        res_info_title: "Varmista pöytäsi suositussa ravintolassamme",
-        res_info_desc: "Suosittelemme pöytävarauksen tekemistä etenkin ilta-aikoihin ja viikonloppuisin. Yli 8 hengen seurueille pyydämme ottamaan yhteyttä suoraan sähköpostitse tai puhelimitse.",
-        res_info_hours: "Ma–Pe 11–21 | La 13–21 | Su Suljettu",
-        form_name: "Koko Nimi *",
-        form_phone: "Puhelinnumero *",
+        nav_cta: "Varaa pöytä",
+        hero_status: "Aukioloajat: Ma–Pe 11:00–21:00 • La 13:00–21:00",
+        hero_h1_1: "Japanilainen keittiö.",
+        hero_h1_2: "Pohjoismainen rauha.",
+        hero_intro: "Aitoa japanilaista kotiruokaa, lämmintä ramenia, rapeaa tonkatsua sekä tuoreita leivonnaisia Helsingissä. Tervetuloa nauttimaan konstailemattomasta ruoasta ja levollisesta tunnelmasta.",
+        hero_btn_menu: "Katso ruokalista",
+        fact_1: "Japanilainen maku",
+        fact_2: "Päivittäin valmistettu",
+        fact_3: "Pursimiehenkatu 12",
+        badge_special: "Lounas & Illallinen",
+        about_tag: "Ruokafilosofia",
+        about_title: "Yksinkertaista, huolella tehtyä japanilaista ruokaa",
+        about_desc: "Ravintola Kamome yhdistää puhtaat suomalaiset raaka-aineet – kuten lohen ja kauden kasvikset – perinteisiin japanilaisiin makuihin, liemiin ja valmistustapoihin. Ei turhaa kikkailua, vaan aitoja ja rehellisiä makuja.",
+        f1_title: "Tuore Lohta & Kalaa",
+        f1_desc: "Paistettua lohta teriyakilla, käsin puristettuja onigireja ja huolella maustettuja lisukkeita.",
+        f2_title: "Haudutetut Liemet",
+        f2_desc: "Hitaasti valmistettu dashi- ja ramen-liemi, täyteläinen miso sekä käsintehdyt gyoza-nyytit.",
+        f3_title: "Korvapuusti & Matcha",
+        f3_desc: "Pehmeät uunituoreet kanelipullat ja aito japanilainen Uji-alueen seremoniallinen vihreä tee.",
+        menu_tag: "Ruokalista",
+        menu_title: "Kamomen Annokset",
+        menu_sub: "Valitse kategoria ja tutustu suosikkeihimme.",
+        cat_mains: "Pääruoat & Teishoku",
+        cat_ramen: "Ramen & Gyoza",
+        cat_onigiri: "Onigiri & Pikkupurtavat",
+        cat_sweets: "Makeat & Juomat",
+        takeaway_t: "Nouto & Kotiinkuljetus",
+        takeaway_d: "Tilaa ennakkoon puhelimitse tai tilaa kotiin Wolt-palvelun kautta.",
+        vibe_tag: "Galleria",
+        vibe_title: "Tunnelmia Kamomesta",
+        res_tag: "Pöytävaraus",
+        res_h: "Varaa pöytä Ravintola Kamomesta",
+        res_p: "Lähetä varauspyyntösi alla olevalla lomakkeella. Vahvistamme varauksen sähköpostitse.",
+        form_name: "Nimi *",
+        form_phone: "Puhelin *",
         form_email: "Sähköposti *",
-        form_guests: "Henkilömäärä *",
-        form_date: "Päivämäärä *",
-        form_time: "Kellonaika *",
-        form_notes: "Erityistoiveet tai allergiat",
-        form_submit: "Lähetä varauspyyntö",
-        reviews_tag: "Asiakkaidemme kokemuksia",
-        reviews_title: "Mitä vieraamme sanovat",
-        rev1_text: "\"Tunnelma oli täysin sama kuin elokuvassa Ruokala Lokki! Lohiateria ja misokeitto olivat taivaallisen hyviä, ja henkilökunnan ystävällisyys teki illasta unohtumattoman.\"",
-        rev2_text: "\"Kaupungin paras tonkotsu-ramen ja taatusti autenttisin japanilainen maku. Korvapuusti matcha-teen kera oli täydellinen päätös lounaalle. Suuri suositus!\"",
-        rev3_text: "\"Rauhallinen ja tyylikäs miljöö Punavuoressa. Erinomaiset vegaanivaihtoehdot ja gyoza-nyytit olivat rapeita ja mehukkaita. Palaamme varmasti pian uudelleen.\"",
-        contact_tag: "Tervetuloa käymään",
-        contact_title: "Aukioloajat & Sijainti",
-        contact_desc: "Löydät meidät Helsingin tunnelmallisesta Punavuoresta, lyhyen kävelymatkan päässä Johanneksenkirkolta.",
-        hours_title: "Aukioloajat",
-        hours_mon_fri: "Maanantai – Perjantai",
-        hours_sat: "Lauantai",
-        hours_sun: "Sunnuntai & Pyhät",
-        hours_closed: "Suljettu",
-        contact_addr_title: "Osoite",
-        contact_open_gmaps: "Avaa Google Mapsissa →",
-        contact_phone_title: "Puhelin & Varaukset",
-        contact_email_title: "Sähköposti",
-        footer_bio: "Aitoa japanilaista ravintolatunnelmaa Helsingissä vuodesta toiseen. Lämpimästi tervetuloa nauttimaan.",
-        footer_nav_title: "Pikalinkit",
-        footer_hours_title: "Aukioloajat",
-        hours_sun_closed: "Su: Suljettu",
-        footer_kitchen_closes: "Keittiö sulkeutuu 30 min ennen sulkemisaikaa.",
-        footer_loc_title: "Käyntiosoite",
-        toast_title: "Varauspyyntö vastaanotettu!",
-        toast_desc: "Kiitos varauksestasi! Olemme vastaanottaneet varauspyyntösi ja lähetämme vahvistuksen sähköpostiisi mahdollisimman pian."
+        form_people: "Henkilömäärä *",
+        form_date: "Päivä & Aika *",
+        form_notes: "Lisätoiveet / Allergiat",
+        form_submit: "Lähetä varaus",
+        contact_tag: "Tiedot",
+        contact_h: "Aukioloajat & Käyntiosoite",
+        time_mf: "Maanantai – Perjantai",
+        time_sat: "Lauantai",
+        time_sun: "Sunnuntai",
+        time_closed: "Suljettu",
+        open_gmaps: "Avaa Google Maps",
+        toast_t: "Kiitos varauksesta!",
+        toast_d: "Varauspyyntösi on vastaanotettu. Vahvistamme pöydän pikimmiten sähköpostiisi."
       },
       en: {
-        nav_about: "About Us",
+        nav_about: "Concept",
         nav_menu: "Menu",
-        nav_gallery: "Vibe",
-        nav_reserve: "Reservations",
+        nav_vibe: "Atmosphere",
+        nav_book: "Reservations",
         nav_contact: "Contact",
-        nav_btn_book: "Book a Table",
-        hero_badge: "Open Today 11:00 – 21:00 • Pursimiehenkatu 12",
-        hero_title_1: "Soulful Japanese Dining",
-        hero_title_2: "in the Heart of Helsinki",
-        hero_subtitle: "The story inspired by the movie Kamome Diner continues. We blend authentic Japanese culinary traditions, pristine Nordic ingredients, and a warm, tranquil ambiance.",
-        hero_cta_menu: "Explore Menu",
-        hero_cta_reserve: "Book a Table",
-        hero_stat_1: "Authentic Recipes",
-        hero_stat_2: "Iconic Movie Location",
-        hero_stat_3: "Happy Diners",
-        hero_float_title: "Lunch & Dinner",
-        hero_float_desc: "Ramen, Donburi & Matcha",
-        hero_float_film: "Kamome Shokudō",
-        about_tag: "Our Story & Philosophy",
-        about_heading: "Where Nordic Calm Meets Gentle Japanese Hospitality",
-        about_p1: "Ravintola Kamome gained worldwide fame as the principal filming setting of the beloved Japanese film Kamome Diner (2006). Today, we keep this culinary spirit alive by offering comforting Japanese soul food and an authentic izakaya experience in Helsinki.",
-        about_p2: "We celebrate freshness: succulent Nordic salmon, slow-simmered dashi stock, warm hand-pressed onigiri, and crisp pork tonkatsu prepared with deep Japanese mastery.",
-        about_val1_t: "Seasonality & Quality",
-        about_val1_d: "Fresh Nordic seafood paired with artisanal Japanese shoyu and miso.",
-        about_val2_t: "Omotenashi Hospitality",
-        about_val2_d: "Heartfelt Japanese hospitality where every guest is welcomed as family.",
-        about_link: "Discover our dishes",
-        menu_subtitle: "Culinary Highlights",
-        menu_title: "Ravintola Kamome Menu",
-        menu_desc: "Authentic flavors, nourishing soul food, and comforting Japanese classics made fresh to order.",
-        menu_tab_mains: "Mains & Donburi",
-        menu_tab_ramen: "Ramen & Gyoza",
-        menu_tab_sides: "Izakaya & Onigiri",
-        menu_tab_drinks: "Drinks & Desserts",
-        menu_takeaway_title: "Craving Kamome at home or the office?",
-        menu_takeaway_desc: "We offer convenient takeaway directly at the restaurant as well as fast courier delivery via Wolt.",
-        menu_call_order: "Call: 041 792 1340",
-        gallery_subtitle: "Atmosphere",
-        gallery_title: "The Kamome Experience",
-        gallery_desc: "Natural blond wood, the comforting aroma of fresh cinnamon rolls and miso broth, and Helsinki's serene charm.",
-        gal_img1: "Daily Bento",
-        gal_img2: "Warm Dining Room",
-        gal_img3: "Ceremonial Matcha",
-        gal_img4: "Famous Cinnamon Buns",
-        res_info_tag: "Reserve a Table",
-        res_info_title: "Secure your table at our beloved restaurant",
-        res_info_desc: "We highly recommend booking in advance, particularly for dinner and Saturday visits. For groups larger than 8 guests, please reach out via email or phone.",
-        res_info_hours: "Mon–Fri 11–21 | Sat 13–21 | Sun Closed",
-        form_name: "Full Name *",
-        form_phone: "Phone Number *",
-        form_email: "Email Address *",
-        form_guests: "Party Size *",
-        form_date: "Date *",
-        form_time: "Time *",
-        form_notes: "Special Requests or Allergies",
-        form_submit: "Send Reservation Request",
-        reviews_tag: "Guest Reviews",
-        reviews_title: "What Our Guests Say",
-        rev1_text: "\"The atmosphere felt exactly like being inside the Kamome Diner film! The salmon set and miso soup were deeply soothing, and service was so kind.\"",
-        rev2_text: "\"Best authentic ramen broth in town! The handmade cinnamon bun with hot green tea is a must-try. A true culinary gem in Helsinki.\"",
-        rev3_text: "\"Cozy, peaceful Nordic-Japanese aesthetic. Excellent vegan ramen and crisp gyoza dumplings. Will return regularly!\"",
-        contact_tag: "Visit Us",
-        contact_title: "Opening Hours & Location",
-        contact_desc: "Conveniently located in Helsinki's charming Punavuori district, just a short walk from St. John's Church.",
-        hours_title: "Opening Hours",
-        hours_mon_fri: "Monday – Friday",
-        hours_sat: "Saturday",
-        hours_sun: "Sunday & Holidays",
-        hours_closed: "Closed",
-        contact_addr_title: "Address",
-        contact_open_gmaps: "Open in Google Maps →",
-        contact_phone_title: "Phone & Reservations",
-        contact_email_title: "Email",
-        footer_bio: "Authentic Japanese comfort dining in Helsinki. We warmly look forward to welcoming you.",
-        footer_nav_title: "Quick Links",
-        footer_hours_title: "Opening Hours",
-        hours_sun_closed: "Sun: Closed",
-        footer_kitchen_closes: "Kitchen closes 30 minutes before closing time.",
-        footer_loc_title: "Our Location",
-        toast_title: "Reservation Received!",
-        toast_desc: "Thank you! We have received your booking request and will confirm it to your email address shortly."
+        nav_cta: "Book Table",
+        hero_status: "Hours: Mon–Fri 11:00–21:00 • Sat 13:00–21:00",
+        hero_h1_1: "Japanese Kitchen.",
+        hero_h1_2: "Nordic Serenity.",
+        hero_intro: "Authentic Japanese home cooking, comforting ramen bowls, crisp tonkatsu, and freshly baked pastries in Helsinki. Experience honest flavors and warm hospitality.",
+        hero_btn_menu: "Explore Menu",
+        fact_1: "Authentic Flavor",
+        fact_2: "Fresh Daily",
+        fact_3: "Pursimiehenkatu 12",
+        badge_special: "Lunch & Dinner",
+        about_tag: "Philosophy",
+        about_title: "Simple, Heartfelt Japanese Cooking",
+        about_desc: "Ravintola Kamome pairs pristine Finnish ingredients—fresh salmon, crisp seasonal vegetables—with authentic Japanese seasonings, dashi broth, and artisanal care.",
+        f1_title: "Nordic Salmon & Fish",
+        f1_desc: "Seared teriyaki salmon, freshly pressed onigiri rice balls, and delicate Japanese side dishes.",
+        f2_title: "Slow-simmered Broths",
+        f2_desc: "Rich dashi and ramen broths, creamy miso soup, and pan-crisped handmade gyoza dumplings.",
+        f3_title: "Cinnamon Buns & Matcha",
+        f3_desc: "Fluffy freshly baked Finnish korvapuusti buns paired with premium ceremonial Uji matcha tea.",
+        menu_tag: "Menu",
+        menu_title: "Kamome Classics",
+        menu_sub: "Select a category to explore our dishes.",
+        cat_mains: "Mains & Teishoku",
+        cat_ramen: "Ramen & Gyoza",
+        cat_onigiri: "Onigiri & Bites",
+        cat_sweets: "Sweets & Drinks",
+        takeaway_t: "Takeaway & Wolt Delivery",
+        takeaway_d: "Order ahead by phone or get direct doorstep delivery via the Wolt app.",
+        vibe_tag: "Atmosphere",
+        vibe_title: "Inside Kamome",
+        res_tag: "Reservations",
+        res_h: "Reserve Your Table",
+        res_p: "Send your reservation details below. We will confirm your table promptly by email.",
+        form_name: "Name *",
+        form_phone: "Phone *",
+        form_email: "Email *",
+        form_people: "Party Size *",
+        form_date: "Date & Time *",
+        form_notes: "Special Requests / Allergies",
+        form_submit: "Submit Reservation",
+        contact_tag: "Info",
+        contact_h: "Opening Hours & Address",
+        time_mf: "Monday – Friday",
+        time_sat: "Saturday",
+        time_sun: "Sunday",
+        time_closed: "Closed",
+        open_gmaps: "Open Google Maps",
+        toast_t: "Reservation Received!",
+        toast_d: "Thank you! We have received your booking request and will confirm it shortly via email."
       },
       ru: {
-        nav_about: "О нас",
+        nav_about: "Концепция",
         nav_menu: "Меню",
-        nav_gallery: "Атмосфера",
-        nav_reserve: "Бронь стола",
+        nav_vibe: "Атмосфера",
+        nav_book: "Бронь",
         nav_contact: "Контакты",
-        nav_btn_book: "Забронировать",
-        hero_badge: "Сегодня открыты 11:00 – 21:00 • Pursimiehenkatu 12",
-        hero_title_1: "Душевная японская кухня",
-        hero_title_2: "в самом сердце Хельсинки",
-        hero_subtitle: "История, вдохновленная фильмом «Чайка» (Kamome Diner), продолжается. Аутентичные японские рецепты, северная свежесть и эстетика теплого уюта.",
-        hero_cta_menu: "Смотреть меню",
-        hero_cta_reserve: "Забронировать стол",
-        hero_stat_1: "Аутентичные рецепты",
-        hero_stat_2: "Место съемок кино",
-        hero_stat_3: "Довольных гостей",
-        hero_float_title: "Обед и Ужин",
-        hero_float_desc: "Рамен, Донбури и Матча",
-        hero_float_film: "Kamome Shokudō",
-        about_tag: "Наша история и философия",
-        about_heading: "Где северный покой встречается с искренней японской заботой",
-        about_p1: "Ресторанчик Kamome обрел мировую популярность как место съемок культовой японской драмы «Чайка» (Kamome Shokudō, 2006). Сегодня мы бережно храним эти традиции, готовя искреннюю домашнюю еду и передавая атмосферу токийской идзакаи.",
-        about_p2: "Мы отдаем дань чистым вкусам: свежайший северный лосось, насыщенный бульон даси, теплые онигири и хрустящий тонкацу готовятся вручную с японской скрупулезностью и финским качеством.",
-        about_val1_t: "Сезонность и свежесть",
-        about_val1_d: "Финская отборная рыба и аутентичные соусы и мисо прямо из Японии.",
-        about_val2_t: "Философия Омотенаси",
-        about_val2_d: "Искреннее японское гостеприимство, где каждый гость чувствует себя как дома.",
-        about_link: "Познакомиться с нашими блюдами",
-        menu_subtitle: "Гастрономическая карта",
-        menu_title: "Меню Ravintola Kamome",
-        menu_desc: "Традиционная японская классика, согревающие бульоны и свежайшие блюда, приготовленные на заказ.",
-        menu_tab_mains: "Основные & Донбури",
-        menu_tab_ramen: "Рамен & Гёдза",
-        menu_tab_sides: "Идзакая & Онигири",
-        menu_tab_drinks: "Напитки & Десерты",
-        menu_takeaway_title: "Хотите заказать блюда домой или в офис?",
-        menu_takeaway_desc: "Быстрый самовывоз прямо из ресторана, а также доставка любимых блюд через Wolt.",
-        menu_call_order: "Заказ: 041 792 1340",
-        gallery_subtitle: "Визуальная эстетика",
-        gallery_title: "Атмосфера «Ruokala Lokki»",
-        gallery_desc: "Светлое натуральное дерево, манящий запах свежих булочек с корицей и умиротворенная атмосфера Пунавуори.",
-        gal_img1: "Дневной Бенто",
-        gal_img2: "Уютный зал",
-        gal_img3: "Церемониальная Матча",
-        gal_img4: "Знаменитые Korvapuusti",
-        res_info_tag: "Бронирование",
-        res_info_title: "Забронируйте столик в любимом заведении",
-        res_info_desc: "Рекомендуем бронировать столик заранее, особенно на ужин и в субботу. Для компаний более 8 человек просим связаться по телефону или почте.",
-        res_info_hours: "Пн–Пт 11–21 | Сб 13–21 | Вс Выходной",
-        form_name: "Ваше Имя *",
-        form_phone: "Номер телефона *",
-        form_email: "Электронная почта *",
-        form_guests: "Количество гостей *",
-        form_date: "Дата визита *",
-        form_time: "Время *",
-        form_notes: "Пожелания или аллергии",
-        form_submit: "Отправить бронь",
-        reviews_tag: "Отзывы наших гостей",
-        reviews_title: "Что говорят посетители",
-        rev1_text: "\"Ощущение, будто оказался внутри любимого фильма! Сет с лососем и мисо-суп невероятно вкусные, а персонал приветлив и заботлив.\"",
-        rev2_text: "\"Лучший тонкацу-рамен в Хельсинки! А булочка с корицей в сочетании с зеленым чаем — идеальное завершение ланча.\"",
-        rev3_text: "\"Очень светлое и стильное место в Пунавуори. Прекрасные веганские позиции и великолепные хрустящие гёдза. Обязательно вернемся!\"",
-        contact_tag: "Ждем вас в гости",
-        contact_title: "Часы работы и локация",
-        contact_desc: "Мы находимся в дизайнерском районе Пунавуори, всего в паре минут пешком от церкви Св. Иоанна.",
-        hours_title: "График работы",
-        hours_mon_fri: "Понедельник – Пятница",
-        hours_sat: "Суббота",
-        hours_sun: "Воскресенье и праздники",
-        hours_closed: "Закрыто",
-        contact_addr_title: "Адрес",
-        contact_open_gmaps: "Маршрут в Google Maps →",
-        contact_phone_title: "Телефон и бронь",
-        contact_email_title: "Email",
-        footer_bio: "Настоящий уголок Японии в Хельсинки. Всегда рады дарить вам тепло и уют.",
-        footer_nav_title: "Навигация",
-        footer_hours_title: "Часы работы",
-        hours_sun_closed: "Вс: Закрыто",
-        footer_kitchen_closes: "Кухня закрывается за 30 минут до закрытия зала.",
-        footer_loc_title: "Наш адрес",
-        toast_title: "Заявка на бронь принята!",
-        toast_desc: "Спасибо! Мы получили вашу заявку и отправим подтверждение на указанную электронную почту в ближайшее время."
+        nav_cta: "Забронировать",
+        hero_status: "График: Пн–Пт 11:00–21:00 • Сб 13:00–21:00",
+        hero_h1_1: "Японская кухня.",
+        hero_h1_2: "Северный покой.",
+        hero_intro: "Настоящая японская домашняя еда, согревающий рамен, хрустящий тонкацу и свежая выпечка в Хельсинки. Честные вкусы и теплое гостеприимство.",
+        hero_btn_menu: "Смотреть меню",
+        fact_1: "Аутентичный вкус",
+        fact_2: "Свежие продукты",
+        fact_3: "Pursimiehenkatu 12",
+        badge_special: "Ланч и Ужин",
+        about_tag: "Философия",
+        about_title: "Простая, душевная японская еда",
+        about_desc: "Ravintola Kamome соединяет свежайшие северные ингредиенты — лосось и сезонные продукты — с традиционными японскими бульонами, мисо и соусами.",
+        f1_title: "Свежий лосось и рыба",
+        f1_desc: "Сочный лосось в соусе терияки, домашние онигири и традиционные японские закуски.",
+        f2_title: "Насыщенные бульоны",
+        f2_desc: "Медленно томленый бульон даси, густой рамен, ароматный мисо и хрустящие гёдза.",
+        f3_title: "Корвапуусти и Матча",
+        f3_desc: "Теплые финские булочки с корицей и церемониальный зеленый чай матча из региона Удзи.",
+        menu_tag: "Меню",
+        menu_title: "Блюда ресторана",
+        menu_sub: "Выберите раздел меню.",
+        cat_mains: "Основные & Тэйсёку",
+        cat_ramen: "Рамен & Гёдза",
+        cat_onigiri: "Онигири & Закуски",
+        cat_sweets: "Десерты & Напитки",
+        takeaway_t: "Самовывоз и Доставка",
+        takeaway_d: "Заказывайте заранее по телефону или оформляйте доставку через Wolt.",
+        vibe_tag: "Галерея",
+        vibe_title: "Атмосфера заведения",
+        res_tag: "Бронирование",
+        res_h: "Забронировать столик",
+        res_p: "Заполните форму ниже, и мы оперативно подтвердим вашу бронь по email.",
+        form_name: "Имя *",
+        form_phone: "Телефон *",
+        form_email: "Email *",
+        form_people: "Количество гостей *",
+        form_date: "Дата и время *",
+        form_notes: "Пожелания / Аллергии",
+        form_submit: "Отправить заявку",
+        contact_tag: "Контакты",
+        contact_h: "Часы работы и адрес",
+        time_mf: "Понедельник – Пятница",
+        time_sat: "Суббота",
+        time_sun: "Воскресенье",
+        time_closed: "Закрыто",
+        open_gmaps: "Маршрут в Google Maps",
+        toast_t: "Заявка принята!",
+        toast_d: "Спасибо! Мы получили вашу заявку и отправим подтверждение на почту в ближайшее время."
       }
     };
 
-    // --- 2. MENU ITEMS DATABASE ---
-    const menuItems = [
-      // MAINS
+    // Actual Dishes
+    const dishes = [
       {
-        id: "m1",
-        category: "mains",
-        price: "22.50 €",
-        badge: "Chef's Choice",
-        image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=600&auto=format&fit=crop",
-        tags: ["G", "L"],
-        names: {
-          fi: "Kamome Salmon Set (Lohisetti)",
-          en: "Kamome Salmon Teishoku Set",
-          ru: "Сет с лососем Камоме Тэйсёку"
-        },
+        cat: 'mains',
+        price: '22.50 €',
+        img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=600&auto=format&fit=crop',
+        names: { fi: 'Kamome Lohisetti (Teishoku)', en: 'Kamome Salmon Teishoku Set', ru: 'Сет с лососем Тэйсёку' },
         descs: {
-          fi: "Paistettua tuoretta lohta teriyakikastikkeella, japanilaista riisiä, miso-keittoa, seesamisalaattia ja tsukemono-pikkelssiä.",
-          en: "Pan-fried fresh Nordic salmon glazed with teriyaki sauce, Japanese rice, miso soup, sesame salad, and house tsukemono pickles.",
-          ru: "Обжаренный свежий нордический лосось в соусе терияки, рис, мисо-суп, салат с кунжутной заправкой и домашние пикули цукэмоно."
+          fi: 'Paistettua tuoretta lohta teriyakilla, japanilaista riisiä, miso-keitto ja kauden lisukkeet.',
+          en: 'Pan-seared fresh salmon with teriyaki glaze, steamed rice, miso soup, and seasonal sides.',
+          ru: 'Свежий лосось в соусе терияки, японский рис, мисо-суп и сезонные гарниры.'
         }
       },
       {
-        id: "m2",
-        category: "mains",
-        price: "19.80 €",
-        badge: "Popular",
-        image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=600&auto=format&fit=crop",
-        tags: ["L"],
-        names: {
-          fi: "Katsu Curry (Tonkatsu)",
-          en: "Crispy Tonkatsu Japanese Curry",
-          ru: "Кацу Карри с хрустящей свининой"
-        },
+        cat: 'mains',
+        price: '19.80 €',
+        img: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=600&auto=format&fit=crop',
+        names: { fi: 'Porsas Tonkatsu Curry', en: 'Crispy Pork Tonkatsu Curry', ru: 'Тонкацу Карри со свининой' },
         descs: {
-          fi: "Kullanrapeaksi paistettua porsaanfileetä panko-kuoressa, perinteistä aromaattista japanilaista currykastiketta ja riisiä.",
-          en: "Golden crispy panko-crusted pork cutlet served with aromatic rich Japanese curry sauce and steamed rice.",
-          ru: "Хрустящая свиная вырезка панко, насыщенный пряный японский соус карри и рис на пару."
+          fi: 'Rapeaksi paistettua porsaanfileetä panko-kuoressa, perinteistä japanilaista currykastiketta ja riisiä.',
+          en: 'Crisp panko pork cutlet served with rich Japanese curry and fluffy white rice.',
+          ru: 'Хрустящая котлета тон Neighboring котлета в сухарях панко, классический японский карри и рис.'
         }
       },
       {
-        id: "m3",
-        category: "mains",
-        price: "18.90 €",
-        badge: "Classic",
-        image: "https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=600&auto=format&fit=crop",
-        tags: ["L"],
-        names: {
-          fi: "Gyudon Beef Bowl",
-          en: "Classic Gyudon Beef Bowl",
-          ru: "Гюдон с мраморной говядиной"
-        },
+        cat: 'mains',
+        price: '18.90 €',
+        img: 'https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=600&auto=format&fit=crop',
+        names: { fi: 'Gyudon Beef Bowl', en: 'Classic Gyudon Beef Bowl', ru: 'Гюдон с говядиной' },
         descs: {
-          fi: "Mureaksi haudutettua naudanlihaa ja karamellisoitua sipulia dashi-soijaliemessä, tarjoiltuna riisipedillä ja onsen-kananmunalla.",
-          en: "Tender thinly sliced beef and sweet onions simmered in sweet dashi broth, over fluffy rice with an onsen soft egg.",
-          ru: "Нежная томленая говядина со сладким луком в соусе даси, рис и яйцо су-вид онсэн-тамаго."
-        }
-      },
-
-      // RAMEN & GYOZA
-      {
-        id: "r1",
-        category: "ramen",
-        price: "18.50 €",
-        badge: "Signature",
-        image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=600&auto=format&fit=crop",
-        tags: ["Pork"],
-        names: {
-          fi: "Kamome Tonkotsu Ramen",
-          en: "Kamome Rich Tonkotsu Ramen",
-          ru: "Камоме Тонкоцу Рамен"
-        },
-        descs: {
-          fi: "12 tuntia haudutettu kermainen porsasliemi, chashu-possua, marinoidut bambunversot, ajitsuke tamago -muna ja tuoreet nuudelit.",
-          en: "12-hour slow-simmered rich pork broth, tender chashu pork, seasoned bamboo shoots, marinated soft egg, and handcrafted noodles.",
-          ru: "12-часовой наваристый бульон, нежная свинина тясю, ростки бамбука, маринованное яйцо адзитама и упругая лапша."
+          fi: 'Mureaksi haudutettua naudanlihaa ja makeaa sipulia dashi-soijakastikkeessa riisipedillä.',
+          en: 'Tender simmered sliced beef and sweet onion in sweet dashi soy sauce over rice.',
+          ru: 'Тонко нарезанная томленая говядина со сладким луком в бульоне даси на подушке из риса.'
         }
       },
       {
-        id: "r2",
-        category: "ramen",
-        price: "17.90 €",
-        badge: "Vegan Choice",
-        image: "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?q=80&w=600&auto=format&fit=crop",
-        tags: ["Vegan"],
-        names: {
-          fi: "Vegaaninen Miso Ramen",
-          en: "Vegan Creamy Miso Ramen",
-          ru: "Веганский Рамен с белым мисо"
-        },
+        cat: 'ramen',
+        price: '18.50 €',
+        img: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=600&auto=format&fit=crop',
+        names: { fi: 'Tonkotsu Ramen', en: 'Tonkotsu Pork Ramen', ru: 'Тонкоцу Рамен' },
         descs: {
-          fi: "Täyteläinen siitake- ja soijamaitoliemi valkoisella misolla, paistettua tofua, maissia, paksoita ja seesamiöljyä.",
-          en: "Creamy shiitake & soy milk broth flavored with white miso, seared tofu, sweet corn, bok choy, and fragrant roasted chili sesame oil.",
-          ru: "Густой бульон на основе шиитаке и соевого молока с мисо, обжаренный тофу, сладкая кукуруза, бок-чой и кунжутное масло."
+          fi: 'Täyteläinen porsasliemi, chashu-possua, marinoitu kananmuna, bambu ja tuore nuudeli.',
+          en: 'Rich pork bone broth, tender chashu pork, seasoned soft egg, bamboo shoots, and noodles.',
+          ru: 'Наваристый свиной бульон, свинина тясю, маринованное яйцо, ростки бамбука и лапша.'
         }
       },
       {
-        id: "r3",
-        category: "ramen",
-        price: "9.50 €",
-        badge: "Handmade",
-        image: "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?q=80&w=600&auto=format&fit=crop",
-        tags: ["6 pcs"],
-        names: {
-          fi: "Paistetut Gyoza-nyytit",
-          en: "Handmade Pan-Fried Gyoza",
-          ru: "Жареные пельмени Гёдза"
-        },
+        cat: 'ramen',
+        price: '17.90 €',
+        img: 'https://images.unsplash.com/photo-1591814468924-caf88d1232e1?q=80&w=600&auto=format&fit=crop',
+        names: { fi: 'Vegaaninen Miso Ramen', en: 'Vegan Creamy Miso Ramen', ru: 'Веганский Мисо Рамен' },
         descs: {
-          fi: "Pohjasta rapeat japanilaiset taikinanyytit porsas-kaalitäytteellä (saatavilla myös vegaanisena kasvisversioina) ja ponzukastikkeella.",
-          en: "Pan-fried crispy Japanese dumplings filled with seasoned pork and scallions (vegan vegetable option available) with citrus ponzu.",
-          ru: "Хрустящие пельмешки с начинкой из свинины и капусты (или веганский вариант на выбор), подаются с цитрусовым соусом пондзу."
-        }
-      },
-
-      // SIDES / IZAKAYA / ONIGIRI
-      {
-        id: "s1",
-        category: "sides",
-        price: "4.50 €",
-        badge: "Movie Icon",
-        image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=600&auto=format&fit=crop",
-        tags: ["V / GF"],
-        names: {
-          fi: "Käsinsolmitut Onigirit",
-          en: "Traditional Handmade Onigiri",
-          ru: "Домашние рисовые Онигири"
-        },
-        descs: {
-          fi: "Ruokala Lokin sielu: lämmin riisipallo nori-merilevällä. Täytevaihtoehdot: Grillilohi, Umeboshi (luumu) tai Miso-sieni.",
-          en: "The icon of Kamome Diner: warm sushi rice wrapped in crispy nori. Choice of Grilled Salmon, Umeboshi plum, or seasoned Miso mushroom.",
-          ru: "Символ фильма «Чайка»: теплый рис в водорослях нори. На выбор: подкопченный лосось, слива умэбоси или грибы в мисо."
+          fi: 'Täyteläinen kasvis-misoliemi, tofua, vihanneksia, seesamiöljyä ja tuoretta nuudelia.',
+          en: 'Creamy vegetable and miso broth with seared tofu, greens, roasted sesame oil, and noodles.',
+          ru: 'Бульон с белым мисо, нежный тофу, сезонные овощи, кунжутное масло и лапша.'
         }
       },
       {
-        id: "s2",
-        category: "sides",
-        price: "8.50 €",
-        badge: "Crispy",
-        image: "https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=600&auto=format&fit=crop",
-        tags: ["Popular"],
-        names: {
-          fi: "Tori Karaage",
-          en: "Japanese Karaage Fried Chicken",
-          ru: "Курица Карааге по-японски"
-        },
+        cat: 'ramen',
+        price: '9.50 €',
+        img: 'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?q=80&w=600&auto=format&fit=crop',
+        names: { fi: 'Gyoza-nyytit (6 kpl)', en: 'Pan-fried Gyoza (6 pcs)', ru: 'Пельмени Гёдза (6 шт)' },
         descs: {
-          fi: "Inkiväärillä, valkosipulilla ja sake-soijalla marinoitua rapeaa kanaa sekä japanilaista kewpie-majoneesia.",
-          en: "Ginger, garlic & sake-marinated crispy fried chicken bites served with Japanese Kewpie mayonnaise and lemon wedge.",
-          ru: "Хрустящие кусочки куриного бедра в имбирно-соевом маринаде, с японским майонезом кьюпи и долькой лимона."
+          fi: 'Pannulla rapsakaksi paistetut käsintehdyt liha- tai kasvisnyytit ponzu-kastikkeella.',
+          en: 'Crispy pan-fried pork or veggie dumplings with citrus soy dipping sauce.',
+          ru: 'Хрустящие жареные гедза с мясом или овощами, подаются с соусом пондзу.'
         }
       },
       {
-        id: "s3",
-        category: "sides",
-        price: "6.00 €",
-        badge: "Fresh",
-        image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=600&auto=format&fit=crop",
-        tags: ["Vegan"],
-        names: {
-          fi: "Höyrytetty Edamame",
-          en: "Sea Salt & Chili Edamame",
-          ru: "Эдамаме с морской солью"
-        },
+        cat: 'onigiri',
+        price: '4.50 €',
+        img: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=600&auto=format&fit=crop',
+        names: { fi: 'Käsintehty Onigiri', en: 'Handmade Onigiri', ru: 'Онигири ручной лепки' },
         descs: {
-          fi: "Tuoreita soijapapuja Maldon-merisuolalla tai togarashi-chilirouheella maustettuna.",
-          en: "Steamed tender green soybeans seasoned with flaked Maldon sea salt or spicy togarashi pepper.",
-          ru: "Нежные бобы эдамаме на пару, с хлопьями морской соли Maldon или японским перцем тогараси."
-        }
-      },
-
-      // DRINKS & DESSERTS
-      {
-        id: "d1",
-        category: "drinks",
-        price: "5.50 €",
-        badge: "Must Try",
-        image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=600&auto=format&fit=crop",
-        tags: ["Fresh Baked"],
-        names: {
-          fi: "Kamome Korvapuusti",
-          en: "Kamome Cinnamon Bun (Korvapuusti)",
-          ru: "Булочка с корицей Korvapuusti"
-        },
-        descs: {
-          fi: "Elokuvasta tuttu vastaleivottu perinteinen kardemummainen ja kanelinen korvapuusti – pehmeä sisältä, rapea päältä.",
-          en: "The legendary fresh-baked Nordic-Japanese cardamom and cinnamon roll from the movie Kamome Diner. Pure bliss.",
-          ru: "Легендарная свежеиспеченная булочка с кардамоном и корицей из фильма «Чайка». Нежнейшее воздушное тесто."
+          fi: 'Perinteinen japanilainen riisipallo nori-levällä. Täyte: Lohi, Umeboshi tai Miso.',
+          en: 'Classic sushi rice triangle wrapped in crisp nori. Filling: Salmon, Umeboshi plum, or Miso.',
+          ru: 'Японский треугольник из риса в нори. Начинки: лосось, слива умэбоси или мисо.'
         }
       },
       {
-        id: "d2",
-        category: "drinks",
-        price: "6.00 €",
-        badge: "Uji Kyoto",
-        image: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=600&auto=format&fit=crop",
-        tags: ["Hot / Iced"],
-        names: {
-          fi: "Kyoto Uji Matcha Latte",
-          en: "Kyoto Uji Ceremonial Matcha Latte",
-          ru: "Матча Латте из Киото"
-        },
+        cat: 'onigiri',
+        price: '8.50 €',
+        img: 'https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=600&auto=format&fit=crop',
+        names: { fi: 'Tori Karaage', en: 'Crispy Karaage Chicken', ru: 'Курица Карааге' },
         descs: {
-          fi: "Seremonialaatuista luomu-matchaa Ujista, pehmeää kauramaitoa ja kevyttä vaniljaa.",
-          en: "Ceremonial-grade organic Uji matcha whisked with silky oat milk and a touch of organic sweetness.",
-          ru: "Церемониальная матча из региона Удзи с шелковистым овсяным молоком и ноткой натуральной ванили."
+          fi: 'Inkiväärillä ja soijalla marinoitua rapeaa kanaa sekä japanilaista majoneesia.',
+          en: 'Crispy soy-ginger fried chicken bites served with lemon and Japanese mayonnaise.',
+          ru: 'Куриные кусочки во фритюре с имбирем, чесноком и японским майонезом.'
         }
       },
       {
-        id: "d3",
-        category: "drinks",
-        price: "11.00 €",
-        badge: "Selected",
-        image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=600&auto=format&fit=crop",
-        tags: ["120ml"],
-        names: {
-          fi: "Dassai 45 Junmai Daiginjo Sake",
-          en: "Dassai 45 Junmai Daiginjo Sake",
-          ru: "Саке Дассай 45 Дзюнмай Дайгиндзё"
-        },
+        cat: 'sweets',
+        price: '5.50 €',
+        img: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=600&auto=format&fit=crop',
+        names: { fi: 'Kamome Korvapuusti', en: 'Cinnamon Roll (Korvapuusti)', ru: 'Булочка с корицей' },
         descs: {
-          fi: "Hienostunut, hedelmäinen ja kukkainen huippuluokan japanilainen riisiviini Yamadanishiki-riisistä.",
-          en: "Premium Japanese sake with delicate aromas of ripe melon, white peach, and silky balanced finish.",
-          ru: "Премиальное японское саке с шелковистой текстурой, оттенками белого персика, дыни и чистым финишем."
+          fi: 'Vastaleivottu pehmeä ja kardemummainen suomalais-japanilainen korvapuusti.',
+          en: 'Freshly baked soft cardamom and cinnamon bun, warm and comforting.',
+          ru: 'Свежеиспеченная сдобная финская булочка с корицей и кардамоном.'
+        }
+      },
+      {
+        cat: 'sweets',
+        price: '6.00 €',
+        img: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=600&auto=format&fit=crop',
+        names: { fi: 'Uji Matcha Latte', en: 'Kyoto Uji Matcha Latte', ru: 'Матча Латте из Киото' },
+        descs: {
+          fi: 'Seremonialaatuista vihreää Uji-matchaa ja pehmeää kauramaitoa.',
+          en: 'Ceremonial grade organic Japanese matcha tea whisked with silky oat milk.',
+          ru: 'Органический чай матча из региона Удзи с овсяным молоком.'
         }
       }
     ];
 
-    // Current app state
-    let currentLang = 'fi';
-    let currentCat = 'mains';
+    let currentL = 'fi';
+    let currentC = 'mains';
 
-    // Set Copyright Year
-    document.getElementById('cur-year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Set Min Date in Booking to Today
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('res-date').min = today;
-    document.getElementById('res-date').value = today;
+    // Mobile nav toggle
+    const toggleBtn = document.getElementById('toggle-nav');
+    const drawer = document.getElementById('mobile-drawer');
+    toggleBtn.addEventListener('click', () => drawer.classList.toggle('hidden'));
+    document.querySelectorAll('.mob-item').forEach(i => i.addEventListener('click', () => drawer.classList.add('hidden')));
 
-    // Mobile Menu Toggle
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    document.querySelectorAll('.mob-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-
-    // --- LANGUAGE SWITCHER FUNCTION ---
-    function setLanguage(lang) {
-      currentLang = lang;
-      
-      // Update active button state
-      ['fi', 'en', 'ru'].forEach(l => {
-        const btn = document.getElementById(`lang-btn-${l}`);
+    // Change Language
+    function changeLang(l) {
+      currentL = l;
+      ['fi', 'en', 'ru'].forEach(lang => {
+        const btn = document.getElementById(`btn-${lang}`);
         if (btn) {
-          if (l === lang) btn.classList.add('active');
+          if (lang === l) btn.classList.add('active');
           else btn.classList.remove('active');
         }
 
-        // Mobile buttons
-        const mobBtns = document.querySelectorAll(`.lang-btn-mob-${l}`);
-        mobBtns.forEach(mb => {
-          if (l === lang) {
-            mb.classList.add('bg-kamome-accent', 'text-white');
-            mb.classList.remove('text-kamome-dark');
+        const mBtn = document.querySelector(`.m-lang-${lang}`);
+        if (mBtn) {
+          if (lang === l) {
+            mBtn.className = `m-lang-${lang} px-2 py-0.5 rounded-full bg-brand-cream text-brand-charcoal`;
           } else {
-            mb.classList.remove('bg-kamome-accent', 'text-white');
-            mb.classList.add('text-kamome-dark');
+            mBtn.className = `m-lang-${lang} px-2 py-0.5 rounded-full text-white`;
           }
-        });
+        }
       });
 
-      // Update static texts
       document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-          el.innerHTML = translations[lang][key];
+        const k = el.getAttribute('data-i18n');
+        if (i18n[l] && i18n[l][k]) {
+          el.textContent = i18n[l][k];
         }
       });
 
-      // Re-render menu to update dish translations
-      renderMenu(currentCat);
+      renderCards(currentC);
     }
 
-    // --- MENU FILTERING & RENDERING ---
-    function filterMenu(category) {
-      currentCat = category;
-      
-      // Tab visual states
-      document.querySelectorAll('.menu-tab').forEach(btn => {
-        if (btn.getAttribute('data-cat') === category) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
+    // Filter Menu
+    function setMenuCategory(cat) {
+      currentC = cat;
+      document.querySelectorAll('.menu-filter').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) btn.classList.add('active');
+        else btn.classList.remove('active');
       });
-
-      renderMenu(category);
+      renderCards(cat);
     }
 
-    function renderMenu(category) {
-      const container = document.getElementById('menu-grid');
-      const filtered = menuItems.filter(item => item.category === category);
-
-      container.innerHTML = filtered.map(item => {
-        return `
-          <div class="bg-white rounded-2xl overflow-hidden border border-kamome-softblue shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group">
-            <div class="relative h-48 overflow-hidden">
-              <img src="${item.image}" alt="${item.names[currentLang]}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-bold text-kamome-accent tracking-wide uppercase shadow-sm">
-                ${item.badge}
-              </div>
-              <div class="absolute bottom-3 right-3 bg-kamome-dark/85 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider">
-                ${item.price}
-              </div>
-            </div>
-            
-            <div class="p-6 flex flex-col justify-between flex-grow space-y-3">
-              <div>
-                <div class="flex items-center justify-between gap-2 mb-1.5">
-                  <h4 class="font-serif font-bold text-base sm:text-lg text-kamome-dark leading-snug group-hover:text-kamome-accent transition-colors">
-                    ${item.names[currentLang]}
-                  </h4>
-                </div>
-                <p class="text-xs text-kamome-muted leading-relaxed">
-                  ${item.descs[currentLang]}
-                </p>
-              </div>
-
-              <div class="pt-2 flex items-center justify-between border-t border-kamome-softblue/60 text-[11px]">
-                <div class="flex gap-1.5">
-                  ${item.tags.map(t => `<span class="bg-kamome-ice px-2 py-0.5 rounded text-kamome-muted font-medium">${t}</span>`).join('')}
-                </div>
-                <button onclick="quickOrderNotice('${item.names[currentLang]}')" class="text-kamome-accent hover:text-kamome-accentDark font-semibold flex items-center gap-1 transition-colors">
-                  <span>Valitse</span>
-                  <i class="fa-solid fa-plus text-[10px]"></i>
-                </button>
-              </div>
+    function renderCards(cat) {
+      const box = document.getElementById('cards-container');
+      const filtered = dishes.filter(d => d.cat === cat);
+      box.innerHTML = filtered.map(d => `
+        <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-brand-cream/60 flex flex-col group text-brand-charcoal">
+          <div class="h-52 overflow-hidden relative">
+            <img src="${d.img}" alt="${d.names[currentL]}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute bottom-3 right-3 bg-brand-charcoal/90 text-brand-cream text-xs font-bold px-3 py-1.5 rounded-full shadow">
+              ${d.price}
+            </span>
+          </div>
+          <div class="p-6 flex flex-col justify-between flex-1 space-y-3 bg-brand-cream/30">
+            <div>
+              <h4 class="font-serif font-bold text-lg text-brand-charcoal mb-1">${d.names[currentL]}</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">${d.descs[currentL]}</p>
             </div>
           </div>
-        `;
-      }).join('');
+        </div>
+      `).join('');
     }
 
-    function quickOrderNotice(dishName) {
-      window.location.href = '#reservation';
-      const notesField = document.querySelector('textarea');
-      if (notesField && !notesField.value.includes(dishName)) {
-        notesField.value = notesField.value ? notesField.value + ', ' + dishName : 'Toiveet: ' + dishName;
-      }
-    }
-
-    // --- RESERVATION FORM HANDLER ---
-    function handleReservation(e) {
+    // Form
+    function submitBooking(e) {
       e.preventDefault();
-      const modal = document.getElementById('toast-modal');
-      modal.classList.remove('hidden');
-      setTimeout(() => {
-        modal.classList.remove('opacity-0');
-        modal.querySelector('div').classList.remove('scale-95');
-      }, 10);
+      document.getElementById('toast').classList.remove('hidden');
       e.target.reset();
-      document.getElementById('res-date').value = today;
     }
-
     function closeModal() {
-      const modal = document.getElementById('toast-modal');
-      modal.classList.add('hidden');
+      document.getElementById('toast').classList.add('hidden');
     }
 
-    // Initialize Menu on Load
-    renderMenu('mains');
+    // Init
+    renderCards('mains');
   </script>
 </body>
 </html>
